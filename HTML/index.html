@@ -5,7 +5,463 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <style>
+        /* Reset e configurações básicas */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background: #0a0a1a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header e banner - MODIFICADO PARA CENTRALIZAR */
+        .header {
+            position: relative;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .banner-container {
+            position: relative;
+            margin: 20px 0;
+            border-radius: 40px;
+            overflow: visible; /* Alterado de hidden para visible */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 1000px; /* Largura máxima para o banner */
+        }
+
+        .banner {
+            width: 100%;
+            display: block;
+            border: 3px solid #7c4dff;
+            border-radius: 40px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 0 15px rgba(124, 77, 255, 0.6);
+        }
+
+        /* Efeito LED em volta do banner - CORRIGIDO */
+        .banner-container::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            border-radius: 48px;
+            background: linear-gradient(45deg, #a201ff, #7c4dff, #4f24c7, #7c4dff, #7c4dff);
+            background-size: 400% 400%;
+            z-index: 1;
+            animation: ledBorder 3s linear infinite;
+            filter: blur(6px);
+            opacity: 0.8;
+        }
+
+        .banner-container::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 44px;
+            background: linear-gradient(45deg, #a054e7, #7c29d5, #6d2bb3, #6600e3, #7c4dff);
+            background-size: 400% 400%;
+            z-index: 1;
+            animation: ledBorder 3s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes ledBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Navegação - MODIFICADO PARA ALINHAR COM O BANNER */
+        .navbar {
+            margin: 30px 0;
+            width: 100%;
+            max-width: 1000px; /* Mesma largura máxima do banner */
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: #4dc4ff;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: #4dc4ff;
+        }
+
+        /* Conteúdo principal */
+        .main-content {
+            min-height: 60vh;
+        }
+
+        .section {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            padding: 40px 0;
+        }
+
+        .section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #4dc4ff;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #4dc4ff, #0077ff);
+            border-radius: 3px;
+        }
+
+        /* Seção Home */
+        .home-content {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .home-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #4dc4ff, #0077ff, #4dc4ff);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .home-content p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Botões */
+        .btn {
+            background: linear-gradient(90deg, #4dc4ff, #0077ff);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 119, 255, 0.4);
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 119, 255, 0.6);
+        }
+
+        /* Seção Sobre */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .skills {
+            margin-top: 20px;
+        }
+
+        .skill {
+            margin-bottom: 20px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #4dc4ff, #0077ff);
+            border-radius: 10px;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+
+        /* Seção Projetos */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 119, 255, 0.2);
+        }
+
+        .project-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-btn {
+            background: #4dc4ff;
+            color: #0a0a1a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .project-card h3 {
+            margin: 15px 0 10px;
+            padding: 0 15px;
+        }
+
+        .project-card p {
+            padding: 0 15px 15px;
+            color: #ccc;
+        }
+
+        /* Seção Contato */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #4dc4ff;
+            box-shadow: 0 0 10px rgba(77, 196, 255, 0.5);
+        }
+
+        .contact-item {
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .social-link {
+            color: #4dc4ff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            text-shadow: 0 0 10px rgba(77, 196, 255, 0.7);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .home-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .banner-container {
+                border-radius: 20px;
+            }
+            
+            .banner {
+                border-radius: 20px;
+            }
+            
+            .banner-container::before,
+            .banner-container::after {
+                border-radius: 28px;
+                top: -5px;
+                left: -5px;
+                right: -5px;
+                bottom: -5px;
+            }
+            
+            .banner-container::before {
+                top: -6px;
+                left: -6px;
+                right: -6px;
+                bottom: -6px;
+                border-radius: 26px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Container principal -->
@@ -13,7 +469,7 @@
         <!-- Header com banner e navegação -->
         <header class="header">
             <div class="banner-container">
-                <img src="https://via.placeholder.com/1200x300/0a0a1a/4dc4ff?text=MEU+BANNER" alt="Banner do Portfólio" class="banner">
+                <img src="../IMG/banner.webp" alt="Banner do Portfólio" class="banner">
             </div>
             
             <nav class="navbar">
@@ -31,7 +487,7 @@
             <!-- Seção Home -->
             <section id="home" class="section active">
                 <div class="home-content">
-                    <h1>Hi all <span>I'm Gabriel Felipe (CAFÉ)</span></h1>
+                    <h1>Olá, eu sou <span>Seu Nome</span></h1>
                     <p>Desenvolvedor Web & Designer Criativo</p>
                     <a href="#projetos" class="btn">Ver Projetos</a>
                 </div>
@@ -143,6 +599,68 @@
         </footer>
     </div>
 
-    <script src="../JAVASCRIPT/index.js"></script>
+    <script>
+        // Navegação suave entre seções
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.section');
+            
+            // Mostrar a seção home por padrão
+            document.getElementById('home').classList.add('active');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    
+                    // Esconder todas as seções
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    
+                    // Mostrar a seção alvo
+                    document.getElementById(targetId).classList.add('active');
+                    
+                    // Scroll suave para o topo da seção
+                    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+            
+            // Animação das barras de habilidades
+            const skillBars = document.querySelectorAll('.skill-progress');
+            
+            function animateSkillBars() {
+                skillBars.forEach(bar => {
+                    const width = bar.getAttribute('data-width');
+                    bar.style.width = width;
+                });
+            }
+            
+            // Verificar quando a seção de habilidades está visível
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkillBars();
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(document.getElementById('sobre'));
+            
+            // Configuração do formulário de contato
+            const contactForm = document.querySelector('.contact-form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Aqui você pode adicionar a lógica para enviar o formulário
+                    alert('Mensagem enviada com sucesso!');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
 </body>
 </html>

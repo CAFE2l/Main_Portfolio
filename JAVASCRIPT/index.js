@@ -1,160 +1,188 @@
-   // Inicializar partículas
-        document.addEventListener('DOMContentLoaded', function() {
-            particlesJS('particles-js', {
-                particles: {
-                    number: { value: 80, density: { enable: true, value_area: 800 } },
-                    color: { value: "#6e45e2" },
-                    shape: { type: "circle" },
-                    opacity: { value: 0.5, random: true },
-                    size: { value: 3, random: true },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: "#6e45e2",
-                        opacity: 0.4,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 2,
-                        direction: "none",
-                        random: true,
-                        straight: false,
-                        out_mode: "out",
-                        bounce: false
-                    }
-                },
-                interactivity: {
-                    detect_on: "canvas",
-                    events: {
-                        onhover: { enable: true, mode: "repulse" },
-                        onclick: { enable: true, mode: "push" },
-                        resize: true
-                    }
-                },
-                retina_detect: true
-            });
-
-            // Header scroll effect
-            window.addEventListener('scroll', function() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-            });
-
-            // Smooth scrolling para links de navegação
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                        
-                        // Fechar menu mobile após clicar em um link
-                        if (document.querySelector('.nav-links').classList.contains('active')) {
-                            toggleMobileMenu();
-                        }
-                    }
-                });
-            });
-
-            // Animação de entrada para elementos
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate__fadeInUp');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.glass-card, .skill-item, .project-card').forEach(el => {
-                observer.observe(el);
-            });
-
-            // Menu mobile toggle
-            const menuToggle = document.querySelector('.menu-toggle');
-            if (menuToggle) {
-                menuToggle.addEventListener('click', toggleMobileMenu);
+// Inicialização quando o documento estiver pronto
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar partículas
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: "#00f7ff" },
+            shape: { type: "circle" },
+            opacity: { value: 0.5, random: true },
+            size: { value: 3, random: true },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#00f7ff",
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: true,
+                straight: false,
+                out_mode: "out",
+                bounce: false
             }
-
-            // Form submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-                    contactForm.reset();
-                });
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: { enable: true, mode: "repulse" },
+                onclick: { enable: true, mode: "push" },
+                resize: true
             }
+        },
+        retina_detect: true
+    });
 
-            // Efeito de digitação no título
-            typeWriterEffect();
+    // Configuração do cursor personalizado
+    const cursor = document.querySelector('.cursor');
+    const cursorFollower = document.querySelector('.cursor-follower');
+    
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(function() {
+            cursorFollower.style.left = e.clientX + 'px';
+            cursorFollower.style.top = e.clientY + 'px';
+        }, 100);
+    });
+    
+    // Efeitos de hover no cursor
+    const hoverElements = document.querySelectorAll('a, button, .nav-link, .led-button, .project-card');
+    
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('active');
+            cursorFollower.classList.add('active');
         });
-
-        function toggleMobileMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
+        
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('active');
+            cursorFollower.classList.remove('active');
+        });
+    });
+    
+    // Navegação suave entre seções
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            const menuIcon = document.querySelector('.menu-toggle i');
-            if (navLinks.classList.contains('active')) {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-times');
+            const targetId = this.getAttribute('href').substring(1);
+            
+            // Esconder todas as seções
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Mostrar a seção alvo
+            document.getElementById(targetId).classList.add('active');
+            
+            // Atualizar a navegação
+            navLinks.forEach(navLink => {
+                navLink.parentElement.classList.remove('active');
+            });
+            
+            this.parentElement.classList.add('active');
+            
+            // Scroll suave para o topo da seção
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    
+    // Animação das barras de habilidades
+    const skillBars = document.querySelectorAll('.skill-progress');
+    
+    function animateSkillBars() {
+        skillBars.forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width;
+        });
+    }
+    
+    // Verificar quando a seção de habilidades está visível
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateSkillBars();
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    observer.observe(document.getElementById('sobre'));
+    
+    // Animação de digitação para a home
+    function initTypingAnimation() {
+        const typingElement = document.querySelector('.typing-animation');
+        const text = typingElement.textContent;
+        typingElement.textContent = '';
+        
+        let i = 0;
+        const typingInterval = setInterval(() => {
+            if (i < text.length) {
+                typingElement.textContent += text.charAt(i);
+                i++;
             } else {
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
+                clearInterval(typingInterval);
+                typingElement.style.borderRight = 'none';
             }
-        }
-
-        function typeWriterEffect() {
-            const titleElement = document.querySelector('.hero h1');
-            if (!titleElement) return;
+        }, 100);
+    }
+    
+    // Iniciar animação de digitação se estiver na seção home
+    if (document.querySelector('.typing-animation')) {
+        initTypingAnimation();
+    }
+    
+    // Animação de entrada para elementos
+    const animatedElements = document.querySelectorAll('.slide-in, .fade-in');
+    
+    function checkScroll() {
+        animatedElements.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            const elementVisible = 150;
             
-            const originalText = titleElement.textContent;
-            titleElement.textContent = '';
-            
-            let i = 0;
-            const speed = 100;
-            
-            function typeWriter() {
-                if (i < originalText.length) {
-                    titleElement.textContent += originalText.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                }
+            if (elementTop < window.innerHeight - elementVisible) {
+                el.style.animationPlayState = 'running';
             }
-            
-            // Iniciar efeito após um breve delay
-            setTimeout(typeWriter, 1000);
-        }
-
-        // Efeito de luz LED interativo
-        document.addEventListener('mousemove', function(e) {
-            const ledElement = document.querySelector('.led-indicator');
-            if (!ledElement) return;
-            
-            // Calcular distância do mouse ao LED
-            const rect = ledElement.getBoundingClientRect();
-            const ledX = rect.left + rect.width / 2;
-            const ledY = rect.top + rect.height / 2;
-            
-            const distance = Math.sqrt(Math.pow(e.clientX - ledX, 2) + Math.pow(e.clientY - ledY, 2));
-            
-            // Aumentar brilho quando o mouse estiver próximo
-            const intensity = Math.max(0, 1 - distance / 200);
-            ledElement.style.boxShadow = `0 0 ${5 + intensity * 10}px ${intensity * 2}px var(--accent-color)`;
         });
+    }
+    
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // Verificar elementos visíveis no carregamento
+    
+    // Efeito LED pulsante para bordas
+    function pulseLED() {
+        const ledElements = document.querySelectorAll('.led-border, .led-hover');
+        
+        setInterval(() => {
+            ledElements.forEach(el => {
+                el.style.boxShadow = '0 0 15px #00f7ff, 0 0 30px #00f7ff';
+                
+                setTimeout(() => {
+                    el.style.boxShadow = '0 0 5px #00f7ff, 0 0 10px #00f7ff';
+                }, 500);
+            });
+        }, 2000);
+    }
+    
+    pulseLED();
+    
+    // Configuração do formulário de contato
+    const contactForm = document.querySelector('.contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aqui você pode adicionar a lógica para enviar o formulário
+            alert('Mensagem enviada com sucesso!');
+            contactForm.reset();
+        });
+    }
+});

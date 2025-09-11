@@ -1,220 +1,159 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Efeito de partículas de fundo -->
+    <!-- Efeito de partículas para fundo dinâmico -->
     <div id="particles-js"></div>
-
-      <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo"><span class="led-indicator"></span>Gabriel<span>Felipe</span></a>
-                <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                    <img src="" alt="">
-                </ul>
-                <div class="menum-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Desenvolvedor & Designer Criativo</h1>
-                <p>Transformando ideias em experiências digitais excepcionais</p>
-                <a href="#projects" class="btn">Ver Projetos</a>
-
+    
+    <!-- Cursor personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Header com banner e navegação -->
+        <header class="header">
+            <div class="banner-container">
+                <img src="https://via.placeholder.com/1200x300" alt="Banner do Portfólio" class="banner">
+                <div class="led-border"></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Sobre -->
-    <section id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About ME</h2>
-                    <p>Junior Front-End Developer focusing on full-stack</p>
-                    <p>Searching on upgrade my skills and q.</p>
-                </div>
-                <div class="about-image">
-                    <div class="glass-card float">
-                        <h3>5+</h3>
-                        <p>Anos de Experiência</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Habilidades - NOVA SEÇÃO -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Minhas Habilidades</h2>
-            <div class="skills-container">
-                <div class="skill-category glass-card">
-                    <h3>Frontend Development</h3>
-                    <div class="skill-icons">
-                        <i class="fab fa-html5 skill-icon"></i>
-                        <i class="fab fa-css3-alt skill-icon"></i>
-                        <i class="fab fa-js skill-icon"></i>
-                        <i class="fab fa-react skill-icon"></i>
-                    </div>
-                </div>
-                
-                <div class="skill-category glass-card">
-                    <h3>Backend Development</h3>
-                    <div class="skill-icons">
-                        <i class="fab fa-node skill-icon"></i>
-                        <i class="fab fa-python skill-icon"></i>
-                        <i class="fas fa-database skill-icon"></i>
-                        <i class="fab fa-php skill-icon"></i>
-                    </div>
-                </div>
-                
-                <div class="skill-category glass-card">
-                    <h3>UI/UX & Graphics Design</h3>
-                    <div class="skill-icons">
-                        <i class="fab fa-figma skill-icon"></i>
-                        <i class="fas fa-paint-brush skill-icon"></i>
-                        <i class="fas fa-pencil-alt skill-icon"></i>
-                        <i class="fas fa-palette skill-icon"></i>
-                    </div>
-                </div>
-                
-                <div class="skill-category glass-card">
-                    <h3>DevOps & Tools</h3>
-                    <div class="devops-tools">
-                        <span class="tool-item">Docker</span>
-                        <span class="tool-item">Git</span>
-                        <span class="tool-item">AWS</span>
-                        <span class="tool-item">CI/CD</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projetos -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Meus Projetos</h2>
-            <div class="projects-grid">
-                <div class="project-card glass-card">
-                    <img src="https://via.placeholder.com/400x300/6e45e2/ffffff?text=Projeto+1" alt="Projeto 1" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Landing Page Moderna</h3>
-                        <p>Design Responsivo</p>
-                        <a href="#" class="project-link">Ver Detalhes</a>
-                    </div>
-                </div>
-                <div class="project-card glass-card">
-                    <img src="https://via.placeholder.com/400x300/88d3ce/000000?text=Projeto+2" alt="Projeto 2" class="project-img">
-                    <div class="project-overlay">
-                        <h3>Aplicação Web</h3>
-                        <p>React e Firebase</p>
-                        <a href="#" class="project-link">Ver Detalhes</a>
-                    </div>
-                </div>
-                <div class="project-card glass-card">
-                    <img src="https://via.placeholder.com/400x300/ff7e5f/ffffff?text=Projeto+3" alt="Projeto 3" class="project-img">
-                    <div class="project-overlay">
-                        <h3>E-commerce</h3>
-                        <p>Loja Virtual Completa</p>
-                        <a href="#" class="project-link">Ver Detalhes</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato - NOVA SEÇÃO -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">CONTACT</h2>
-            <h3 style="text-align: center; margin-bottom: 40px; font-weight: 300;">Reach Out to Me</h3>
             
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-item glass-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Phone</h4>
-                            <p>+8801648068834</p>
-                        </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#home" class="nav-link led-hover">Home</a></li>
+                    <li><a href="#sobre" class="nav-link led-hover">Sobre</a></li>
+                    <li><a href="#projetos" class="nav-link led-hover">Projetos</a></li>
+                    <li><a href="#contato" class="nav-link led-hover">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <!-- Seção Home -->
+            <section id="home" class="section active">
+                <div class="home-content">
+                    <h1 class="typing-animation">Olá, eu sou <span class="highlight">Seu Nome</span></h1>
+                    <p class="slide-in">Desenvolvedor Web & Designer Criativo</p>
+                    <div class="led-button-container">
+                        <button class="led-button">Ver Projetos</button>
                     </div>
-                    
-                    <div class="contact-item glass-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>raufurislam@gmail.com</p>
-                        </div>
+                </div>
+            </section>
+
+            <!-- Seção Sobre -->
+            <section id="sobre" class="section">
+                <h2>Sobre Mim</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eu ultricies lacinia, nunc nisl aliquam nisl, eu aliquam nisl nunc eu nisl.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eu ultricies lacinia, nunc nisl aliquam nisl, eu aliquam nisl nunc eu nisl.</p>
                     </div>
-                    
-                    <div class="contact-item glass-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                    <div class="skills">
+                        <div class="skill">
+                            <span>HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <p>Dhaka, Bangladesh</p>
+                        <div class="skill">
+                            <span>JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span>UI/UX Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="contact-form glass-card">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+            </section>
+
+            <!-- Seção Projetos -->
+            <section id="projetos" class="section">
+                <h2>Meus Projetos</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Projeto 1">
+                            <div class="project-overlay">
+                                <button class="project-btn">Ver Detalhes</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        <h3>Projeto 1</h3>
+                        <p>Descrição breve do projeto</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Projeto 2">
+                            <div class="project-overlay">
+                                <button class="project-btn">Ver Detalhes</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject" required>
+                        <h3>Projeto 2</h3>
+                        <p>Descrição breve do projeto</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/300x200" alt="Projeto 3">
+                            <div class="project-overlay">
+                                <button class="project-btn">Ver Detalhes</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <h3>Projeto 3</h3>
+                        <p>Descrição breve do projeto</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção Contato -->
+            <section id="contato" class="section">
+                <h2>Entre em Contato</h2>
+                <div class="contact-content">
+                    <form class="contact-form">
+                        <input type="text" placeholder="Seu Nome" required>
+                        <input type="email" placeholder="Seu Email" required>
+                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                        <button type="submit" class="led-button">Enviar Mensagem</button>
                     </form>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h4>Email</h4>
+                            <p>seuemail@exemplo.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Telefone</h4>
+                            <p>(00) 00000-0000</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Redes Sociais</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link">LinkedIn</a>
+                                <a href="#" class="social-link">GitHub</a>
+                                <a href="#" class="social-link">Instagram</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
+        </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; 2023 Meu Portfólio. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2023 Seu Nome. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="../JAVASCRIPT/index.js"></script>
 </body>

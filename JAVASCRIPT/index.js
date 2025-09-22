@@ -91,7 +91,7 @@
             
             // Inicialização do Typed.js
             var typed = new Typed('#typed', {
-                strings: ["Full-Stack Developer", "UI/UX Designer", "Innovation Enthusiast"],
+                strings: ["Full-Stack Developer", "UI/UX Designer", "Web3 Enthusiast"],
                 typeSpeed: 50,
                 backSpeed: 30,
                 backDelay: 2000,

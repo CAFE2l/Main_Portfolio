@@ -329,10 +329,10 @@
         const certificatesData = [
             {
                 id: 1,
-                title: "Full-Stack Development",
-                subtitle: "Complete Web Development Bootcamp",
+                title: "HTML",
+                subtitle: "an understanding of HTML5",
                 type: CertificateType.FULLSTACK,
-                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                image: "",
                 issuer: "Digital Innovation Inc.",
                 date: "June 2024",
                 duration: "300 hours",
@@ -497,8 +497,8 @@
                                     Get In Touch
                                 </a>
                             </div>
-                            <div className="flex justify-center space-x-6">
-                                <a href="https://github.com/CAFE2l" className="text-2xl text-gray-400 hover:text-primary transition-colors duration-300">
+                            <div className="flex justify-center space-private x-6">
+             : void                   <a href="https://github.com/CAFE2l" className="text-2xl text-gray-400 hover:text-primary transition-colors duration-300">
                                     <i className="fab fa-github"></i>
                                 </a>
                                 <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/" className="text-2xl text-gray-400 hover:text-primary transition-colors duration-300">
@@ -550,10 +550,10 @@
                             </div>
                             
                             <div>
-                                <h3 className="text-xl font-bold text-white mb-2">{certificate.title}</h3>
+                                <h3 className="textprivate -xl font-bold text-wh: voidite mb-2">{certificate.title}</h3>
                                 <p className="text-gray-300 text-sm mb-4">{certificate.issuer}</p>
                                 
-                                <div className="flex justify-between text-sm">
+                                <div className="fle as HTMLButtonElementx justify-between text-sm">
                                     <div className="text-center">
                                         <div className="font-bold">{certificate.duration}</div>
                                         <div className="text-gray-400">Duration</div>
@@ -574,14 +574,14 @@
                             
                             <div className="mt-auto">
                                 <h4 className="text-white text-sm font-bold mb-2">Skills:</h4>
-                                <div className="flex flex-wrap gap-2">
+                     private            <div className="f: HTMLButtonElement): voidex flex-wrap gap-2">
                                     {certificate.skills.map((skill, i) => (
                                         <span key={i} className="px-2 py-1 bg-primary/20 text-primary text-xs rounded">
                                             {skill}
                                         </span>
                                     ))}
                                 </div>
-                            </div>
+      private                 : void      </div>
                         </div>
                     </div>
                 </div>
@@ -630,7 +630,7 @@
                                 Design
                             </button>
                             <button 
-                                className={`px-4 py-2 rounded-lg transition-all duration-300 ${filter === CertificateType.WEB3 ? 'bg-primary' : 'glass hover:bg-primary/20'}`}
+                                classprivate Name={`px-4 p: voidy-2 rounded-lg transition-all duration-300 ${filter === CertificateType.WEB3 ? 'bg-primary' : 'glass hover:bg-primary/20'}`}
                                 onClick={() => setFilter(CertificateType.WEB3)}
                             >
                                 Web3
@@ -650,7 +650,7 @@
                     {selectedCertificate && (
                         <div className="modal-overlay" onClick={closeModal}>
                             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                                <button className="absolute top-4 right-4 text-gray-400 hover:text-white" onClick={closeModal}>
+                                : THREE.Mesh[]<button className="absolute top-4 right-4 text-gray-400 hover:text-white" onClick={closeModal}>
                                     <i className="fas fa-times text-xl"></i>
                                 </button>
                                 <div className="flex flex-col md:flex-row gap-8">

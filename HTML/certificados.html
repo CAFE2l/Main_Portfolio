@@ -3,970 +3,723 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificados - Gabriel Felipe</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Gabriel Felipe - Full Stack Developer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#7c4dff',
+                        'primary-dark': '#651fff',
+                        secondary: '#00e5ff',
+                        dark: '#0a0a1a',
+                        light: '#f5f5f7',
+                        gray: '#8a8aa0',
+                        fire: '#ff7f00',
+                        water: '#0077be',
+                        grass: '#4caf50',
+                        electric: '#ffd700',
+                        psychic: '#ff6b9d',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                        'card-reveal': 'cardReveal 0.8s ease-out',
+                        'holo': 'holoEffect 5s ease infinite',
+                        'typewriter': 'typewriter 3.5s steps(40, end)',
+                        'shimmer': 'shimmer 3s infinite linear',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px rgba(124, 77, 255, 0.5)' },
+                            '50%': { boxShadow: '0 0 20px rgba(124, 77, 255, 0.8)' },
+                            '100%': { boxShadow: '0 0 5px rgba(124, 77, 255, 0.5)' },
+                        },
+                        gradient: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' },
+                        },
+                        cardReveal: {
+                            '0%': { transform: 'rotateY(90deg) scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'rotateY(0deg) scale(1)', opacity: '1' },
+                        },
+                        holoEffect: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                            '100%': { backgroundPosition: '0% 50%' },
+                        },
+                        typewriter: {
+                            'from': { width: '0' },
+                            'to': { width: '100%' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '200% 0' },
+                            '100%': { backgroundPosition: '-200% 0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-        
-        :root {
-            --primary: #7c4dff;
-            --primary-dark: #651fff;
-            --secondary: #00e5ff;
-            --dark: #0a0a1a;
-            --light: #f5f5f7;
-            --gray: #8a8aa0;
-            --fire: #ff7f00;
-            --water: #0077be;
-            --grass: #4caf50;
-            --electric: #ffd700;
-            --psychic: #ff6b9d;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style type="text/tailwindcss">
+        @layer base {
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            overflow-x: hidden;
-            background: linear-gradient(-45deg, #0a0a1a, #1a1a3a, #2d2d5a, #0a0a1a);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            color: var(--light);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+            body {
+                font-family: 'Poppins', sans-serif;
+                overflow-x: hidden;
+                background: linear-gradient(-45deg, #0a0a1a, #1a1a3a, #2d2d5a, #0a0a1a);
+                background-size: 400% 400%;
+                animation: gradient 15s ease infinite;
+                color: #f5f5f7;
+                line-height: 1.6;
+                scroll-behavior: smooth;
+            }
 
-        /* Animações personalizadas */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px rgba(124, 77, 255, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(124, 77, 255, 0.8); }
-            100% { box-shadow: 0 0 5px rgba(124, 77, 255, 0.5); }
-        }
-        
-        @keyframes cardReveal {
-            0% { transform: rotateY(90deg) scale(0.8); opacity: 0; }
-            100% { transform: rotateY(0deg) scale(1); opacity: 1; }
-        }
-        
-        @keyframes holoEffect {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .animate-float {
-            animation: float 5s ease-in-out infinite;
-        }
-        
-        .animate-glow {
-            animation: glow 3s ease-in-out infinite;
-        }
-        
-        /* Efeito de partículas */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        
-        .content-wrapper {
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* Glassmorphism effect */
-        .glass {
-            background: rgba(25, 25, 35, 0.6);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .glass-dark {
-            background: rgba(10, 10, 26, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        
-        /* Estilo Pokémon TCG para os certificados */
-        .pokemon-card {
-            perspective: 1000px;
-            width: 320px;
-            height: 450px;
-            margin: 20px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .pokemon-card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.8s;
-            transform-style: preserve-3d;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-        }
-        
-        .pokemon-card:hover .pokemon-card-inner {
-            transform: rotateY(10deg) rotateX(5deg);
-        }
-        
-        .pokemon-card-front, .pokemon-card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-        
-        .pokemon-card-front {
-            background: linear-gradient(145deg, #1a1a3a, #2d2d5a);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 20px;
-            animation: cardReveal 0.8s ease-out;
-        }
-        
-        .pokemon-card-back {
-            background: linear-gradient(145deg, #2d2d5a, #1a1a3a);
-            transform: rotateY(180deg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 25px;
-            text-align: left;
-        }
-        
-        .card-type {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        
-        .card-image {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto;
-            border-radius: 10px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px;
-        }
-        
-        .card-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .card-title {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin: 10px 0;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .card-subtitle {
-            font-size: 1rem;
-            color: #ccc;
-            margin-bottom: 15px;
-        }
-        
-        .card-hp {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(255, 0, 0, 0.8);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-weight: bold;
-        }
-        
-        .card-details {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-        
-        .card-detail {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .card-detail-value {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .card-detail-label {
-            font-size: 0.8rem;
-            color: #ccc;
-        }
-        
-        .card-description {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: #ddd;
-        }
-        
-        .card-abilities {
-            margin-top: 15px;
-        }
-        
-        .ability {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .ability-type {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 10px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        
-        .ability-name {
-            font-weight: bold;
-            margin-right: 5px;
-        }
-        
-        .holo-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(125deg, 
-                rgba(255,255,255,0.1) 0%, 
-                rgba(124,77,255,0.2) 25%, 
-                rgba(0,229,255,0.2) 50%, 
-                rgba(0,230,118,0.2) 75%, 
-                rgba(255,255,255,0.1) 100%);
-            background-size: 200% 200%;
-            animation: holoEffect 5s ease infinite;
-            opacity: 0.3;
-            pointer-events: none;
-            border-radius: 20px;
-        }
-        
-        /* Tipos de certificado (cores baseadas em tipos Pokémon) */
-        .type-development { background: var(--electric); color: #000; }
-        .type-design { background: var(--psychic); color: white; }
-        .type-web3 { background: var(--fire); color: white; }
-        .type-language { background: var(--water); color: white; }
-        .type-fullstack { background: var(--grass); color: white; }
-        
-        /* Container de cartas */
-        .cards-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-            gap: 30px;
-        }
-        
-        /* Filtros */
-        .filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
-            padding: 0 20px;
-        }
-        
-        .filter-btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--primary);
-            transform: translateY(-2px);
-        }
-        
-        /* Modal para visualização detalhada */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 100;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .modal-content {
-            background: linear-gradient(145deg, #1a1a3a, #0a0a1a);
-            width: 90%;
-            max-width: 800px;
-            border-radius: 20px;
-            padding: 30px;
-            position: relative;
-            box-shadow: 0 0 50px rgba(124, 77, 255, 0.5);
-            animation: scaleIn 0.3s ease;
-        }
-        
-        @keyframes scaleIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            color: white;
-            background: rgba(255, 255, 255, 0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .close-modal:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: rotate(90deg);
-        }
-        
-        .modal-body {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-        
-        .modal-image {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modal-image img {
-            max-width: 100%;
-            max-height: 400px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-        
-        .modal-details {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .modal-title {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-            color: white;
-        }
-        
-        .modal-subtitle {
-            font-size: 1.2rem;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
-        
-        .detail-row {
-            margin: 15px 0;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .detail-label {
-            width: 120px;
-            font-weight: bold;
-            color: var(--primary);
-        }
-        
-        .detail-value {
-            flex: 1;
-            color: #ddd;
-        }
-        
-        /* Responsividade */
-        @media (max-width: 768px) {
+            .glass {
+                background: rgba(25, 25, 35, 0.6);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .glass-dark {
+                background: rgba(10, 10, 26, 0.8);
+                backdrop-filter: blur(10px);
+            }
+
+            .shimmer {
+                background: linear-gradient(90deg, #fff, #7c4dff, #fff);
+                background-size: 200% 100%;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            /* Pokémon Card Styles */
             .pokemon-card {
-                width: 280px;
-                height: 420px;
+                perspective: 1000px;
+                width: 320px;
+                height: 450px;
             }
-            
-            .modal-body {
+
+            .pokemon-card-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.8s;
+                transform-style: preserve-3d;
+                border-radius: 20px;
+                box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            }
+
+            .pokemon-card:hover .pokemon-card-inner {
+                transform: rotateY(10deg) rotateX(5deg);
+            }
+
+            .pokemon-card-front, .pokemon-card-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+            .pokemon-card-front {
+                background: linear-gradient(145deg, #1a1a3a, #2d2d5a);
+                display: flex;
                 flex-direction: column;
+                justify-content: space-between;
+                padding: 20px;
             }
-            
-            .modal-image, .modal-details {
-                min-width: 100%;
+
+            .pokemon-card-back {
+                background: linear-gradient(145deg, #2d2d5a, #1a1a3a);
+                transform: rotateY(180deg);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 25px;
+                text-align: left;
+            }
+
+            .card-type {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                padding: 5px 10px;
+                border-radius: 15px;
+                font-size: 0.8rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .type-development { background: #ffd700; color: #000; }
+            .type-design { background: #ff6b9d; color: white; }
+            .type-web3 { background: #ff7f00; color: white; }
+            .type-language { background: #0077be; color: white; }
+            .type-fullstack { background: #4caf50; color: white; }
+
+            .holo-effect {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(125deg, 
+                    rgba(255,255,255,0.1) 0%, 
+                    rgba(124,77,255,0.2) 25%, 
+                    rgba(0,229,255,0.2) 50%, 
+                    rgba(0,230,118,0.2) 75%, 
+                    rgba(255,255,255,0.1) 100%);
+                background-size: 200% 200%;
+                animation: holoEffect 5s ease infinite;
+                opacity: 0.3;
+                pointer-events: none;
+                border-radius: 20px;
+            }
+
+            /* 3D Cube Animation */
+            #tech-cube {
+                width: 200px;
+                height: 200px;
+                position: relative;
+                transform-style: preserve-3d;
+                animation: rotate 20s infinite linear;
+            }
+
+            @keyframes rotate {
+                0% { transform: rotateX(0) rotateY(0); }
+                100% { transform: rotateX(360deg) rotateY(360deg); }
+            }
+
+            .cube-face {
+                position: absolute;
+                width: 200px;
+                height: 200px;
+                background: rgba(124, 77, 255, 0.1);
+                border: 2px solid rgba(124, 77, 255, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                color: #7c4dff;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: #1a1a3a;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: #7c4dff;
+                border-radius: 4px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: #651fff;
             }
         }
-        
-        /* Efeito de brilho para cartas raras */
-        .rare-card {
-            position: relative;
-        }
-        
-        .rare-card::before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            z-index: -1;
-            border-radius: 25px;
-            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-            background-size: 400%;
-            filter: blur(20px);
-            animation: glowing 20s linear infinite;
-        }
-        
-        /* Animações de entrada para as cartas */
-        .card-enter {
-            animation: cardReveal 0.8s ease-out;
-        }
-        
-        /* Efeito de seleção */
-        .selected-card {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(124, 77, 255, 0.7);
-            z-index: 10;
+
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .hover-lift {
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .hover-lift:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(124, 77, 255, 0.3);
+            }
         }
     </style>
 </head>
-<body>
-    <div id="particles-js"></div>
-    <div class="content-wrapper">
-        <!-- Header -->
-        <header class="glass-dark fixed w-full z-50">
-            <nav class="container mx-auto px-6 py-4">
+<body class="antialiased">
+    <!-- Particles Background -->
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
+
+    <!-- 3D Background Elements -->
+    <div id="three-container" class="fixed inset-0 z-0 opacity-20"></div>
+
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <!-- Navigation -->
+        <nav class="glass-dark fixed w-full z-50 py-4">
+            <div class="container mx-auto px-6">
                 <div class="flex justify-between items-center">
-                    <a href="index.html" class="text-2xl font-bold text-white">
-                        <span class="text-purple-500">&lt;</span>CAFÉ<span class="text-purple-500">/&gt;</span>
+                    <a href="#home" class="text-2xl font-bold text-white">
+                        <span class="text-primary">&lt;</span>CAFÉ<span class="text-primary">/&gt;</span>
                     </a>
                     
-                    <div class="hidden md:flex space-x-10">
-                        <a href="index.html#home" class="text-gray-300 hover:text-purple-400 transition-colors">Home</a>
-                        <a href="index.html#about" class="text-gray-300 hover:text-purple-400 transition-colors">About Me</a>
-                        <a href="index.html#skills" class="text-gray-300 hover:text-purple-400 transition-colors">Skills</a>
-                        <a href="index.html#projects" class="text-gray-300 hover:text-purple-400 transition-colors">Projects</a>
-                        <a href="index.html#experience" class="text-gray-300 hover:text-purple-400 transition-colors">Experience</a>
-                        <a href="certificados.html" class="text-purple-400">Certificates</a>
-                        <a href="index.html#contact" class="text-gray-300 hover:text-purple-400 transition-colors">Contact</a>
+                    <div class="hidden md:flex space-x-8">
+                        <a href="#home" class="text-gray-300 hover:text-primary transition-colors duration-300">Home</a>
+                        <a href="#about" class="text-gray-300 hover:text-primary transition-colors duration-300">About</a>
+                        <a href="#skills" class="text-gray-300 hover:text-primary transition-colors duration-300">Skills</a>
+                        <a href="#projects" class="text-gray-300 hover:text-primary transition-colors duration-300">Projects</a>
+                        <a href="#certificates" class="text-gray-300 hover:text-primary transition-colors duration-300">Certificates</a>
+                        <a href="#contact" class="text-gray-300 hover:text-primary transition-colors duration-300">Contact</a>
                     </div>
                     
                     <div class="flex items-center space-x-4">
-                        <button class="md:hidden text-gray-300 focus:outline-none" id="mobile-menu-btn" title="Open mobile menu">
+                        <button id="mobile-menu-btn" class="md:hidden text-gray-300">
                             <i class="fas fa-bars text-xl"></i>
                         </button>
-                        <a href="#" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors">
-                            <i class="fas fa-download mr-2"></i>Currículo
+                        <a href="#" class="px-4 py-2 bg-primary hover:bg-primary-dark rounded-lg transition-colors duration-300">
+                            <i class="fas fa-download mr-2"></i>Resume
                         </a>
                     </div>
                 </div>
                 
-                <!-- Menu Mobile -->
-                <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="md:hidden mt-4 hidden">
                     <div class="flex flex-col space-y-3">
-                        <a href="index.html#home" class="text-gray-300 hover:text-purple-400 transition-colors">Home</a>
-                        <a href="index.html#about" class="text-gray-300 hover:text-purple-400 transition-colors">About Me</a>
-                        <a href="index.html#skills" class="text-gray-300 hover:text-purple-400 transition-colors">Skills</a>
-                        <a href="index.html#projects" class="text-gray-300 hover:text-purple-400 transition-colors">Projects</a>
-                        <a href="index.html#experience" class="text-gray-300 hover:text-purple-400 transition-colors">Experience</a>
-                        <a href="certificados.html" class="text-purple-400">Certificates</a>
-                        <a href="index.html#contact" class="text-gray-300 hover:text-purple-400 transition-colors">Contact</a>
+                        <a href="#home" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Home</a>
+                        <a href="#about" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">About</a>
+                        <a href="#skills" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Skills</a>
+                        <a href="#projects" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Projects</a>
+                        <a href="#certificates" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Certificates</a>
+                        <a href="#contact" class="text-gray-300 hover:text-primary transition-colors duration-300 py-2">Contact</a>
                     </div>
                 </div>
-            </nav>
-        </header>
+            </div>
+        </nav>
 
-        <!-- Seção Hero Certificados -->
-        <section class="min-h-screen flex items-center justify-center relative pt-32 pb-16">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-float">
-                    My <span class="shimmer">Certificates</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                    Collection of certifications and achievements in my development journey. Each card represents a milestone in my learning path.
-                </p>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-20 pb-16">
+            <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                        Hi, I'm <span class="shimmer animate-shimmer">Gabriel Felipe</span>
+                    </h1>
+                    <div class="text-2xl md:text-4xl mb-8 h-12">
+                        <span id="typed" class="text-primary font-medium"></span>
+                    </div>
+                    <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                        Full-Stack Developer passionate about creating innovative digital experiences 
+                        with modern technologies and clean code.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 mb-12">
+                        <a href="#projects" class="px-8 py-3 bg-primary hover:bg-primary-dark rounded-lg transition-all duration-300 hover-lift">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="px-8 py-3 glass hover:bg-primary/20 rounded-lg transition-all duration-300 hover-lift">
+                            Get In Touch
+                        </a>
+                    </div>
+                    <div class="flex justify-center space-x-6">
+                        <a href="https://github.com/CAFE2l" class="text-2xl text-gray-400 hover:text-primary transition-colors duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/" class="text-2xl text-gray-400 hover:text-primary transition-colors duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://x.com/ct_cafe87877" class="text-2xl text-gray-400 hover:text-primary transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
                 
-                <!-- Filtros -->
-                <div class="filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="development">Development</button>
-                    <button class="filter-btn" data-filter="design">Design</button>
-                    <button class="filter-btn" data-filter="web3">Web3</button>
-                    <button class="filter-btn" data-filter="language">Languages</button>
-                    <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+                <!-- Animated Tech Cube -->
+                <div class="mt-16 flex justify-center">
+                    <div id="tech-cube">
+                        <div class="cube-face" style="transform: rotateY(0deg) translateZ(100px)"><i class="fab fa-js"></i></div>
+                        <div class="cube-face" style="transform: rotateY(90deg) translateZ(100px)"><i class="fab fa-react"></i></div>
+                        <div class="cube-face" style="transform: rotateY(180deg) translateZ(100px)"><i class="fab fa-node-js"></i></div>
+                        <div class="cube-face" style="transform: rotateY(-90deg) translateZ(100px)"><i class="fab fa-python"></i></div>
+                        <div class="cube-face" style="transform: rotateX(90deg) translateZ(100px)"><i class="fas fa-database"></i></div>
+                        <div class="cube-face" style="transform: rotateX(-90deg) translateZ(100px)"><i class="fab fa-aws"></i></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Container de Cartas -->
-        <section class="py-10">
-            <div class="cards-container" id="certificates-container">
-                <!-- As cartas serão inseridas aqui via JavaScript -->
-            </div>
-        </section>
-
-        <!-- Modal de Detalhes -->
-        <div class="modal" id="certificate-modal">
-            <div class="modal-content">
-                <div class="close-modal" id="close-modal">
-                    <i class="fas fa-times"></i>
-                </div>
-                <div class="modal-body" id="modal-body">
-                    <!-- Conteúdo será preenchido via JavaScript -->
-                </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <footer class="py-12 bg-gray-900 mt-20">
+        <!-- Certificates Section -->
+        <section id="certificates" class="py-20 bg-dark/50">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <div class="mb-6 md:mb-0">
-                        <a href="index.html" class="text-2xl font-bold text-white">
-                            <span class="text-purple-500">&lt;</span>CAFÉ<span class="text-purple-500">/&gt;</span>
-                        </a>
-                    </div>
-                    
-                    <div class="flex space-x-6 mb-6 md:mb-0">
-                        <a href="index.html#home" class="text-gray-400 hover:text-purple-400 transition-colors">Home</a>
-                        <a href="index.html#about" class="text-gray-400 hover:text-purple-400 transition-colors">About Me</a>
-                        <a href="index.html#skills" class="text-gray-400 hover:text-purple-400 transition-colors">Skills</a>
-                        <a href="index.html#projects" class="text-gray-400 hover:text-purple-400 transition-colors">Projects</a>
-                        <a href="certificados.html" class="text-purple-400">Certificates</a>
-                        <a href="index.html#contact" class="text-gray-400 hover:text-purple-400 transition-colors">Contact</a>
-                    </div>
-                    
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/CAFE2l" class="text-gray-400 hover:text-purple-400 transition-colors">
-                            <i class="fab fa-github text-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/?originalSubdomain=br" class="text-gray-400 hover:text-purple-400 transition-colors">
-                            <i class="fab fa-linkedin-in text-xl"></i>
-                        </a>
-                        <a href="https://x.com/ct_cafe87877" class="text-gray-400 hover:text-purple-400 transition-colors">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                    </div>
+                <h2 class="text-4xl font-bold text-center mb-4" data-aos="fade-up">My Certificates</h2>
+                <div class="w-20 h-1 bg-primary mx-auto mb-12" data-aos="fade-up"></div>
+                
+                <div class="filters flex justify-center flex-wrap gap-4 mb-8" data-aos="fade-up">
+                    <button class="filter-btn px-4 py-2 bg-primary rounded-lg transition-all duration-300" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 glass hover:bg-primary/20 rounded-lg transition-all duration-300" data-filter="development">Development</button>
+                    <button class="filter-btn px-4 py-2 glass hover:bg-primary/20 rounded-lg transition-all duration-300" data-filter="design">Design</button>
+                    <button class="filter-btn px-4 py-2 glass hover:bg-primary/20 rounded-lg transition-all duration-300" data-filter="web3">Web3</button>
                 </div>
                 
-                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                    <p>&copy; 2025 Gabriel Felipe. All rights reserved.</p>
+                <div class="cards-container flex flex-wrap justify-center gap-8" id="certificates-container">
+                    <!-- Certificates will be loaded here -->
                 </div>
             </div>
-        </footer>
+        </section>
+
+        <!-- Additional Sections would continue here... -->
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        // Dados dos certificados (você pode substituir por seus próprios certificados)
-        const certificatesData = [
-            {
-                id: 1,
-                title: "Full-Stack Development",
-                subtitle: "Complete Web Development Bootcamp",
-                type: "fullstack",
-                image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                issuer: "Digital Innovation Inc.",
-                date: "June 2024",
-                duration: "300 hours",
-                skills: ["HTML/CSS", "JavaScript", "React", "Node.js", "MongoDB"],
-                description: "Comprehensive full-stack development program covering front-end and back-end technologies, database management, and deployment strategies.",
-                rarity: "rare",
-                hp: 95
-            },
-            {
-                id: 2,
-                title: "UI/UX Design Mastery",
-                subtitle: "User Interface & Experience Design",
-                type: "design",
-                image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                issuer: "Design Innovation Academy",
-                date: "March 2024",
-                duration: "120 hours",
-                skills: ["Figma", "User Research", "Wireframing", "Prototyping"],
-                description: "Advanced UI/UX design course focusing on user-centered design principles, prototyping, and creating intuitive digital experiences.",
-                rarity: "common",
-                hp: 85
-            },
-            {
-                id: 3,
-                title: "Web3 & Blockchain Fundamentals",
-                subtitle: "Introduction to Decentralized Technologies",
-                type: "web3",
-                image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                issuer: "Blockchain University",
-                date: "January 2024",
-                duration: "80 hours",
-                skills: ["Solidity", "Smart Contracts", "Ethereum", "dApps"],
-                description: "Fundamentals of blockchain technology, smart contract development, and building decentralized applications on Ethereum.",
-                rarity: "uncommon",
-                hp: 75
-            },
-            {
-                id: 4,
-                title: "Advanced JavaScript",
-                subtitle: "Modern JavaScript Development",
-                type: "development",
-                image: "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                issuer: "JS Masters Institute",
-                date: "November 2023",
-                duration: "60 hours",
-                skills: ["ES6+", "Async/Await", "Modules", "APIs"],
-                description: "Deep dive into modern JavaScript features, asynchronous programming, and advanced development techniques.",
-                rarity: "common",
-                hp: 90
-            },
-            {
-                id: 5,
-                title: "React & Next.js Specialist",
-                subtitle: "Modern Frontend Frameworks",
-                type: "development",
-                image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                issuer: "React Masters",
-                date: "September 2023",
-                duration: "100 hours",
-                skills: ["React Hooks", "Next.js", "SSR", "State Management"],
-                description: "Comprehensive course on React ecosystem, including hooks, context, and Next.js for server-side rendering.",
-                rarity: "uncommon",
-                hp: 88
-            },
-            {
-                id: 6,
-                title: "English Proficiency C1",
-                subtitle: "Advanced English Certification",
-                type: "language",
-                image: "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                issuer: "Cambridge English",
-                date: "July 2023",
-                duration: "Continuous",
-                skills: ["Advanced Communication", "Technical Writing", "Presentation"],
-                description: "Certification of advanced English proficiency, enabling effective communication in professional and technical contexts.",
-                rarity: "common",
-                hp: 92
+    <!-- TypeScript Code -->
+    <script type="module">
+        // Import statements (in a real project, these would be proper imports)
+        // For now, we'll use inline TypeScript-like code
+
+        // Certificate Interface
+        interface Certificate {
+            id: number;
+            title: string;
+            subtitle: string;
+            type: 'development' | 'design' | 'web3' | 'language' | 'fullstack';
+            image: string;
+            issuer: string;
+            date: string;
+            duration: string;
+            skills: string[];
+            description: string;
+            rarity: 'common' | 'uncommon' | 'rare';
+            hp: number;
+        }
+
+        // Portfolio Manager Class
+        class PortfolioManager {
+            certificates = [];
+            currentFilter = 'all';
+
+            constructor() {
+                this.init();
             }
-        ];
 
-        // Inicialização quando o DOM estiver carregado
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar partículas
-            particlesJS('particles-js', {
-                "particles": {
-                    "number": {
-                        "value": 60,
-                        "density": {
-                            "enable": true,
-                            "value_area": 800
-                        }
-                    },
-                    "color": {
-                        "value": "#7c4dff"
-                    },
-                    "shape": {
-                        "type": "circle"
-                    },
-                    "opacity": {
-                        "value": 0.5,
-                        "random": true
-                    },
-                    "size": {
-                        "value": 3,
-                        "random": true
-                    },
-                    "line_linked": {
-                        "enable": true,
-                        "distance": 150,
-                        "color": "#7c4dff",
-                        "opacity": 0.4,
-                        "width": 1
-                    },
-                    "move": {
-                        "enable": true,
-                        "speed": 2,
-                        "direction": "none",
-                        "random": true,
-                        "straight": false,
-                        "out_mode": "out"
-                    }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": {
-                        "onhover": {
-                            "enable": true,
-                            "mode": "grab"
-                        },
-                        "onclick": {
-                            "enable": true,
-                            "mode": "push"
-                        },
-                        "resize": true
-                    }
-                },
-                "retina_detect": true
-            });
-            
-            // Renderizar certificados
-            renderCertificates();
-            
-            // Configurar filtros
-            setupFilters();
-            
-            // Configurar menu mobile
-            setupMobileMenu();
-            
-            // Configurar modal
-            setupModal();
-        });
+            init() {
+                this.loadCertificates();
+                this.setupEventListeners();
+                this.initAnimations();
+                this.init3DScene();
+            }
 
-        // Renderizar certificados
-        function renderCertificates(filter = 'all') {
-            const container = document.getElementById('certificates-container');
-            container.innerHTML = '';
-            
-            const filteredCertificates = filter === 'all' 
-                ? certificatesData 
-                : certificatesData.filter(cert => cert.type === filter);
-            
-            filteredCertificates.forEach((cert, index) => {
-                const card = document.createElement('div');
-                card.className = `pokemon-card card-enter ${cert.rarity === 'rare' ? 'rare-card' : ''}`;
-                card.style.animationDelay = `${index * 0.1}s`;
-                
-                card.innerHTML = `
-                    <div class="pokemon-card-inner">
-                        <div class="pokemon-card-front">
-                            <div class="holo-effect"></div>
-                            <div class="card-hp">HP ${cert.hp}</div>
-                            <div class="card-type type-${cert.type}">${cert.type}</div>
-                            
-                            <div class="card-image">
-                                <img src="${cert.image}" alt="${cert.title}">
+            loadCertificates() {
+                this.certificates = [
+                    {
+                        id: 1,
+                        title: "Full-Stack Development",
+                        subtitle: "Complete Web Development Bootcamp",
+                        type: "fullstack",
+                        image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        issuer: "Digital Innovation Inc.",
+                        date: "June 2024",
+                        duration: "300 hours",
+                        skills: ["HTML/CSS", "JavaScript", "React", "Node.js", "MongoDB"],
+                        description: "Comprehensive full-stack development program covering front-end and back-end technologies.",
+                        rarity: "rare",
+                        hp: 95
+                    },
+                    {
+                        id: 2,
+                        title: "UI/UX Design Mastery",
+                        subtitle: "User Interface & Experience Design",
+                        type: "design",
+                        image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        issuer: "Design Innovation Academy",
+                        date: "March 2024",
+                        duration: "120 hours",
+                        skills: ["Figma", "User Research", "Wireframing", "Prototyping"],
+                        description: "Advanced UI/UX design course focusing on user-centered design principles.",
+                        rarity: "common",
+                        hp: 85
+                    },
+                    {
+                        id: 3,
+                        title: "Web3 & Blockchain Fundamentals",
+                        subtitle: "Introduction to Decentralized Technologies",
+                        type: "web3",
+                        image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        issuer: "Blockchain University",
+                        date: "January 2024",
+                        duration: "80 hours",
+                        skills: ["Solidity", "Smart Contracts", "Ethereum", "dApps"],
+                        description: "Fundamentals of blockchain technology and smart contract development.",
+                        rarity: "uncommon",
+                        hp: 75
+                    }
+                ];
+
+                this.renderCertificates();
+            }
+
+            private renderCertificates(): void {
+                const container = document.getElementById('certificates-container');
+                if (!container) return;
+
+                const filteredCertificates = this.currentFilter === 'all' 
+                    ? this.certificates 
+                    : this.certificates.filter(cert => cert.type === this.currentFilter);
+
+                container.innerHTML = filteredCertificates.map((cert, index) => `
+                    <div class="pokemon-card animate-float" style="animation-delay: ${index * 0.2}s">
+                        <div class="pokemon-card-inner">
+                            <div class="pokemon-card-front">
+                                <div class="holo-effect"></div>
+                                <div class="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                                    HP ${cert.hp}
+                                </div>
+                                <div class="card-type type-${cert.type}">${cert.type}</div>
+                                
+                                <div class="w-40 h-40 mx-auto my-6 rounded-lg overflow-hidden glass flex items-center justify-center">
+                                    <img src="${cert.image}" alt="${cert.title}" class="w-full h-full object-cover">
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-bold text-white mb-2">${cert.title}</h3>
+                                    <p class="text-gray-300 text-sm mb-4">${cert.issuer}</p>
+                                    
+                                    <div class="flex justify-between text-sm">
+                                        <div class="text-center">
+                                            <div class="font-bold">${cert.duration}</div>
+                                            <div class="text-gray-400">Duration</div>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="font-bold">${cert.date}</div>
+                                            <div class="text-gray-400">Completed</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             
-                            <div>
-                                <h3 class="card-title">${cert.title}</h3>
-                                <p class="card-subtitle">${cert.issuer}</p>
+                            <div class="pokemon-card-back">
+                                <h3 class="text-xl font-bold text-white mb-2">${cert.title}</h3>
+                                <p class="text-gray-300 text-sm mb-4">${cert.subtitle}</p>
                                 
-                                <div class="card-details">
-                                    <div class="card-detail">
-                                        <span class="card-detail-value">${cert.duration}</span>
-                                        <span class="card-detail-label">Duration</span>
-                                    </div>
-                                    <div class="card-detail">
-                                        <span class="card-detail-value">${cert.date}</span>
-                                        <span class="card-detail-label">Completed</span>
+                                <p class="text-gray-200 text-sm mb-4 leading-relaxed">${cert.description}</p>
+                                
+                                <div class="mt-auto">
+                                    <h4 class="text-white text-sm font-bold mb-2">Skills:</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        ${cert.skills.map(skill => `
+                                            <span class="px-2 py-1 bg-primary/20 text-primary text-xs rounded">${skill}</span>
+                                        `).join('')}
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                `).join('');
+            }
+
+            private setupEventListeners(): void {
+                // Filter buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const target = e.target as HTMLButtonElement;
+                        const filter = target.dataset.filter;
                         
-                        <div class="pokemon-card-back">
-                            <h3 class="card-title">${cert.title}</h3>
-                            <p class="card-subtitle">${cert.subtitle}</p>
-                            
-                            <div class="card-description">
-                                ${cert.description}
-                            </div>
-                            
-                            <div class="card-abilities">
-                                <h4>Skills Acquired:</h4>
-                                ${cert.skills.map(skill => `
-                                    <div class="ability">
-                                        <div class="ability-type type-${cert.type}">•</div>
-                                        <span class="ability-name">${skill}</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    </div>
-                `;
+                        if (filter) {
+                            this.currentFilter = filter;
+                            this.updateActiveFilter(target);
+                            this.renderCertificates();
+                        }
+                    });
+                });
+
+                // Mobile menu
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
                 
-                card.addEventListener('click', () => openCertificateModal(cert));
-                container.appendChild(card);
-            });
-        }
+                if (mobileMenuBtn && mobileMenu) {
+                    mobileMenuBtn.addEventListener('click', () => {
+                        mobileMenu.classList.toggle('hidden');
+                    });
+                }
 
-        // Configurar filtros
-        function setupFilters() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Remover classe ativa de todos os botões
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Adicionar classe ativa ao botão clicado
-                    button.classList.add('active');
-                    
-                    // Aplicar filtro
-                    const filter = button.getAttribute('data-filter');
-                    renderCertificates(filter);
+                // Smooth scrolling
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const target = document.querySelector(anchor.getAttribute('href') || '');
+                        if (target) {
+                            target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
                 });
-            });
-        }
+            }
 
-        // Configurar menu mobile
-        function setupMobileMenu() {
-            const menuButton = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            
-            if (menuButton && menu) {
-                menuButton.addEventListener('click', () => {
-                    menu.classList.toggle('hidden');
+            private updateActiveFilter(activeBtn: HTMLButtonElement): void {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('bg-primary');
+                    btn.classList.add('glass', 'hover:bg-primary/20');
                 });
+                
+                activeBtn.classList.add('bg-primary');
+                activeBtn.classList.remove('glass', 'hover:bg-primary/20');
+            }
+
+            private initAnimations(): void {
+                // Initialize AOS
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 1000,
+                        once: true,
+                        offset: 100
+                    });
+                }
+
+                // Typed.js effect
+                if (typeof Typed !== 'undefined') {
+                    new Typed('#typed', {
+                        strings: ["Full-Stack Developer", "UI/UX Designer", "Web3 Enthusiast", "Problem Solver"],
+                        typeSpeed: 50,
+                        backSpeed: 30,
+                        backDelay: 2000,
+                        loop: true
+                    });
+                }
+
+                // Particles.js
+                if (typeof particlesJS !== 'undefined') {
+                    particlesJS('particles-js', {
+                        particles: {
+                            number: { value: 80, density: { enable: true, value_area: 800 } },
+                            color: { value: "#7c4dff" },
+                            shape: { type: "circle" },
+                            opacity: { value: 0.5, random: true },
+                            size: { value: 3, random: true },
+                            line_linked: {
+                                enable: true,
+                                distance: 150,
+                                color: "#7c4dff",
+                                opacity: 0.4,
+                                width: 1
+                            },
+                            move: {
+                                enable: true,
+                                speed: 2,
+                                direction: "none",
+                                random: true,
+                                straight: false,
+                                out_mode: "out"
+                            }
+                        },
+                        interactivity: {
+                            detect_on: "canvas",
+                            events: {
+                                onhover: { enable: true, mode: "grab" },
+                                onclick: { enable: true, mode: "push" },
+                                resize: true
+                            }
+                        },
+                        retina_detect: true
+                    });
+                }
+            }
+
+            private init3DScene(): void {
+                // Simple 3D scene with Three.js
+                if (typeof THREE !== 'undefined') {
+                    const scene = new THREE.Scene();
+                    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+                    const renderer = new THREE.WebGLRenderer({ alpha: true });
+                    
+                    const container = document.getElementById('three-container');
+                    if (container) {
+                        renderer.setSize(window.innerWidth, window.innerHeight);
+                        container.appendChild(renderer.domElement);
+                        
+                        // Add some floating geometric shapes
+                        const geometry = new THREE.IcosahedronGeometry(2, 0);
+                        const material = new THREE.MeshBasicMaterial({ 
+                            color: 0x7c4dff, 
+                            wireframe: true,
+                            transparent: true,
+                            opacity: 0.1
+                        });
+                        
+                        const shapes: THREE.Mesh[] = [];
+                        for (let i = 0; i < 5; i++) {
+                            const shape = new THREE.Mesh(geometry, material);
+                            shape.position.x = Math.random() * 20 - 10;
+                            shape.position.y = Math.random() * 20 - 10;
+                            shape.position.z = Math.random() * 10 - 20;
+                            scene.add(shape);
+                            shapes.push(shape);
+                        }
+                        
+                        camera.position.z = 5;
+                        
+                        const animate = () => {
+                            requestAnimationFrame(animate);
+                            
+                            shapes.forEach((shape, index) => {
+                                shape.rotation.x += 0.01;
+                                shape.rotation.y += 0.01;
+                                shape.position.y += Math.sin(Date.now() * 0.001 + index) * 0.01;
+                            });
+                            
+                            renderer.render(scene, camera);
+                        };
+                        
+                        animate();
+                        
+                        // Handle window resize
+                        window.addEventListener('resize', () => {
+                            camera.aspect = window.innerWidth / window.innerHeight;
+                            camera.updateProjectionMatrix();
+                            renderer.setSize(window.innerWidth, window.innerHeight);
+                        });
+                    }
+                }
             }
         }
 
-        // Configurar modal
-        function setupModal() {
-            const modal = document.getElementById('certificate-modal');
-            const closeButton = document.getElementById('close-modal');
-            
-            // Fechar modal ao clicar no X
-            closeButton.addEventListener('click', () => {
-                modal.style.display = 'none';
-            });
-            
-            // Fechar modal ao clicar fora do conteúdo
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-        }
+        // Initialize the portfolio when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new PortfolioManager();
+        });
+    </script>
 
-        // Abrir modal com detalhes do certificado
-        function openCertificateModal(certificate) {
-            const modal = document.getElementById('certificate-modal');
-            const modalBody = document.getElementById('modal-body');
-            
-            modalBody.innerHTML = `
-                <div class="modal-image">
-                    <img src="${certificate.image}" alt="${certificate.title}">
-                </div>
-                <div class="modal-details">
-                    <h2 class="modal-title">${certificate.title}</h2>
-                    <p class="modal-subtitle">${certificate.subtitle}</p>
-                    
-                    <div class="detail-row">
-                        <div class="detail-label">Issuer:</div>
-                        <div class="detail-value">${certificate.issuer}</div>
-                    </div>
-                    
-                    <div class="detail-row">
-                        <div class="detail-label">Date:</div>
-                        <div class="detail-value">${certificate.date}</div>
-                    </div>
-                    
-                    <div class="detail-row">
-                        <div class="detail-label">Duration:</div>
-                        <div class="detail-value">${certificate.duration}</div>
-                    </div>
-                    
-                    <div class="detail-row">
-                        <div class="detail-label">Type:</div>
-                        <div class="detail-value">
-                            <span class="card-type type-${certificate.type}">${certificate.type}</span>
-                        </div>
-                    </div>
-                    
-                    <div class="detail-row">
-                        <div class="detail-label">Description:</div>
-                        <div class="detail-value">${certificate.description}</div>
-                    </div>
-                    
-                    <div class="detail-row">
-                        <div class="detail-label">Skills:</div>
-                        <div class="detail-value">
-                            ${certificate.skills.map(skill => `
-                                <span class="inline-block bg-gray-800 text-gray-200 px-2 py-1 rounded mr-2 mb-2 text-sm">${skill}</span>
-                            `).join('')}
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            modal.style.display = 'flex';
-        }
+    <!-- External Scripts -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        // Efeito de digitação para o título
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
+    <script>
+        // Initialize AOS
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init();
             }
-            
-            type();
-        }
+        });
     </script>
 </body>
 </html>

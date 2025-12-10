@@ -1,750 +1,829 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificates Portfolio</title>
-    
-    <!-- React e Babel para transformar JSX no navegador -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#7c4dff',
-                        'primary-dark': '#651fff',
-                        secondary: '#00e5ff',
-                        dark: '#0a0a1a',
-                        light: '#f5f5f7',
-                        gray: '#8a8aa0',
-                        fire: '#ff7f00',
-                        water: '#0077be',
-                        grass: '#4caf50',
-                        electric: '#ffd700',
-                        psychic: '#ff6b9d',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'glow': 'glow 3s ease-in-out infinite',
-                        'gradient': 'gradient 15s ease infinite',
-                        'card-reveal': 'cardReveal 0.8s ease-out',
-                        'holo': 'holoEffect 5s ease infinite',
-                        'typewriter': 'typewriter 3.5s steps(40, end)',
-                        'shimmer': 'shimmer 3s infinite linear',
-                        'bounce-slow': 'bounce 2s infinite',
-                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        glow: {
-                            '0%': { boxShadow: '0 0 5px rgba(124, 77, 255, 0.5)' },
-                            '50%': { boxShadow: '0 0 20px rgba(124, 77, 255, 0.8)' },
-                            '100%': { boxShadow: '0 0 5px rgba(124, 77, 255, 0.5)' },
-                        },
-                        gradient: {
-                            '0%': { backgroundPosition: '0% 50%' },
-                            '50%': { backgroundPosition: '100% 50%' },
-                            '100%': { backgroundPosition: '0% 50%' },
-                        },
-                        cardReveal: {
-                            '0%': { transform: 'rotateY(90deg) scale(0.8)', opacity: '0' },
-                            '100%': { transform: 'rotateY(0deg) scale(1)', opacity: '1' },
-                        },
-                        holoEffect: {
-                            '0%': { backgroundPosition: '0% 50%' },
-                            '50%': { backgroundPosition: '100% 50%' },
-                            '100%': { backgroundPosition: '0% 50%' },
-                        },
-                        typewriter: {
-                            'from': { width: '0' },
-                            'to': { width: '100%' },
-                        },
-                        shimmer: {
-                            '0%': { backgroundPosition: '200% 0' },
-                            '100%': { backgroundPosition: '-200% 0' },
-                        },
-                        'pulse-glow': {
-                            '0%, 100%': { opacity: '0.7' },
-                            '50%': { opacity: '1' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="/CSS/certificados.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/certificados.css">
 </head>
 <body>
-    <div id="root"></div>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo"><span><</span>CAFÉ<span>/></span></a>
+                <div class="nav-links">
+                    <a href="../HTML/index.html" class="nav-link">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in">My <span>Professional Certificates</span></h1>
+                <p class="hero-subtitle fade-in">
+                    A curated collection of certifications and qualifications demonstrating expertise across various technologies and methodologies.
+                    Each certificate represents dedicated learning and professional development.
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <!-- React App corrigido -->
-    <script type="text/babel">
-        const { useState, useEffect } = React;
+    <!-- Certificates Section -->
+    <section id="certificates" class="section-padding">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Certificates Collection</h2>
+                <p class="section-subtitle">Browse through my professional certifications, organized by category</p>
+            </div>
 
-        // Interfaces TypeScript-like
-        const CertificateType = {
-            DEVELOPMENT: 'development',
-            DESIGN: 'design',
-            WEB3: 'web3',
-            LANGUAGE: 'language',
-            FULLSTACK: 'fullstack',
-            MANAGEMENT: 'management'
-        };
+            <!-- Filters -->
+            <div class="filters-container fade-in">
+                <div class="filter-btn active" data-filter="all">
+                    <i class="fas fa-globe"></i> All
+                    <span class="filter-count">24</span>
+                </div>
+                <div class="filter-btn" data-filter="development">
+                    <i class="fas fa-code"></i> Development
+                    <span class="filter-count">12</span>
+                </div>
+                <div class="filter-btn" data-filter="design">
+                    <i class="fas fa-palette"></i> Design
+                    <span class="filter-count">4</span>
+                </div>
+                <div class="filter-btn" data-filter="web3">
+                    <i class="fas fa-cube"></i> Web3
+                    <span class="filter-count">1</span>
+                </div>
+                <div class="filter-btn" data-filter="language">
+                    <i class="fas fa-language"></i> Languages
+                    <span class="filter-count">1</span>
+                </div>
+                <div class="filter-btn" data-filter="fullstack">
+                    <i class="fas fa-layer-group"></i> Full Stack
+                    <span class="filter-count">1</span>
+                </div>
+                <div class="filter-btn" data-filter="management">
+                    <i class="fas fa-tasks"></i> Management
+                    <span class="filter-count">3</span>
+                </div>
+            </div>
 
-        const RarityType = {
-            COMMON: 'common',
-            UNCOMMON: 'uncommon',
-            RARE: 'rare'
-        };
+            <!-- Results Counter -->
+            <div class="page-info fade-in" id="results-count">
+                Showing 1-12 of 24 certificates
+            </div>
 
-        // Mapeamento de ícones para tipos de certificado
-        const typeIcons = {
-            [CertificateType.DEVELOPMENT]: 'fas fa-code',
-            [CertificateType.DESIGN]: 'fas fa-palette',
-            [CertificateType.WEB3]: 'fas fa-cube',
-            [CertificateType.LANGUAGE]: 'fas fa-language',
-            [CertificateType.FULLSTACK]: 'fas fa-layer-group',
-            [CertificateType.MANAGEMENT]: 'fas fa-tasks'
-        };
+            <!-- Certificates Grid -->
+            <div class="certificates-grid" id="certificates-container">
+                <!-- Certificates will be loaded here by JavaScript -->
+            </div>
 
-        // Mapeamento de ícones para skills
-        const skillIcons = {
-            'HTML5': 'fab fa-html5',
-            'CSS3': 'fab fa-css3-alt',
-            'Flexbox': 'fas fa-th',
-            'Grid': 'fas fa-th-large',
-            'Responsive Design': 'fas fa-mobile-alt',
-            'Create a webpage': 'fas fa-file-code',
-            'Positioning, Lists and Navigation': 'fas fa-sitemap',
-            'Advancing in CSS': 'fas fa-paint-brush',
-            'Working with forms and tables': 'fas fa-table',
-            'JavaScript': 'fab fa-js',
-            'React': 'fab fa-react',
-            'Node.js': 'fab fa-node-js',
-            'Python': 'fab fa-python',
-            'SQL': 'fas fa-database',
-            'Git': 'fab fa-git-alt',
-            'AWS': 'fab fa-aws',
-            'UI/UX': 'fas fa-pencil-ruler',
-            'Web Design': 'fas fa-desktop'
-        };
+            <!-- Pagination -->
+            <div class="pagination-container fade-in">
+                <button class="pagination-btn disabled" id="prev-page">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                
+                <button class="pagination-btn" id="next-page">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="page-info">
+                    Page <span id="current-page">1</span> of <span id="total-pages">2</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Função para obter ícone de skill
-        const getSkillIcon = (skill) => {
-            // Tenta encontrar correspondência exata
-            if (skillIcons[skill]) {
-                return skillIcons[skill];
-            }
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Let's Stay Connected</h2>
+                <p class="section-subtitle">Feel free to reach out for professional opportunities or collaborations</p>
+            </div>
             
-            // Busca por palavras-chave
-            const skillLower = skill.toLowerCase();
-            if (skillLower.includes('html')) return 'fab fa-html5';
-            if (skillLower.includes('css')) return 'fab fa-css3-alt';
-            if (skillLower.includes('javascript') || skillLower.includes('js')) return 'fab fa-js';
-            if (skillLower.includes('react')) return 'fab fa-react';
-            if (skillLower.includes('node')) return 'fab fa-node-js';
-            if (skillLower.includes('python')) return 'fab fa-python';
-            if (skillLower.includes('sql') || skillLower.includes('database')) return 'fas fa-database';
-            if (skillLower.includes('git')) return 'fab fa-git-alt';
-            if (skillLower.includes('aws')) return 'fab fa-aws';
-            if (skillLower.includes('ui') || skillLower.includes('ux')) return 'fas fa-pencil-ruler';
-            if (skillLower.includes('design')) return 'fas fa-palette';
-            if (skillLower.includes('web')) return 'fas fa-globe';
-            if (skillLower.includes('mobile')) return 'fas fa-mobile-alt';
-            if (skillLower.includes('table') || skillLower.includes('form')) return 'fas fa-table';
-            
-            // Ícone padrão
-            return 'fas fa-check';
-        };
+            <div class="social-links fade-in">
+                <a href="https://github.com" class="social-link" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com" class="social-link" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:example@email.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://codepen.io" class="social-link" target="_blank" title="twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://codepen.io" class="social-link" target="_blank" title="twitter">
+                    <i class="fab fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        // Dados dos certificados
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>© 2025 Professional Portfolio. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Certificate Modal -->
+    <div class="modal-overlay" id="certificate-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Certificate Title</h3>
+                <p class="modal-subtitle" id="modal-subtitle">Certificate Subtitle</p>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modal-image" src="" alt="Certificate">
+                </div>
+                <div class="modal-details">
+                    <div class="detail-group">
+                        <h4><i class="fas fa-info-circle"></i> Details</h4>
+                        <div class="detail-item">
+                            <span class="detail-label">Issuer:</span>
+                            <span class="detail-value" id="modal-issuer">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Completion Date:</span>
+                            <span class="detail-value" id="modal-date">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Duration:</span>
+                            <span class="detail-value" id="modal-duration">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Certificate ID:</span>
+                            <span class="detail-value" id="modal-id">-</span>
+                        </div>
+                    </div>
+                    <div class="detail-group">
+                        <h4><i class="fas fa-tools"></i> Skills Acquired</h4>
+                        <div class="modal-skills" id="modal-skills">
+                            <!-- Skills will be added here -->
+                        </div>
+                    </div>
+                </div>
+                <p class="modal-description" id="modal-description"></p>
+                <div style="margin-top: 30px; display: flex; gap: 15px;">
+                    <button class="action-btn view-btn" id="modal-download-pdf">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                    <button class="action-btn download-btn" id="modal-share">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ====== DATA ======
         const certificatesData = [
             {
                 id: 1,
-                title: "HTML",
-                subtitle: "an understanding of HTML5",
-                type: CertificateType.DEVELOPMENT,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fplay-lh.googleusercontent.com%2FCImImd_aaNpZYuFL4o0NRNFuoxmKr6zzLCuBDsZYRu6TrBN3ws0M_hA4y_zii6b2Qxdz%3Dw3840-h2160&f=1&nofb=1&ipt=8aea57c1f31906eb995364af1e771ec2b04138b56be179f3b6d6fafb1b0f8656",
-                pdfUrl: "/Certificates/certificate_HTML.pdf",
-                issuer: "Mimo Education",
+                title: "Javascript ",
+                subtitle: "Javascript Web and Terminal",
+                type: "development",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "../Todos_certificados/CEV/Javascript.pdf",
+                issuer: "Curso em Vídeo",
                 date: "May 2025",
-                duration: "5 hours",
-                skills: ["HTML5"],
-                description: "an understanding of the core concepts of websites and the HTML knowledge required to create web pages",
-                rarity: RarityType.COMMON,
-                
+                duration: "40 hours",
+                skills: ["Manipulation of DOM ", "ECMAScript",],
+                description: "Under the guidance of Professor Gustavo Guanabara, the student learns in a structured and light way, going through modules organized into theory and practice, with applied exercises and challenges that make the learning dynamic and engaging. Each lesson was planned so that the student can understand how JavaScript works in practice, both in the browser and outside of it."
             },
             {
                 id: 2,
-                title: "CSS",
-                subtitle: "User Interface & Experience Design",
-                type: CertificateType.DEVELOPMENT,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fplay-lh.googleusercontent.com%2FCImImd_aaNpZYuFL4o0NRNFuoxmKr6zzLCuBDsZYRu6TrBN3ws0M_hA4y_zii6b2Qxdz%3Dw3840-h2160&f=1&nofb=1&ipt=8aea57c1f31906eb995364af1e771ec2b04138b56be179f3b6d6fafb1b0f8656",
-                issuer: "Mimo Education",
-                pdfUrl: "/Certificates/certificate_CSS.pdf",
-                date: "March 2025",
-                duration: "5 hours",
-                skills: ["CSS3", "Flexbox", "Grid", "Responsive Design"],
-                description: "an understanding of the core concepts of CSS and the knowledge required to style web pages",
-                rarity: RarityType.COMMON,
-                
+                title: "Modern PHP",
+                subtitle: "",
+                type: "development",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "../Todos_certificados/CEV/PHP moderno.pdf",
+                issuer: "Curso em Vídeo",
+                date: "August 2025",
+                duration: "40 hours",
+                skills: [
+                        "PHP Basics",
+                        "Environment Setup (Windows, Linux, macOS)",
+                        "PHP Scripts",
+                        "Variables & Data Types",
+                        "String Manipulation",
+                        "User Input (URL & Forms)",
+                        "HTML + PHP Integration",
+                        "Superglobals",
+                        "Form Handling (retroalimentação)",
+                        "Arithmetic Operators",
+                        "Math Functions",
+                        "Null Coalescence",
+                        "Nullsafe Operator",
+                        "Spaceship Operator",
+                        "Modern PHP (7 e 8)"
+                        ],
+                description: "The student writes their first scripts, understands the structure of a PHP file, explores data output, and takes the first steps with variables, data types, and string manipulation. From there, they learn how to receive user input via URLs and forms, integrate HTML with PHP, and practice logical reasoning through hands-on challenges. To complete the module, the student works with operators and arithmetic functions, including modern features such as null coalescence, nullsafe operator, and the spaceship operator, which are an essential part of contemporary PHP."
             },
             {
                 id: 3,
-                title: "Pratique HTML e CSS em projetos Web",
-                subtitle: "Introduction to HTML5 and CSS3 Fundamentals",
-                type: CertificateType.DEVELOPMENT,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportfolio-stefania-bruera.vercel.app%2Fassets%2Fimg%2Flogos%2Falura-latam-logo.jpg&f=1&nofb=1&ipt=98c39b068f90767e0cbc024c5dc249df338ba2d7c99e52d182ad746198ea21d6",
-                issuer: "Alura",
+                title: "PHP Basic",
+                subtitle: "Practicing and learning PHP fundamentals",
+                type: "development",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "../Todos_certificados/CEV/PHP basico.pdf",
+                issuer: "Curso em Vídeo",
                 date: "June 2025",
-                pdfUrl: "/Certificates/html_cww.pdf",
-                duration: "35 hours",
-                skills: ["Create a webpage", "Positioning, Lists and Navigation", "Advancing in CSS", "Working with forms and tables"],
-                description: "Fundamentals of HTML5 and CSS3, building and styling web pages, responsive design techniques, and best practices for web development.",
-                rarity: RarityType.UNCOMMON,
-            
+                duration: "40 hours",
+                skills: [
+                    "PHP Basics",
+                    "HTML + PHP Integration",
+                    "Variables & Data Types",
+                    "Operators & Control Structures",
+                    "Loops",
+                    "Arrays & Matrices",
+                    "String Functions",
+                    "User Input (Forms & URL)",
+                    "Local Server Setup",
+                    "Project Publishing"
+                    ],
+                description: "The student gains practical understanding of how PHP works in real web development, learning how to configure the environment, integrate PHP with HTML5, and structure dynamic pages. Throughout the module, they explore core concepts such as variables, operators, conditionals, loops, arrays, and text functions, applying each topic in hands-on exercises and real-world examples. The training also covers setting up a local server and publishing projects, ensuring a solid foundation and the confidence to advance independently in modern web programming"
             },
-             {
+            {
                 id: 4,
-                title: "Data Modeling",
-                subtitle: "Introducing to Modeling data and relational databases",
-                type: CertificateType.DEVELOPMENT,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportfolio-stefania-bruera.vercel.app%2Fassets%2Fimg%2Flogos%2Falura-latam-logo.jpg&f=1&nofb=1&ipt=98c39b068f90767e0cbc024c5dc249df338ba2d7c99e52d182ad746198ea21d6",
-                issuer: "Alura",
+                title: "PHP OOP",
+                subtitle: "-PHP Oriented Object Programming",
+                type: "development",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "../Todos_certificados/CEV/PHP POO.pdf",
+                issuer: "Curso em Vídeo",
                 date: "July 2025",
-                pdfUrl: "/Certificates/data_modeling.pdf",
                 duration: "39 hours",
-                skills: ["Entities, Relationships, and Attributes", "logical and physical modeling", "Relational Algebra", "Normalization", "Understanding SQL"],
-                description: "Understanding data modeling concepts, including entities, relationships, and attributes. Learning how to create logical and physical data models, as well as understanding relational algebra and normalization techniques.",
-                rarity: RarityType.UNCOMMON,
-            
+                skills: [
+                    "Development Environment Setup (XAMPP, NetBeans)",
+                    "Object Creation & Manipulation",
+                    "Classes & Methods",
+                    "Reusable Modules",
+                    "Object Relationships",
+                    "OOP Principles (Encapsulation, Inheritance, Polymorphism, Abstraction)",
+                    "Logical Thinking",
+                    "Clean Code Practices",
+                    "PHP OOP Syntax",
+                    "Project Integration in PHP",
+                    "Modular System Design"
+                    ],
+                description: "During this course, the student learns how to set up the development environment using XAMPP and NetBeans, create and manipulate objects, and organize code into reusable modules. The program demonstrates how to apply the core principles of Object-Oriented Programming to build clean, flexible, and sustainable solutions, reinforcing logical thinking and good programming practices."
             },
             {
                 id: 5,
                 title: "UX Strategy",
-                subtitle: "Understanding the Strategies of UX",
-                type: CertificateType.DESIGN,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportfolio-stefania-bruera.vercel.app%2Fassets%2Fimg%2Flogos%2Falura-latam-logo.jpg&f=1&nofb=1&ipt=98c39b068f90767e0cbc024c5dc249df338ba2d7c99e52d182ad746198ea21d6",
-                issuer: "Alura",
+                subtitle: "User Experience Planning and Execution",
+                type: "design",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "#",
+                issuer: "Curso em Vídeo",
                 date: "July 2025",
-                pdfUrl: "https://cursos.alura.com.br/degree/certificate/f8568ec7-5207-4719-8459-a2eacead5f5c?lang=en",
                 duration: "12 hours",
-                skills: ["UX canvas", "MVP and MLP", "Features", "Understanding the user", "Having a strategy", "Diverging ideas", "Defining the script", "Materializing the user", "More empathy and more value", "Scenarios and stories"],
-                description: "Understanding data modeling concepts, including entities, relationships, and attributes. Learning how to create logical and physical data models, as well as understanding relational algebra and normalization techniques.",
-                rarity: RarityType.UNCOMMON,
-            
+                skills: ["UX Research", "User Personas", "Journey Mapping", "Strategy Development"],
+                description: "Strategic approach to UX design including research methodologies, persona development, and journey mapping techniques."
             },
             {
                 id: 6,
                 title: "UX Usability",
-                subtitle: "Introduction to Decentralized Technologies",
-                type: CertificateType.DESIGN,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportfolio-stefania-bruera.vercel.app%2Fassets%2Fimg%2Flogos%2Falura-latam-logo.jpg&f=1&nofb=1&ipt=98c39b068f90767e0cbc024c5dc249df338ba2d7c99e52d182ad746198ea21d6",
-                issuer: "Alura",
+                subtitle: "Testing and Optimization Techniques",
+                type: "design",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "#",
+                issuer: "Curso em Vídeo",
                 date: "July 2025",
-                pdfUrl: "/Certificates/UX_usability.pdf",
                 duration: "39 hours",
-                skills: [""],
-                description: "Understanding data modeling concepts, including entities, relationships, and attributes. Learning how to create logical and physical data models, as well as understanding relational algebra and normalization techniques.",
-                rarity: RarityType.UNCOMMON,
-            
+                skills: ["Usability Testing", "User Research", "Prototyping", "Analytics"],
+                description: "In-depth course on usability testing methodologies, user research techniques, and optimization strategies for better user experiences."
             },
             {
                 id: 7,
-                title: "UX",
-                subtitle: "Introduction to Decentralized Technologies",
-                type: CertificateType.DESIGN,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportfolio-stefania-bruera.vercel.app%2Fassets%2Fimg%2Flogos%2Falura-latam-logo.jpg&f=1&nofb=1&ipt=98c39b068f90767e0cbc024c5dc249df338ba2d7c99e52d182ad746198ea21d6",
-                issuer: "Alura",
-                date: "July 2025",
-                pdfUrl: "/Certificates/UX.pdf",
-                duration: "39 hours",
-                skills: ["Entities, Relationships, and Attributes", "logical and physical modeling", "Relational Algebra", "Normalization", "Understanding SQL"],
-                description: "Understanding data modeling concepts, including entities, relationships, and attributes. Learning how to create logical and physical data models, as well as understanding relational algebra and normalization techniques.",
-                rarity: RarityType.UNCOMMON,
-            
+                title: "JavaScript Fundamentals",
+                subtitle: "Modern JavaScript Programming",
+                type: "development",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "#",
+                issuer: "Curso em Vídeo",
+                date: "August 2025",
+                duration: "45 hours",
+                skills: ["ES6+", "DOM Manipulation", "Async Programming", "Modern JS Features"],
+                description: "Comprehensive JavaScript course covering modern ES6+ features, DOM manipulation, asynchronous programming, and best practices."
             },
             {
                 id: 8,
-                title: "Comunication",
-                subtitle: "Introduction to Decentralized Technologies",
-                type: CertificateType.MANAGEMENT,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportfolio-stefania-bruera.vercel.app%2Fassets%2Fimg%2Flogos%2Falura-latam-logo.jpg&f=1&nofb=1&ipt=98c39b068f90767e0cbc024c5dc249df338ba2d7c99e52d182ad746198ea21d6",
-                issuer: "Alura",
+                title: "Communication Skills",
+                subtitle: "Effective Business Communication",
+                type: "management",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "#",
+                issuer: "Curso em Vídeo",
                 date: "July 2025",
-                pdfUrl: "/Certificates/comunication.pdf",
                 duration: "39 hours",
-                skills: ["Entities, Relationships, and Attributes", "logical and physical modeling", "Relational Algebra", "Normalization", "Understanding SQL"],
-                description: "Understanding data modeling concepts, including entities, relationships, and attributes. Learning how to create logical and physical data models, as well as understanding relational algebra and normalization techniques.",
-                rarity: RarityType.UNCOMMON,
-            
+                skills: ["Public Speaking", "Business Writing", "Presentation Skills", "Negotiation"],
+                description: "Professional communication skills development including public speaking, business writing, and effective presentation techniques."
             },
             {
                 id: 9,
-                title: "DATA MODELING",
-                subtitle: "Introduction to Decentralized Technologies",
-                type: CertificateType.DEVELOPMENT,
-                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fportfolio-stefania-bruera.vercel.app%2Fassets%2Fimg%2Flogos%2Falura-latam-logo.jpg&f=1&nofb=1&ipt=98c39b068f90767e0cbc024c5dc249df338ba2d7c99e52d182ad746198ea21d6",
-                issuer: "Alura",
-                date: "July 2025",
-                pdfUrl: "https://cursos.alura.com.br/degree/certificate/f8568ec7-5207-4719-8459-a2eacead5f5c?lang=en",
-                duration: "39 hours",
-                skills: ["Entities, Relationships, and Attributes", "logical and physical modeling", "Relational Algebra", "Normalization", "Understanding SQL"],
-                description: "Understanding data modeling concepts, including entities, relationships, and attributes. Learning how to create logical and physical data models, as well as understanding relational algebra and normalization techniques.",
-                rarity: RarityType.UNCOMMON,
-            
+                title: "React & Redux",
+                subtitle: "Modern Frontend Development",
+                type: "development",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "#",
+                issuer: "Curso em Vídeo",
+                date: "September 2025",
+                duration: "50 hours",
+                skills: ["React Hooks", "Redux", "Context API", "Component Architecture"],
+                description: "Advanced React development with Redux for state management, modern hooks, and scalable component architecture."
             },
-
+            {
+                id: 10,
+                title: "Node.js API Development",
+                subtitle: "Backend Development with Node.js",
+                type: "development",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "#",
+                issuer: "Curso em Vídeo",
+                date: "October 2025",
+                duration: "40 hours",
+                skills: ["Express.js", "REST APIs", "Authentication", "Database Integration"],
+                description: "Building robust backend APIs with Node.js and Express, including authentication, database integration, and RESTful principles."
+            },
+            {
+                id: 11,
+                title: "AWS Cloud Practitioner",
+                subtitle: "Cloud Computing Fundamentals",
+                type: "development",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "#",
+                issuer: "Curso em Vídeo",
+                date: "November 2025",
+                duration: "80 hours",
+                skills: ["EC2", "S3", "Lambda", "Cloud Architecture", "Security"],
+                description: "Comprehensive AWS cloud computing certification covering core services, architecture best practices, and security fundamentals."
+            },
+            {
+                id: 12,
+                title: "Python for Data Science",
+                subtitle: "Data Analysis with Python",
+                type: "development",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "#",
+                issuer: "Curso em Vídeo",
+                date: "December 2025",
+                duration: "55 hours",
+                skills: ["Pandas", "NumPy", "Matplotlib", "Data Analysis", "Visualization"],
+                description: "Data analysis and visualization using Python libraries including Pandas, NumPy, and Matplotlib for data science applications."
+            },
+            {
+                id: 13,
+                title: "UI Design Fundamentals",
+                subtitle: "User Interface Design Principles",
+                type: "design",
+                image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fblogger.googleusercontent.com%2Fimg%2Fb%2FR29vZ2xl%2FAVvXsEjOgpr5wOPOIw2riItxNc_3m88TgW0nusFe26K5ltT6aWzlobs_bBs9440KcYGZ6pumqhW4Yr7qHQzkeptOpf0eONFqtNtxHIQfUd_O-Qtfv6SuXeWs8jnGvGNlqO7pQQKo3GndKtuu9hAJqnBNDd4WJNIVZPqVfMam9PdLH4ctCFJpPY1ZnOC-ilvSsGQ%2Fs1152%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=75df88f683fe7e43b3376f562fb81a76e5f066d1bb6b59e5b69c33b9d282b418",
+                pdfUrl: "#",
+                issuer: "Curso em Vídeo",
+                date: "January 2026",
+                duration: "30 hours",
+                skills: ["Visual Design", "Typography", "Color Theory", "Layout", "UI Patterns"],
+                description: "Fundamental principles of user interface design including typography, color theory, layout systems, and design patterns."
+            },
+            {
+                id: 14,
+                title: "Project Management",
+                subtitle: "Agile Project Management",
+                type: "management",
+                image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                pdfUrl: "#",
+                issuer: "Google",
+                date: "February 2026",
+                duration: "60 hours",
+                skills: ["Scrum", "Agile", "Project Planning", "Team Leadership", "Risk Management"],
+                description: "Comprehensive project management certification focusing on Agile and Scrum methodologies for technical project leadership."
+            },
+            {
+                id: 15,
+                title: "English C1 Advanced",
+                subtitle: "Advanced English Proficiency",
+                type: "language",
+                image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                pdfUrl: "#",
+                issuer: "Cambridge",
+                date: "March 2026",
+                duration: "200 hours",
+                skills: ["Advanced Grammar", "Business English", "Academic Writing", "Speaking Fluency"],
+                description: "Advanced English language certification demonstrating professional proficiency in business communication and academic contexts."
+            },
+            {
+                id: 16,
+                title: "Blockchain Fundamentals",
+                subtitle: "Introduction to Blockchain Technology",
+                type: "web3",
+                image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                pdfUrl: "#",
+                issuer: "Alura",
+                date: "April 2026",
+                duration: "25 hours",
+                skills: ["Smart Contracts", "Cryptocurrency", "Decentralized Apps", "Web3"],
+                description: "Introduction to blockchain technology covering smart contracts, cryptocurrency fundamentals, and decentralized application concepts."
+            },
+            {
+                id: 17,
+                title: "Full-Stack Development",
+                subtitle: "Complete Web Development Stack",
+                type: "fullstack",
+                image: "https://images.unsplash.com/photo-1555066931-bf19f8fd1085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                pdfUrl: "#",
+                issuer: "Alura",
+                date: "May 2026",
+                duration: "100 hours",
+                skills: ["Frontend", "Backend", "Database", "DevOps", "Full Stack Architecture"],
+                description: "Comprehensive full-stack web development certification covering frontend, backend, database, and deployment strategies."
+            },
+            {
+                id: 18,
+                title: "DevOps Engineering",
+                subtitle: "Development Operations",
+                type: "development",
+                image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                pdfUrl: "#",
+                issuer: "Microsoft",
+                date: "June 2026",
+                duration: "70 hours",
+                skills: ["Docker", "Kubernetes", "CI/CD", "Infrastructure", "Automation"],
+                description: "DevOps engineering certification focusing on containerization, orchestration, continuous integration, and infrastructure automation."
+            },
+            {
+                id: 19,
+                title: "TypeScript Mastery",
+                subtitle: "Type-Safe JavaScript",
+                type: "development",
+                image: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                pdfUrl: "#",
+                issuer: "Alura",
+                date: "September 2026",
+                duration: "45 hours",
+                skills: ["TypeScript", "Types", "Interfaces", "Advanced Features", "Type Safety"],
+                description: "Advanced TypeScript course covering type systems, interfaces, generics, and best practices for type-safe application development."
+            },
+            {
+                id: 20,
+                title: "Leadership Skills",
+                subtitle: "Team Leadership and Management",
+                type: "management",
+                image: "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+                pdfUrl: "#",
+                issuer: "Alura",
+                date: "November 2026",
+                duration: "25 hours",
+                skills: ["Team Management", "Decision Making", "Conflict Resolution", "Strategy", "Leadership"],
+                description: "Leadership development program focusing on team management, strategic decision-making, and conflict resolution skills."
+            }
         ];
 
-        // Componentes React
-        const Navigation = () => {
-            const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+        // ====== STATE MANAGEMENT ======
+        let currentPage = 1;
+        let currentFilter = 'all';
+        const certificatesPerPage = 12;
 
-            return (
-                <nav className="glass-dark fixed w-full z-50 py-4">
-                    <div className="container mx-auto px-6">
-                        <div className="flex justify-between items-center">
-                            <a href="#home" className="text-2xl font-bold text-white">
-                                <span className="text-primary">&lt;</span>CAFÉ<span className="text-primary">/&gt;</span>
-                            </a>
-                            
-                            <div className="hidden md:flex space-x-8">
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300">Home</a>
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300">About</a>
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300">Skills</a>
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300">Projects</a>
-                                <a href="#certificates" className="text-gray-300 hover:text-primary transition-colors duration-300">Certificates</a>
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300">Contact</a>
-                            </div>
-                            
-                            <div className="flex items-center space-x-4">
-                                <button 
-                                    className="md:hidden text-gray-300"
-                                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                                >
-                                    <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
-                                </button>
-                                <a href="#" className="px-4 py-2 bg-primary hover:bg-primary-dark rounded-lg transition-colors duration-300">
-                                    <i className="fas fa-download mr-2"></i>Resume
-                                </a>
-                            </div>
-                        </div>
-                        
-                        {/* Mobile Menu */}
-                        <div className={`md:hidden mt-4 transition-all duration-300 ${mobileMenuOpen ? 'block' : 'hidden'}`}>
-                            <div className="flex flex-col space-y-3">
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300 py-2" onClick={() => setMobileMenuOpen(false)}>Home</a>
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300 py-2" onClick={() => setMobileMenuOpen(false)}>About</a>
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300 py-2" onClick={() => setMobileMenuOpen(false)}>Skills</a>
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300 py-2" onClick={() => setMobileMenuOpen(false)}>Projects</a>
-                                <a href="#certificates" className="text-gray-300 hover:text-primary transition-colors duration-300 py-2" onClick={() => setMobileMenuOpen(false)}>Certificates</a>
-                                <a href="index.html" className="text-gray-300 hover:text-primary transition-colors duration-300 py-2" onClick={() => setMobileMenuOpen(false)}>Contact</a>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            );
-        };
+        // ====== DOM ELEMENTS ======
+        const certificatesContainer = document.getElementById('certificates-container');
+        const resultsCount = document.getElementById('results-count');
+        const currentPageElement = document.getElementById('current-page');
+        const totalPagesElement = document.getElementById('total-pages');
+        const prevPageButton = document.getElementById('prev-page');
+        const nextPageButton = document.getElementById('next-page');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const modal = document.getElementById('certificate-modal');
+        const modalClose = document.getElementById('modal-close');
 
-        const HeroSection = () => {
-            const [currentRole, setCurrentRole] = useState(0);
-            const roles = ["Full-Stack Developer", "UI/UX Designer", "Web3 Enthusiast", "Project Manager"];
+        // ====== INITIALIZATION ======
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCertificates();
+            setupEventListeners();
+            initializeAnimations();
+        });
+
+        // ====== RENDER FUNCTIONS ======
+        function renderCertificates() {
+            const filteredCertificates = getFilteredCertificates();
+            const totalPages = Math.ceil(filteredCertificates.length / certificatesPerPage);
+            const startIndex = (currentPage - 1) * certificatesPerPage;
+            const endIndex = startIndex + certificatesPerPage;
+            const pageCertificates = filteredCertificates.slice(startIndex, endIndex);
             
-            useEffect(() => {
-                const interval = setInterval(() => {
-                    setCurrentRole((prev) => (prev + 1) % roles.length);
-                }, 3000);
-                return () => clearInterval(interval);
-            }, []);
+            // Clear container
+            certificatesContainer.innerHTML = '';
+            
+            // Render certificates
+            pageCertificates.forEach((cert, index) => {
+                const card = createCertificateCard(cert, index);
+                certificatesContainer.appendChild(card);
+            });
+            
+            // Update UI
+            updatePagination(totalPages);
+            updateResultsCount(filteredCertificates.length, startIndex + 1, endIndex);
+            
+            // Animate cards
+            animateCards();
+        }
 
-            return (
-                <section id="home" className="min-h-screen flex items-center justify-center pt-20 pb-16">
-                    <div className="container mx-auto px-6 text-center">
-                        <div className="max-w-4xl mx-auto">
-                            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                                My <span className="shimmer">Certificates</span>
-                            </h1>
-                            <div className="text-2xl md:text-4xl mb-8 h-12">
-                                <span className="text-primary font-medium">{roles[currentRole]}</span>
-                            </div>
-                            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                                Explore my collection of certifications and achievements in web development, design, and technology.
-                            </p>
-                           
-                            <div className="flex justify-center space-x-6">
-                                <a href="https://github.com/CAFE2l" target="_blank" className="text-2xl text-gray-400 hover:text-primary transition-colors duration-300">
-                                    <i className="fab fa-github"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/" target="_blank" className="text-2xl text-gray-400 hover:text-primary transition-colors duration-300">
-                                    <i className="fab fa-linkedin"></i>
-                                </a>
-                                <a href="https://x.com/ct_cafe87877" target="_blank" className="text-2xl text-gray-400 hover:text-primary transition-colors duration-300">
-                                    <i className="fab fa-twitter"></i>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        {/* Animated Tech Cube */}
-                        <div className="mt-16 flex justify-center">
-                            <div className="tech-cube">
-                                <div className="cube-face" style={{transform: 'rotateY(0deg) translateZ(100px)'}}><i className="fab fa-js"></i></div>
-                                <div className="cube-face" style={{transform: 'rotateY(90deg) translateZ(100px)'}}><i className="fab fa-react"></i></div>
-                                <div className="cube-face" style={{transform: 'rotateY(180deg) translateZ(100px)'}}><i className="fab fa-node-js"></i></div>
-                                <div className="cube-face" style={{transform: 'rotateY(-90deg) translateZ(100px)'}}><i className="fab fa-python"></i></div>
-                                <div className="cube-face" style={{transform: 'rotateX(90deg) translateZ(100px)'}}><i className="fas fa-database"></i></div>
-                                <div className="cube-face" style={{transform: 'rotateX(-90deg) translateZ(100px)'}}><i className="fab fa-aws"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            );
-        };
-
-        const CertificateCard = ({ certificate, index }) => {
-            const [isFlipped, setIsFlipped] = useState(false);
-
-            return (
-                <div 
-                    className={`pokemon-card animate-float ${isFlipped ? 'flipped' : ''}`} 
-                    style={{animationDelay: `${index * 0.2}s`}}
-                    onClick={() => setIsFlipped(!isFlipped)}
-                >
-                    <div className="pokemon-card-inner">
-                        <div className="pokemon-card-front">
-                            <div className="holo-effect"></div>
-                            
-                            <div className={`rarity-badge rarity-${certificate.rarity}`}>
-                                {certificate.rarity}
-                            </div>
-                            
-                            <div className={`card-type type-${certificate.type}`}>
-                                <i className={typeIcons[certificate.type]}></i>
-                                {certificate.type}
-                            </div>
-                            
-                            <div className="cert-image">
-                                <img src={certificate.image} alt={certificate.title} className="w-full h-full object-cover" />
-                            </div>
-                            
-                            <div>
-                                <h3 className="text-xl font-bold text-white mb-2">{certificate.title}</h3>
-                                <p className="text-gray-300 text-sm mb-4">{certificate.issuer}</p>
-                                
-                                <div className="flex justify-between text-sm mb-2">
-                                    <div className="text-center">
-                                        <div className="font-bold">{certificate.duration}</div>
-                                        <div className="text-gray-400">Duration</div>
-                                    </div>
-                                    <div className="text-center">
-                                        <div className="font-bold">{certificate.date}</div>
-                                        <div className="text-gray-400">Completed</div>
-                                    </div>
-                                </div>
-                                
-                                <div className="stats-bar">
-                                    <div className="stats-fill bg-primary" style={{width: certificate.rarity === RarityType.RARE ? '100%' : certificate.rarity === RarityType.UNCOMMON ? '70%' : '40%'}}></div>
-                                </div>
-                            </div>
-                            
-                            <div className="flip-icon">
-                                <i className="fas fa-sync-alt"></i>
-                            </div>
-                        </div>
-                        
-                        <div className="pokemon-card-back">
-                            <h3 className="text-xl font-bold text-white mb-2">{certificate.title}</h3>
-                            <p className="text-gray-300 text-sm mb-4">{certificate.subtitle}</p>
-                            
-                            <p className="text-gray-200 text-sm mb-4 leading-relaxed">{certificate.description}</p>
-                            
-                            <div className="mt-auto">
-                                <h4 className="text-white text-sm font-bold mb-2">Skills:</h4>
-                                <div className="space-y-2">
-                                    {certificate.skills.map((skill, i) => (
-                                        <div key={i} className="skill-item">
-                                            <div className="skill-icon bg-primary/20 text-primary">
-                                                <i className={getSkillIcon(skill)}></i>
-                                            </div>
-                                            <span className="text-sm">{skill}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            
-                            <div className="flip-icon">
-                                <i className="fas fa-sync-alt"></i>
-                            </div>
-                        </div>
+        function createCertificateCard(certificate, index) {
+            const card = document.createElement('div');
+            card.className = 'certificate-card';
+            card.style.animationDelay = `${index * 0.1}s`;
+            
+            card.innerHTML = `
+                <div class="certificate-image">
+                    <img src="${certificate.image}" alt="${certificate.title}">
+                    <div class="certificate-overlay"></div>
+                    <div class="certificate-badge">
+                        <i class="fas fa-certificate"></i>
+                        ${certificate.type.charAt(0).toUpperCase() + certificate.type.slice(1)}
                     </div>
                 </div>
-            );
-        };
-
-        const CertificatesSection = () => {
-            const [filter, setFilter] = useState('all');
-            const [selectedCertificate, setSelectedCertificate] = useState(null);
-
-            const filteredCertificates = filter === 'all' 
-                ? certificatesData 
-                : certificatesData.filter(cert => cert.type === filter);
-
-            const openModal = (certificate) => {
-                setSelectedCertificate(certificate);
-            };
-
-            const closeModal = () => {
-                setSelectedCertificate(null);
-            };
-
-            return (
-                <section id="certificates" className="py-20 bg-dark/50">
-                    <div className="container mx-auto px-6">
-                        <h2 className="text-4xl font-bold text-center mb-4">Certificates</h2>
-                        <div className="w-20 h-1 bg-primary mx-auto mb-12"></div>
-                        
-                        <div className="filters flex justify-center flex-wrap gap-4 mb-8">
-                            <button 
-                                className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 ${filter === 'all' ? 'bg-primary' : 'glass hover:bg-primary/20'}`}
-                                onClick={() => setFilter('all')}
-                            >
-                                <i className="fas fa-layer-group"></i> All
-                            </button>
-                            <button 
-                                className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 ${filter === CertificateType.DEVELOPMENT ? 'bg-primary' : 'glass hover:bg-primary/20'}`}
-                                onClick={() => setFilter(CertificateType.DEVELOPMENT)}
-                            >
-                                <i className="fas fa-code"></i> Development
-                            </button>
-                            <button 
-                                className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 ${filter === CertificateType.DESIGN ? 'bg-primary' : 'glass hover:bg-primary/20'}`}
-                                onClick={() => setFilter(CertificateType.DESIGN)}
-                            >
-                                <i className="fas fa-palette"></i> Design
-                            </button>
-                            <button 
-                                className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 ${filter === CertificateType.WEB3 ? 'bg-primary' : 'glass hover:bg-primary/20'}`}
-                                onClick={() => setFilter(CertificateType.WEB3)}
-                            >
-                                <i className="fas fa-cube"></i> Web3
-                            </button>
-                             <button 
-                                className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 ${filter === CertificateType.LANGUAGE ? 'bg-primary' : 'glass hover:bg-primary/20'}`}
-                                onClick={() => setFilter(CertificateType.LANGUAGE)}
-                            >
-                                <i className="fas fa-language"></i> Language
-                            </button>
-
-                            <button 
-                                className={`px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-2 ${filter === CertificateType.MANAGEMENT ? 'bg-primary' : 'glass hover:bg-primary/20'}`}
-                                onClick={() => setFilter(CertificateType.MANAGEMENT)}
-                            >
-                                <i className="fas fa-tasks"></i> Management
-                            </button>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">${certificate.title}</h3>
+                    <div class="certificate-issuer">
+                        <i class="fas fa-university"></i>
+                        ${certificate.issuer}
+                    </div>
+                    <p class="certificate-description">${certificate.description}</p>
+                    <div class="certificate-meta">
+                        <div class="certificate-date">
+                            <i class="far fa-calendar"></i>
+                            ${certificate.date}
                         </div>
-
-                        
-                        
-                        <div className="cards-container flex flex-wrap justify-center gap-8">
-                            {filteredCertificates.map((certificate, index) => (
-                                <div key={certificate.id} onClick={() => openModal(certificate)}>
-                                    <CertificateCard certificate={certificate} index={index} />
-                                </div>
-                            ))}
+                        <div class="certificate-duration">
+                            <i class="far fa-clock"></i>
+                            ${certificate.duration}
                         </div>
                     </div>
-
-                    {/* Modal */}
-                    {selectedCertificate && (
-                        <div className="modal-overlay" onClick={closeModal}>
-                            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                                <button className="absolute top-4 right-4 text-gray-400 hover:text-white" onClick={closeModal}>
-                                    <i className="fas fa-times text-xl"></i>
-                                </button>
-                                <div className="flex flex-col md:flex-row gap-8">
-                                    <div className="flex-1">
-                                        <img src={selectedCertificate.image} alt={selectedCertificate.title} className="w-full h-64 object-cover rounded-lg" />
-                                        <div className="mt-4 flex justify-between">
-                                            <div className={`px-3 py-1 rounded-full ${selectedCertificate.rarity === RarityType.RARE ? 'bg-purple-600' : selectedCertificate.rarity === RarityType.UNCOMMON ? 'bg-green-600' : 'bg-gray-600'}`}>
-                                                {selectedCertificate.rarity}
-                                            </div>
-                                            <div className={`px-3 py-1 rounded-full flex items-center gap-2 type-${selectedCertificate.type}`}>
-                                                <i className={typeIcons[selectedCertificate.type]}></i>
-                                                {selectedCertificate.type}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex-1">
-                                        <h3 className="text-2xl font-bold mb-2">{selectedCertificate.title}</h3>
-                                        <p className="text-gray-300 mb-4">{selectedCertificate.subtitle}</p>
-                                        <div className="space-y-2 mb-4">
-                                            <p><strong>Issuer:</strong> {selectedCertificate.issuer}</p>
-                                            <p><strong>Date:</strong> {selectedCertificate.date}</p>
-                                            <p><strong>Duration:</strong> {selectedCertificate.duration}</p>
-                                        </div>
-                                        <div className="mb-4">
-                                            <h4 className="font-bold mb-2">Skills:</h4>
-                                            <div className="flex flex-wrap gap-2">
-                                                {selectedCertificate.skills.map((skill, i) => (
-                                                    <span key={i} className="px-2 py-1 bg-primary/20 text-primary text-xs rounded flex items-center gap-1">
-                                                        <i className={getSkillIcon(skill)}></i> {skill}
-                                                    </span>
-                                                ))}
-                                            </div>
-                                        </div>
-                                        <p className="mt-4 text-gray-200">{selectedCertificate.description}</p>
-                                        {selectedCertificate.pdfUrl && (
-                                            <a 
-                                                href={selectedCertificate.pdfUrl} 
-                                                download 
-                                                className="mt-4 inline-block bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-lg transition-colors"
-                                            >
-                                                <i className="fas fa-download mr-2"></i>Download Certificate
-                                            </a>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-                </section>
-            );
-        };
-
-        const Footer = () => {
-            return (
-                <footer className="py-12 bg-dark/80">
-                    <div className="container mx-auto px-6">
-                        <div className="flex flex-col md:flex-row justify-between items-center">
-                            <div className="mb-6 md:mb-0">
-                                <a href="#home" className="text-2xl font-bold text-white">
-                                    <span className="text-primary">&lt;</span>CAFÉ<span className="text-primary">/&gt;</span>
-                                </a>
-                            </div>
-                            
-                            <div className="flex space-x-6 mb-6 md:mb-0">
-                                <a href="index.html" className="text-gray-400 hover:text-primary transition-colors duration-300">Home</a>
-                                <a href="index.html" className="text-gray-400 hover:text-primary transition-colors duration-300">About</a>
-                                <a href="index.html" className="text-gray-400 hover:text-primary transition-colors duration-300">Skills</a>
-                                <a href="index.html" className="text-gray-400 hover:text-primary transition-colors duration-300">Projects</a>
-                                <a href="#certificates" className="text-gray-400 hover:text-primary transition-colors duration-300">Certificates</a>
-                                <a href="index.html" className="text-gray-400 hover:text-primary transition-colors duration-300">Contact</a>
-                            </div>
-                            
-                            <div className="flex space-x-4">
-                                <a href="https://github.com/CAFE2l" target="_blank" className="text-gray-400 hover:text-primary transition-colors duration-300">
-                                    <i className="fab fa-github text-xl"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/" target="_blank" className="text-gray-400 hover:text-primary transition-colors duration-300">
-                                    <i className="fab fa-linkedin text-xl"></i>
-                                </a>
-                                <a href="https://x.com/ct_cafe87877" target="_blank" className="text-gray-400 hover:text-primary transition-colors duration-300">
-                                    <i className="fab fa-twitter text-xl"></i>
-                                </a>
-                                  
-                                <a href="https://youtube.com/@CAFE_ct" target="_blank" className="text-gray-400 hover:text-primary transition-colors duration-300">
-                                    <i className="fab fa-youtube text-xl"></i>
-                                </a>
-                                
-                            </div>
-                        </div>
-                        
-                        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                            <p>&copy; 2025 Gabriel Felipe. All rights reserved.</p>
-                        </div>
+                    <div class="certificate-actions">
+                        <button class="action-btn view-btn" data-id="${certificate.id}">
+                            <i class="fas fa-eye"></i> View Details
+                        </button>
+                        <button class="action-btn download-btn" data-id="${certificate.id}">
+                            <i class="fas fa-download"></i> PDF
+                        </button>
                     </div>
-                </footer>
-            );
-        };
+                </div>
+            `;
+            
+            return card;
+        }
 
-        // App Principal
-        const App = () => {
-            useEffect(() => {
-                // Inicializar Particles.js
-                if (typeof particlesJS !== 'undefined') {
-                    particlesJS('particles-js', {
-                        particles: {
-                            number: { value: 80, density: { enable: true, value_area: 800 } },
-                            color: { value: "#7c4dff" },
-                            shape: { type: "circle" },
-                            opacity: { value: 0.5, random: true },
-                            size: { value: 3, random: true },
-                            line_linked: {
-                                enable: true,
-                                distance: 150,
-                                color: "#7c4dff",
-                                opacity: 0.4,
-                                width: 1
-                            },
-                            move: {
-                                enable: true,
-                                speed: 2,
-                                direction: "none",
-                                random: true,
-                                straight: false,
-                                out_mode: "out"
-                            }
-                        },
-                        interactivity: {
-                            detect_on: "canvas",
-                            events: {
-                                onhover: { enable: true, mode: "grab" },
-                                onclick: { enable: true, mode: "push" },
-                                resize: true
-                            }
-                        },
-                        retina_detect: true
-                    });
-                }
+        // ====== FILTER FUNCTIONS ======
+        function getFilteredCertificates() {
+            if (currentFilter === 'all') {
+                return certificatesData;
+            }
+            return certificatesData.filter(cert => cert.type === currentFilter);
+        }
 
-                // Smooth scrolling
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const target = document.querySelector(this.getAttribute('href'));
-                        if (target) {
-                            target.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
+        // ====== PAGINATION FUNCTIONS ======
+        function updatePagination(totalPages) {
+            currentPageElement.textContent = currentPage;
+            totalPagesElement.textContent = totalPages;
+            
+            prevPageButton.classList.toggle('disabled', currentPage === 1);
+            nextPageButton.classList.toggle('disabled', currentPage === totalPages);
+            
+            // Update pagination buttons
+            document.querySelectorAll('.pagination-btn:not(#prev-page):not(#next-page)').forEach((btn, index) => {
+                btn.classList.toggle('active', index + 1 === currentPage);
+            });
+        }
+
+        function updateResultsCount(total, start, end) {
+            resultsCount.textContent = `Showing ${start}-${Math.min(end, total)} of ${total} certificates`;
+        }
+
+        // ====== MODAL FUNCTIONS ======
+        function openCertificateModal(certificateId) {
+            const certificate = certificatesData.find(cert => cert.id === certificateId);
+            if (!certificate) return;
+            
+            // Update modal content
+            document.getElementById('modal-title').textContent = certificate.title;
+            document.getElementById('modal-subtitle').textContent = certificate.subtitle;
+            document.getElementById('modal-image').src = certificate.image;
+            document.getElementById('modal-issuer').textContent = certificate.issuer;
+            document.getElementById('modal-date').textContent = certificate.date;
+            document.getElementById('modal-duration').textContent = certificate.duration;
+            document.getElementById('modal-id').textContent = `#${certificate.id.toString().padStart(3, '0')}`;
+            document.getElementById('modal-description').textContent = certificate.description;
+            
+            // Update skills
+            const skillsContainer = document.getElementById('modal-skills');
+            skillsContainer.innerHTML = '';
+            certificate.skills.forEach(skill => {
+                const skillTag = document.createElement('div');
+                skillTag.className = 'skill-tag';
+                skillTag.innerHTML = `<i class="fas fa-check"></i> ${skill}`;
+                skillsContainer.appendChild(skillTag);
+            });
+            
+            // Update download button
+            document.getElementById('modal-download-pdf').onclick = () => downloadCertificate(certificate);
+            
+            // Show modal
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        
+        function downloadCertificate(certificate) {
+            // 1. Verificação de segurança: Se o link for '#' ou vazio, avisa e para.
+            if (!certificate.pdfUrl || certificate.pdfUrl === '#') {
+                alert(`O arquivo PDF para "${certificate.title}" ainda não foi anexado.`);
+                return;
+            }
+
+            // 2. Cria um elemento <a> temporário na memória
+            const link = document.createElement('a');
+            
+            // 3. Define o caminho do arquivo
+            link.href = certificate.pdfUrl;
+            
+            // 4. Define o atributo de download (sugere um nome para o arquivo salvo)
+            // Ex: "Javascript_Mastery.pdf"
+            link.download = `${certificate.title.replace(/\s+/g, '_')}.pdf`;
+            
+            // 5. Configura para abrir em nova aba caso o browser bloqueie o download direto
+            link.target = '_blank';
+
+            // 6. Adiciona ao corpo do site (necessário para Firefox), clica e remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function shareCertificate(certificate) {
+            if (navigator.share) {
+                navigator.share({
+                    title: certificate.title,
+                    text: `Check out my ${certificate.title} certificate!`,
+                    url: window.location.href
                 });
-            }, []);
+            } else {
+                // Fallback for browsers that don't support Web Share API
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    alert('Link copied to clipboard!');
+                });
+            }
+        }
 
-            return (
-                <div className="relative">
-                    <div id="particles-js" className="fixed inset-0 z-0"></div>
-                    <div className="relative z-10">
-                        <Navigation />
-                        <HeroSection />
-                        <CertificatesSection />
-                        <Footer />
-                    </div>
-                </div>
-            );
-        };
+        // ====== ANIMATION FUNCTIONS ======
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
 
-        // Renderizar a aplicação
-        ReactDOM.render(<App />, document.getElementById('root'));
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements with fade-in class
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        function animateCards() {
+            const cards = document.querySelectorAll('.certificate-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        }
+
+        // ====== EVENT LISTENERS ======
+        function setupEventListeners() {
+            // Filter buttons
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.dataset.filter;
+                    
+                    // Update active filter
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Apply filter
+                    currentFilter = filter;
+                    currentPage = 1;
+                    renderCertificates();
+                });
+            });
+
+            // Pagination buttons
+            prevPageButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderCertificates();
+                    window.scrollTo({ top: certificatesContainer.offsetTop - 100, behavior: 'smooth' });
+                }
+            });
+
+            nextPageButton.addEventListener('click', () => {
+                const filteredCertificates = getFilteredCertificates();
+                const totalPages = Math.ceil(filteredCertificates.length / certificatesPerPage);
+                
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderCertificates();
+                    window.scrollTo({ top: certificatesContainer.offsetTop - 100, behavior: 'smooth' });
+                }
+            });
+
+            // Page number buttons
+            document.querySelectorAll('.pagination-btn:not(#prev-page):not(#next-page)').forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    currentPage = index + 1;
+                    renderCertificates();
+                    window.scrollTo({ top: certificatesContainer.offsetTop - 100, behavior: 'smooth' });
+                });
+            });
+
+            // Certificate actions (delegated)
+            certificatesContainer.addEventListener('click', (e) => {
+                const viewBtn = e.target.closest('.view-btn');
+                const downloadBtn = e.target.closest('.download-btn');
+                
+                if (viewBtn) {
+                    const certificateId = parseInt(viewBtn.dataset.id);
+                    openCertificateModal(certificateId);
+                }
+                
+                if (downloadBtn) {
+                    const certificateId = parseInt(downloadBtn.dataset.id);
+                    const certificate = certificatesData.find(cert => cert.id === certificateId);
+                    if (certificate) downloadCertificate(certificate);
+                }
+            });
+
+            // Modal close
+            modalClose.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            // Share button in modal
+            document.getElementById('modal-share').addEventListener('click', () => {
+                const certificateId = parseInt(document.getElementById('modal-id').textContent.slice(1));
+                const certificate = certificatesData.find(cert => cert.id === certificateId);
+                if (certificate) shareCertificate(certificate);
+            });
+
+            // Smooth scroll for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offset = 80;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        
+                        window.scrollTo({
+                            top: targetPosition - offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>

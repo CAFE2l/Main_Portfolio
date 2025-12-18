@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "Todos_certificados",
+			"path": "../../../Área de Trabalho/Programação/Todos_certificados"
+		},
+		{
+			"name": "Portfolio",
+			"path": "."
+		}
+	],
+    "settings": {
+        "liveServer.settings.port": 5501,
+        "liveServer.settings.multiRootWorkspaceName": "Portfolio"
+    }
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Felipe</title>
+    <title>Gabriel Felipe | Full-Stack Developer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -15,53 +15,54 @@
 <body class="animated-bg">
     <div id="particles-js"></div>
     <div class="content-wrapper">
+        
         <!-- Header e Navegação -->
-        <header class="glass-dark fixed w-full z-50">
+        <header id="main-header" class="glass-dark fixed w-full z-50 transition-all duration-300">
             <nav class="container mx-auto px-6 py-4">
                 <div class="flex justify-between items-center">
-                    <a href="#" class="text-2xl font-bold text-white">
+                    <a href="#" class="text-2xl font-bold text-white hover:scale-105 transition-transform">
                         <span class="text-purple-500">&lt;</span>CAFÉ<span class="text-purple-500">/&gt;</span>
                     </a>
                     
                     <div class="hidden md:flex space-x-10">
-                        <a href="#home" class="text-gray-300 hover:text-purple-400 transition-colors">Home</a>
-                        <a href="#about" class="text-gray-300 hover:text-purple-400 transition-colors">About Me</a>
-                        <a href="#skills" class="text-gray-300 hover:text-purple-400 transition-colors">Skills</a>
-                        <a href="#projects" class="text-gray-300 hover:text-purple-400 transition-colors">Projects</a>
-                        <a href="#experience" class="text-gray-300 hover:text-purple-400 transition-colors">Experience</a>
-                        <a href="#contact" class="text-gray-300 hover:text-purple-400 transition-colors">Contact</a>
-                        <a href="./HTML/certificados.html" class="text-gray-300 hover:text-purple-400 transition-colors">Certificates</a>
+                        <a href="#home" class="nav-link text-gray-300">Home</a>
+                        <a href="#about" class="nav-link text-gray-300">About Me</a>
+                        <a href="#skills" class="nav-link text-gray-300">Skills</a>
+                        <a href="#projects" class="nav-link text-gray-300">Projects</a>
+                        <a href="#experience" class="nav-link text-gray-300">Experience</a>
+                        <a href="#contact" class="nav-link text-gray-300">Contact</a>
+                        <a href="./HTML/certificados.html" class="nav-link text-gray-300">Certificates</a>
                     </div>
                     
                     <div class="flex items-center space-x-4">
-                        <buttonbutton class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu de navegação" title="Abrir menu de navegação">
+                        <button class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu">
                             <i class="fas fa-bars text-xl"></i>
                         </button>
-                        <button class="px-4 py-2 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors">
+                        <button class="btn btn-primary">
                             <i class="fas fa-download mr-2"></i>Currículo
                         </button>
                     </div>
                 </div>
                 
                 <!-- Menu Mobile -->
-                <div class="md:hidden mt-4 hidden">
+                <div class="md:hidden mt-4 hidden glass rounded-lg p-4">
                     <div class="flex flex-col space-y-3">
-                        <a href="#home" class="text-gray-300 hover:text-purple-400 transition-colors">Home</a>
-                        <a href="#about" class="text-gray-300 hover:text-purple-400 transition-colors">About Me</a>
-                        <a href="#skills" class="text-gray-300 hover:text-purple-400 transition-colors">Skills</a>
-                        <a href="#projects" class="text-gray-300 hover:text-purple-400 transition-colors">Projects</a>
-                        <a href="#experience" class="text-gray-300 hover:text-purple-400 transition-colors">Experience</a>
-                        <a href="#contact" class="text-gray-300 hover:text-purple-400 transition-colors">Contact</a>
-                        <a href="./HTML/certificados.html" class="text-gray-300 hover:text-purple-400 transition-colors">Certificates</a>
+                        <a href="#home" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Home</a>
+                        <a href="#about" class="text-gray-300 hover:text-purple-400 transition-colors py-2">About Me</a>
+                        <a href="#skills" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Skills</a>
+                        <a href="#projects" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Projects</a>
+                        <a href="#experience" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Experience</a>
+                        <a href="#contact" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Contact</a>
+                        <a href="./HTML/certificados.html" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Certificates</a>
                     </div>
                 </div>
             </nav>
         </header>
 
         <!-- Seção Hero -->
-        <section id="home" class="min-h-screen flex items-center justify-center relative pt-20 pb-16">
+        <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
             <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 text-center md:text-left">
+                <div class="md:w-1/2 text-center md:text-left animate-in">
                     <h1 class="text-4xl md:text-6xl font-bold mb-4">
                         Hi all👋, I'm <span class="shimmer">Gabriel Felipe</span>
                     </h1>
@@ -69,52 +70,53 @@
                         <span id="typed" class="text-purple-400 font-medium"></span>
                     </div>
                     <p class="text-gray-300 mb-8 text-lg">
-                       Junior Full-Stack Developer
+                        Junior Full-Stack Developer
                     </p>
                     <div class="flex flex-wrap justify-center md:justify-start space-x-4">
-                        <a href="#projects" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors mb-4">
+                        <a href="#projects" class="btn btn-primary mb-4">
                             See Projects
                         </a>
-                        <a href="#contact" class="px-6 py-3 glass hover:bg-purple-500 rounded-lg transition-colors mb-4">
+                        <a href="#contact" class="btn btn-glass mb-4">
                             Contact Me
                         </a>
                     </div>
                     <div class="flex justify-center md:justify-start space-x-4 mt-8">
-                        <a href="https://github.com/CAFE2l" target="_blank class="text-gray-400 hover:text-purple-400 transition-colors">
+                        <a href="https://github.com/CAFE2l" target="_blank" class="text-gray-400 hover:text-purple-400 transition-colors hover:scale-110 transform">
                             <i class="fab fa-github text-2xl"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/?originalSubdomain=br" target="_blank class="text-gray-400 hover:text-purple-400 transition-colors">
+                        <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/" target="_blank" class="text-gray-400 hover:text-purple-400 transition-colors hover:scale-110 transform">
                             <i class="fab fa-linkedin text-2xl"></i>
                         </a>
-                        <a href="https://x.com/ct_cafe87877"  target="_blank class="text-gray-400 hover:text-purple-400 transition-colors">
+                        <a href="https://x.com/ct_cafe87877" target="_blank" class="text-gray-400 hover:text-purple-400 transition-colors hover:scale-110 transform">
                             <i class="fab fa-twitter text-2xl"></i>
                         </a>
-
-                        <a href="https://www.youtube.com/@CAFE_ct/streams"  target="_blank class="text-gray-400 hover:text-purple-400 transition-colors">
+                        <a href="https://www.youtube.com/@CAFE_ct/streams" target="_blank" class="text-gray-400 hover:text-purple-400 transition-colors hover:scale-110 transform">
                             <i class="fab fa-youtube text-2xl"></i>
                         </a>
-                        
-                        
                     </div>
                 </div>
+                
                 <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-                    <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 animate-float">
-                            <img src="/IMG/pfp.jpg" 
-                                 alt="Profile" class="w-full h-full object-cover">
+                    <div class="relative hero-image-wrapper">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-purple-500 animate-float shadow-led">
+                            <img src="/IMG/pfp.jpg" alt="Profile" class="w-full h-full object-cover">
                         </div>
-                        <div class="absolute -bottom-4 -right-4 glass rounded-lg px-4 py-2">
-                            <p class="text-sm">🎉 <span class="font-medium">1+ year</span> Of Experience</p>
+                        
+                        <div class="hero-badge top-right glass led-glow">
+                            <span class="animate-pulse">🎉</span> 
+                            <span class="font-medium">1+ year</span> Of Experience
                         </div>
-                        <div class="absolute -top-4 -left-4 glass rounded-lg px-4 py-2">
-                            <p class="text-sm">⭐ <span class="font-medium">5+ Projects</span> Mades</p>
+                        
+                        <div class="hero-badge bottom-left glass led-glow" style="animation-delay: 2s;">
+                            <span>⭐</span> 
+                            <span class="font-medium">5+ Projects</span> Made
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <a href="#about" class="text-gray-400 hover:text-purple-400">
+                <a href="#about" class="text-gray-400 hover:text-purple-400 transition-colors">
                     <i class="fas fa-chevron-down text-2xl"></i>
                 </a>
             </div>
@@ -123,57 +125,55 @@
         <!-- Seção Sobre -->
         <section id="about" class="py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">About Me</h2>
-                <div class="w-20 h-1 bg-purple-500 mx-auto mb-12"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gradient">About Me</h2>
                 
                 <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center">
+                    <div class="md:w-1/3 mb-10 md:mb-0 flex justify-center animate-in">
                         <div class="relative">
-                            <div class="w-64 h-64 rounded-lg overflow-hidden zoom-effect">
-                                <img src="/IMG/WIN_20251123_18_56_46_Pro.jpg" 
-                                     alt="About" class="w-full h-full object-cover">
+                            <div class="w-64 h-64 rounded-2xl overflow-hidden zoom-effect led-glow">
+                                <img src="/IMG/WIN_20251123_18_56_46_Pro.jpg" alt="About" class="w-full h-full object-cover">
                             </div>
-                            <div class="absolute inset-0 border-2 border-purple-500 rounded-lg transform translate-x-4 translate-y-4 -z-10"></div>
+                            <div class="absolute inset-0 border-2 border-purple-500 rounded-2xl transform translate-x-4 translate-y-4 -z-10 led-glow"></div>
                         </div>
                     </div>
-                    <div class="md:w-2/3 md:pl-12">
-                        <h3 class="text-2xl font-bold mb-4">Full-Stack Developver & UI/UX Enthusiast</h3>
-                     <p class="text-gray-300 mb-6">
-                        I am a full-stack developer with over 1 year of experience creating innovative web solutions. 
-                        My passion is transforming complex ideas into intuitive and functional interfaces that provide 
-                        excellent user experiences.
-                    </p>
-                    <p class="text-gray-300 mb-6">
-                        My programming journey began in my 16 years of age, and since then I have been dedicated to learning 
-                        new technologies and methodologies. I believe technology should be accessible and useful to everyone, 
-                        and that’s what motivates me to create applications that make a difference.
-                    </p>
-
+                    
+                    <div class="md:w-2/3 md:pl-12 animate-in">
+                        <h3 class="text-2xl font-bold mb-4 text-gradient">Full-Stack Developer & UI/UX Enthusiast</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            I am a full-stack developer with over 1 year of experience creating innovative web solutions.
+                            My passion is transforming complex ideas into intuitive and functional interfaces that provide
+                            excellent user experiences.
+                        </p>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            My programming journey began in my 16 years of age, and since then I have been dedicated to learning
+                            new technologies and methodologies. I believe technology should be accessible and useful to everyone,
+                            and that's what motivates me to create applications that make a difference.
+                        </p>
                         
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                            <div class="glass rounded-lg p-4 text-center">
-                                <div class="text-purple-400 text-2xl font-bold">5+</div>
-                                <div class="text-gray-400 text-sm">Projects</div>
+                            <div class="clay rounded-lg p-4 text-center hover-lift">
+                                <div class="text-purple-400 text-2xl font-bold shimmer">5+</div>
+                                <div class="text-gray-400 text-sm mt-1">Projects</div>
                             </div>
-                            <div class="glass rounded-lg p-4 text-center">
-                                <div class="text-purple-400 text-2xl font-bold">10+</div>
-                                <div class="text-gray-400 text-sm">Clients</div>
+                            <div class="clay rounded-lg p-4 text-center hover-lift">
+                                <div class="text-purple-400 text-2xl font-bold shimmer">10+</div>
+                                <div class="text-gray-400 text-sm mt-1">Clients</div>
                             </div>
-                            <div class="glass rounded-lg p-4 text-center">
-                                <div class="text-purple-400 text-2xl font-bold">1+</div>
-                                <div class="text-gray-400 text-sm">Years Of Exp</div>
+                            <div class="clay rounded-lg p-4 text-center hover-lift">
+                                <div class="text-purple-400 text-2xl font-bold shimmer">1+</div>
+                                <div class="text-gray-400 text-sm mt-1">Years Of Exp</div>
                             </div>
-                            <div class="glass rounded-lg p-4 text-center">
-                                <div class="text-purple-400 text-2xl font-bold">5+</div>
-                                <div class="text-gray-400 text-sm">Technologies</div>
+                            <div class="clay rounded-lg p-4 text-center hover-lift">
+                                <div class="text-purple-400 text-2xl font-bold shimmer">5+</div>
+                                <div class="text-gray-400 text-sm mt-1">Technologies</div>
                             </div>
                         </div>
                         
-                        <div class="flex flex-wrap">
-                            <a href="#contact" class="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg mr-4 mb-4 transition-colors">
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#contact" class="btn btn-primary">
                                 Contact Me
                             </a>
-                            <a href="#projects" class="px-6 py-3 glass hover:bg-purple-500 rounded-lg mb-4 transition-colors">
+                            <a href="#projects" class="btn btn-glass">
                                 See Projects
                             </a>
                         </div>
@@ -183,170 +183,160 @@
         </section>
 
         <!-- Seção Habilidades -->
-        <section id="skills" class="py-20 bg-gray-900">
+        <section id="skills" class="py-20 bg-gray-900/50">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My Skills</h2>
-                <div class="w-20 h-1 bg-purple-500 mx-auto mb-12"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gradient">My Skills</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto mb-12 rounded-full"></div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-xl font-bold mb-6">Technical Skills</h3>
+                    <div class="animate-in">
+                        <h3 class="text-xl font-bold mb-6 text-gradient">Technical Skills</h3>
                         
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
+                        <div class="skill-bar">
+                            <div class="skill-header">
                                 <span class="text-gray-300">HTML/CSS</span>
-                                <span class="text-purple-400">75%</span>
+                                <span class="text-purple-400 font-bold">75%</span>
                             </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 75%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
+                        <div class="skill-bar">
+                            <div class="skill-header">
                                 <span class="text-gray-300">JavaScript/TypeScript</span>
-                                <span class="text-purple-400">60%</span>
+                                <span class="text-purple-400 font-bold">60%</span>
                             </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 60%"></div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 60%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
+                        <div class="skill-bar">
+                            <div class="skill-header">
                                 <span class="text-gray-300">React/JSON</span>
-                                <span class="text-purple-400">40%</span>
+                                <span class="text-purple-400 font-bold">40%</span>
                             </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 40%"></div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 40%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
+                        <div class="skill-bar">
+                            <div class="skill-header">
                                 <span class="text-gray-300">Node.js/Angular</span>
-                                <span class="text-purple-400">30%</span>
+                                <span class="text-purple-400 font-bold">30%</span>
                             </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 30%"></div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 30%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
+                        <div class="skill-bar">
+                            <div class="skill-header">
                                 <span class="text-gray-300">PHP/MySQL</span>
-                                <span class="text-purple-400">50%</span>
+                                <span class="text-purple-400 font-bold">50%</span>
                             </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 50%"></div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 50%"></div>
                             </div>
                         </div>
                     </div>
                     
-                    <div>
-                        <h3 class="text-xl font-bold mb-6">Profissional Skills</h3>
+                    <div class="animate-in">
+                        <h3 class="text-xl font-bold mb-6 text-gradient">Professional Skills</h3>
                         
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
+                        <div class="skill-bar">
+                            <div class="skill-header">
                                 <span class="text-gray-300">UI/UX Design</span>
-                                <span class="text-purple-400">50%</span>
+                                <span class="text-purple-400 font-bold">50%</span>
                             </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 50%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300">Agile development</span>
-                                <span class="text-purple-400">60%</span>
-                            </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 60%"></div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 50%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300">Solving Problem</span>
-                                <span class="text-purple-400">70%</span>
+                        <div class="skill-bar">
+                            <div class="skill-header">
+                                <span class="text-gray-300">Agile Development</span>
+                                <span class="text-purple-400 font-bold">60%</span>
                             </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 70%"></div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 60%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
+                        <div class="skill-bar">
+                            <div class="skill-header">
+                                <span class="text-gray-300">Problem Solving</span>
+                                <span class="text-purple-400 font-bold">70%</span>
+                            </div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-header">
                                 <span class="text-gray-300">Teamwork</span>
-                                <span class="text-purple-400">88%</span>
+                                <span class="text-purple-400 font-bold">88%</span>
                             </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 88%"></div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 88%"></div>
                             </div>
                         </div>
                         
-                        <div class="mb-6">
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-300">Comunication</span>
-                                <span class="text-purple-400">87%</span>
+                        <div class="skill-bar">
+                            <div class="skill-header">
+                                <span class="text-gray-300">Communication</span>
+                                <span class="text-purple-400 font-bold">87%</span>
                             </div>
-                            <div class="w-full bg-gray-800 rounded-full h-2.5">
-                                <div class="bg-purple-600 h-2.5 rounded-full" style="width: 87%"></div>
+                            <div class="skill-track">
+                                <div class="skill-fill" style="width: 87%"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="mt-16">
-                    <h3 class="text-xl font-bold mb-6 text-center">Technologies I use</h3>
-                    
+                <div class="mt-16 animate-in">
+                    <h3 class="text-xl font-bold mb-6 text-center text-gradient">Technologies I Use</h3>
                     <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
-                        <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
                             <i class="fab fa-html5 text-4xl text-orange-500"></i>
                         </div>
-                        <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
                             <i class="fab fa-css3-alt text-4xl text-blue-500"></i>
                         </div>
-                        <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
                             <i class="fab fa-js-square text-4xl text-yellow-500"></i>
                         </div>
-                        
-                       
-                        <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
                             <i class="fab fa-php text-4xl text-purple-500"></i>
                         </div>
-                        <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
                             <i class="fab fa-python text-4xl text-blue-400"></i>
                         </div>
-                        <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
                             <i class="fab fa-git-alt text-4xl text-red-500"></i>
                         </div>
-                       
-                        <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
-                            <i class="fab fa-figma text-4xl text-purple-400"></i>
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
+                            <i class="fab fa-linux text-4xl text-pink-400"></i>
                         </div>
-
-                          <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
-                            <i class="fab fab fa-node-js text-4xl text-purple-400"></i>
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
+                            <i class="fab fa-node-js text-4xl text-green-500"></i>
                         </div>
-
-                          <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
-                            <i class="fab fab fa-react text-4xl text-purple-400"></i>
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
+                            <i class="fab fa-react text-4xl text-cyan-400"></i>
                         </div>
-
-                          <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
-                            <i class="fab fab fab fa-mongodb text-4xl text-purple-400"></i>
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
+                            <i class="fab fa-docker text-4xl text-green-400"></i>
                         </div>
-
-                        <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
-                            <i class="fab fab fab fa-bitcoin text-4xl text-purple-400"></i>
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
+                            <i class="fab fa-bitcoin text-4xl text-yellow-400"></i>
                         </div>
-
-                        <div class="glass rounded-lg p-4 flex items-center justify-center hover-float">
-                            <i class="fab fab fab fa-github text-4xl text-purple-400"></i>
+                        <div class="clay rounded-lg p-4 flex items-center justify-center hover-lift">
+                            <i class="fab fa-github text-4xl text-gray-300"></i>
                         </div>
-                       
                     </div>
                 </div>
             </div>
@@ -355,21 +345,21 @@
         <!-- Seção Projetos -->
         <section id="projects" class="py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">My Projects</h2>
-                <div class="w-20 h-1 bg-purple-500 mx-auto mb-12"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gradient">My Projects</h2>
+        
                 
-                <div class="flex justify-center mb-12">
-                    <div class="inline-flex rounded-md shadow-sm" role="group">
-                        <button type="button" class="px-5 py-2 text-sm font-medium rounded-l-lg glass text-purple-400">
+                <div class="flex justify-center mb-12 animate-in">
+                    <div class="inline-flex rounded-lg shadow-lg glass p-1" role="group">
+                        <button type="button" class="px-5 py-2 text-sm font-medium rounded-lg bg-purple-600 text-white transition-all">
                             All
                         </button>
-                        <button type="button" class="px-5 py-2 text-sm font-medium glass text-gray-300">
+                        <button type="button" class="px-5 py-2 text-sm font-medium rounded-lg text-gray-300 hover:bg-purple-600/30 transition-all">
                             Front-end
                         </button>
-                        <button type="button" class="px-5 py-2 text-sm font-medium glass text-gray-300">
+                        <button type="button" class="px-5 py-2 text-sm font-medium rounded-lg text-gray-300 hover:bg-purple-600/30 transition-all">
                             Back-end
                         </button>
-                        <button type="button" class="px-5 py-2 text-sm font-medium rounded-r-lg glass text-gray-300">
+                        <button type="button" class="px-5 py-2 text-sm font-medium rounded-lg text-gray-300 hover:bg-purple-600/30 transition-all">
                             Full-Stack
                         </button>
                     </div>
@@ -377,30 +367,31 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Projeto 1 -->
-                    <div class="glass rounded-xl overflow-hidden hover-float">
-                        <div class="h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-                                 alt="E-commerce Project" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="project-card clay led-glow animate-in">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=1170&q=80" alt="Monk Mode" class="w-full h-48 object-cover">
                         </div>
-                        <div class="p-6">
+                        <div class="content">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold">Monk Mode</h3>
-                                <span class="bg-purple-900 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded">Full-Stack</span>
+                                <h3 class="text-xl font-bold text-gradient">Monk Mode</h3>
+                                <span class="bg-purple-900/50 text-purple-200 text-xs font-medium px-3 py-1 rounded-full border border-purple-500/30">
+                                    Full-Stack
+                                </span>
                             </div>
-                            <p class="text-gray-400 mb-4">
-                            Monk Mode is a gamified productivity platform designed to help individuals and teams stay consistent, focused, and motivated. The app combines the power of habit tracking, focus timers, and community accountability with engaging game-like mechanics.
+                            <p class="text-gray-400 mb-4 text-sm">
+                                Monk Mode is a gamified productivity platform designed to help individuals and teams stay consistent, focused, and motivated.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">React</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Node.js</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">MongoDB</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Stripe</span>
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">Stripe</span>
                             </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center">
+                            <div class="flex justify-between mt-auto">
+                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
                                     <i class="fas fa-external-link-alt mr-2"></i> See
                                 </a>
-                                <a href="https://github.com/CAFE2l/Productivity-App" class="text-gray-400 hover:text-purple-300">
+                                <a href="https://github.com/CAFE2l/Productivity-App" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
                                 </a>
                             </div>
@@ -408,30 +399,31 @@
                     </div>
                     
                     <!-- Projeto 2 -->
-                    <div class="glass rounded-xl overflow-hidden hover-float">
-                        <div class="h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" 
-                                 alt="App Financeiro" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="project-card clay led-glow animate-in">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1074&q=80" alt="App Financeiro" class="w-full h-48 object-cover">
                         </div>
-                        <div class="p-6">
+                        <div class="content">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold">App de Gestão Financeira</h3>
-                                <span class="bg-blue-900 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded">Front-end</span>
+                                <h3 class="text-xl font-bold text-gradient">Gestão Financeira</h3>
+                                <span class="bg-blue-900/50 text-blue-200 text-xs font-medium px-3 py-1 rounded-full border border-blue-500/30">
+                                    Front-end
+                                </span>
                             </div>
-                            <p class="text-gray-400 mb-4">
+                            <p class="text-gray-400 mb-4 text-sm">
                                 Application for personal finance control with interactive graphs, expense categorization and reports.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">React Native</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">TypeScript</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Chart.js</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Firebase</span>
+                                <span class="tag">React Native</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">Chart.js</span>
+                                <span class="tag">Firebase</span>
                             </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center">
+                            <div class="flex justify-between mt-auto">
+                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
                                     <i class="fas fa-external-link-alt mr-2"></i> See
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-purple-300">
+                                <a href="#" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
                                 </a>
                             </div>
@@ -439,30 +431,31 @@
                     </div>
                     
                     <!-- Projeto 3 -->
-                    <div class="glass rounded-xl overflow-hidden hover-float">
-                        <div class="h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-                                 alt="Rede Social" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="project-card clay led-glow animate-in">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1170&q=80" alt="FishDex" class="w-full h-48 object-cover">
                         </div>
-                        <div class="p-6">
+                        <div class="content">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold">FishDex</h3>
-                                <span class="bg-green-900 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded">Full-Stack</span>
+                                <h3 class="text-xl font-bold text-gradient">FishDex</h3>
+                                <span class="bg-green-900/50 text-green-200 text-xs font-medium px-3 py-1 rounded-full border border-green-500/30">
+                                    Full-Stack
+                                </span>
                             </div>
-                            <p class="text-gray-400 mb-4">
-                                Your complete digital archive for fish history and ichthyology. Featuring detailed timelines, species evolution, historical records, and the cultural relationship between humans and marine life.
+                            <p class="text-gray-400 mb-4 text-sm">
+                                Your complete digital archive for fish history and ichthyology. Featuring detailed timelines and species evolution.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Next.js</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Node.js</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">MySQL</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Socket.io</span>
+                                <span class="tag">Next.js</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Socket.io</span>
                             </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center">
+                            <div class="flex justify-between mt-auto">
+                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
                                     <i class="fas fa-external-link-alt mr-2"></i> See
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-purple-300">
+                                <a href="#" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
                                 </a>
                             </div>
@@ -470,30 +463,31 @@
                     </div>
                     
                     <!-- Projeto 4 -->
-                    <div class="glass rounded-xl overflow-hidden hover-float">
-                        <div class="h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" 
-                                 alt="Dashboard Analytics" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="project-card clay led-glow animate-in">
+                        <div class="image-container">
+                            <img src="./IMG/linkwave.jpg" alt="LinkWave" class="w-full h-48 object-cover">
                         </div>
-                        <div class="p-6">
+                        <div class="content">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold">Os Chumbadas</h3>
-                                <span class="bg-yellow-900 text-yellow-200 text-xs font-medium px-2.5 py-0.5 rounded">Front-end</span>
+                                <h3 class="text-xl font-bold text-gradient">LinkWave</h3>
+                                <span class="bg-yellow-900/50 text-yellow-200 text-xs font-medium px-3 py-1 rounded-full border border-yellow-500/30">
+                                    Front-end
+                                </span>
                             </div>
-                            <p class="text-gray-400 mb-4">
-                                See profissional persons with diferrent skills working together
+                            <p class="text-gray-400 mb-4 text-sm">
+                                Links for creators, influencers and streamers. A simple and elegant way to share all your content in one place.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">React</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">D3.js</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Material UI</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">REST API</span>
+                                <span class="tag">PHP</span>
+                                <span class="tag">Tailwind</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Firebase</span>
                             </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center">
+                            <div class="flex justify-between mt-auto">
+                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
                                     <i class="fas fa-external-link-alt mr-2"></i> See
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-purple-300">
+                                <a href="#" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
                                 </a>
                             </div>
@@ -501,30 +495,31 @@
                     </div>
                     
                     <!-- Projeto 5 -->
-                    <div class="glass rounded-xl overflow-hidden hover-float">
-                        <div class="h-48 overflow-hidden">
-                            <img src="./IMG/wallpaper.png" 
-                                 alt="API REST" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="project-card clay led-glow animate-in">
+                        <div class="image-container">
+                            <img src="./IMG/samptech.jpg" alt="SampTech" class="w-full h-48 object-cover">
                         </div>
-                        <div class="p-6">
+                        <div class="content">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold">SampTech</h3>
-                                <span class="bg-red-900 text-red-200 text-xs font-medium px-2.5 py-0.5 rounded">Back-end</span>
+                                <h3 class="text-xl font-bold text-gradient">SampTech</h3>
+                                <span class="bg-red-900/50 text-red-200 text-xs font-medium px-3 py-1 rounded-full border border-red-500/30">
+                                    Back-end
+                                </span>
                             </div>
-                            <p class="text-gray-400 mb-4">
-                                SampTech.
+                            <p class="text-gray-400 mb-4 text-sm">
+                                Loja de Informática e Assistência Técnica para Computadores, Celulares e Consoles.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Firebase</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Javascript</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">mySQL</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">PHP</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">PHP</span>
                             </div>
-                            <div class="flex justify-between">
-                                <a href="https://samptech-production.up.railway.app/" class="text-purple-400 hover:text-purple-300 flex items-center" target="_blank">
+                            <div class="flex justify-between mt-auto">
+                                <a href="https://samptech-link-tree.vercel.app/" target="_blank" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
                                     <i class="fas fa-external-link-alt mr-2"></i> See
                                 </a>
-                                <a href="https://github.com/CAFE2l/SampTech" class="text-gray-400 hover:text-purple-300" target="_blank">
+                                <a href="https://github.com/CAFE2l/SampTech" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
                                 </a>
                             </div>
@@ -532,30 +527,31 @@
                     </div>
                     
                     <!-- Projeto 6 -->
-                    <div class="glass rounded-xl overflow-hidden hover-float">
-                        <div class="h-48 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-                                 alt="App de Tasks" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                    <div class="project-card clay led-glow animate-in">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=1170&q=80" alt="Tasks App" class="w-full h-48 object-cover">
                         </div>
-                        <div class="p-6">
+                        <div class="content">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold">App de Tarefas Colaborativas</h3>
-                                <span class="bg-indigo-900 text-indigo-200 text-xs font-medium px-2.5 py-0.5 rounded">Full-Stack</span>
+                                <h3 class="text-xl font-bold text-gradient">Tarefas Colaborativas</h3>
+                                <span class="bg-indigo-900/50 text-indigo-200 text-xs font-medium px-3 py-1 rounded-full border border-indigo-500/30">
+                                    Full-Stack
+                                </span>
                             </div>
-                            <p class="text-gray-400 mb-4">
+                            <p class="text-gray-400 mb-4 text-sm">
                                 Aplicativo de gerenciamento de tarefas com equipes, prazos, notificações e integração com calendário.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Vue.js</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">Laravel</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">MySQL</span>
-                                <span class="text-xs px-2 py-1 bg-gray-800 text-gray-300 rounded">WebSockets</span>
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">Laravel</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">WebSockets</span>
                             </div>
-                            <div class="flex justify-between">
-                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center">
-                                    <i class="fas fa-external-link-alt mr-2"></i> Visualizar
+                            <div class="flex justify-between mt-auto">
+                                <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
+                                    <i class="fas fa-external-link-alt mr-2"></i> See
                                 </a>
-                                <a href="#" class="text-gray-400 hover:text-purple-300">
+                                <a href="#" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
                                 </a>
                             </div>
@@ -563,217 +559,195 @@
                     </div>
                 </div>
                 
-                <div class="text-center mt-12">
-                    <a href="https://github.com/CAFE2l" target="_blank" class="px-6 py-3 glass hover:bg-purple-500 rounded-lg transition-colors inline-flex items-center">
+                <div class="text-center mt-12 animate-in">
+                    <a href="https://github.com/CAFE2l" target="_blank" class="btn btn-glass inline-flex items-center">
                         <i class="fab fa-github mr-2"></i> See more on GitHub
                     </a>
                 </div>
             </div>
         </section>
 
-<!-- Seção Experiência -->
-<section id="experience" class="py-20 bg-gray-900">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Experience </h2>
-        <div class="w-20 h-1 bg-purple-500 mx-auto mb-12"></div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-xl font-bold mb-6">UI/UX Design</h3>
+        <!-- Seção Experiência -->
+        <section id="experience" class="py-20 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gradient">Experience</h2>
+
                 
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h4 class="text-lg font-bold">UI/UX Designer</h4>
-                        <p class="text-purple-400 mb-2">Alura</p>
-                        <p class="text-gray-400 text-sm mb-2">march 2025 - Present</p>
-                        <p class="text-gray-300">
-                            Creating intuitive interfaces and exceptional user experiences for web and mobile applications. Implementation of design systems and interactive prototyping with Figma.
-                        </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="animate-in">
+                        <h3 class="text-xl font-bold mb-6 text-gradient">UI/UX Design</h3>
+                        <div class="timeline">
+                            <div class="timeline-item clay glass-hover">
+                                <span class="date">March 2025 - Present</span>
+                                <h4 class="text-lg font-bold text-gradient">UI/UX Designer</h4>
+                                <p class="text-purple-400 mb-2 font-medium">Alura</p>
+                                <p class="text-gray-300 text-sm">
+                                    Creating intuitive interfaces and exceptional user experiences for web and mobile applications. Implementation of design systems and interactive prototyping with Figma.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     
-                
-                </div>
-            </div>
-            
-            <div>
-                <h3 class="text-xl font-bold mb-6">Full-Stack Development</h3>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h4 class="text-lg font-bold">Full-Stack</h4>
-                        <p class="text-purple-400 mb-2">Alura - Curso em vídeo - Mimo - FreeCodeCamp</p>
-                        <p class="text-gray-400 text-sm mb-2">Jan 2025 - Present</p>
-                        <p class="text-gray-300">
-                            Web development using technologies such as HTML, CSS, JavaScript, PHP, and MySQL. Building responsive and dynamic applications with a focus on performance and user experience.
-                        </p>
+                    <div class="animate-in">
+                        <h3 class="text-xl font-bold mb-6 text-gradient">Full-Stack Development</h3>
+                        <div class="timeline">
+                            <div class="timeline-item clay glass-hover">
+                                <span class="date">Jan 2025 - Present</span>
+                                <h4 class="text-lg font-bold text-gradient">Full-Stack Developer</h4>
+                                <p class="text-purple-400 mb-2 font-medium">Alura - Curso em Vídeo - Mimo - FreeCodeCamp</p>
+                                <p class="text-gray-300 text-sm">
+                                    Web development using technologies such as HTML, CSS, JavaScript, PHP, and MySQL. Building responsive and dynamic applications with a focus on performance.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     
-                    
-                </div>
-            </div>
-            
-            <div class="md:col-span-2">
-                <h3 class="text-xl font-bold mb-6">Project Management </h3>
-                
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h4 class="text-lg font-bold">Project Management</h4>
-                        <p class="text-purple-400 mb-2">Alura</p>
-                        <p class="text-gray-400 text-sm mb-2">Jan 2025 - Present</p>
-                        <p class="text-gray-300">
-                            Managementing Projects using Agile methodologies (Scrum, Kanban). Coordination of teams, planning sprints, and ensuring timely delivery of high-quality software solutions.
-                        </p>
-                    </div>
-                       
-                    
-                    
+                    <div class="md:col-span-2 animate-in">
+                        <h3 class="text-xl font-bold mb-6 text-gradient">Project Management</h3>
+                        <div class="timeline">
+                            <div class="timeline-item clay glass-hover">
+                                <span class="date">Jan 2025 - Present</span>
+                                <h4 class="text-lg font-bold text-gradient">Project Management</h4>
+                                <p class="text-purple-400 mb-2 font-medium">Alura</p>
+                                <p class="text-gray-300 text-sm">
+                                    Managing projects using Agile methodologies (Scrum, Kanban). Coordination of teams, planning sprints, and ensuring timely delivery of high-quality software solutions.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+
         <!-- Seção Contato -->
-     
-            
-            <!-- Seção Contato -->
-            <section id="contact" class="py-20">
-                <div class="container mx-auto px-6">
-                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Contact Me</h2>
-                    <div class="w-20 h-1 bg-purple-500 mx-auto mb-12"></div>
-                    
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        <div>
-                            <h3 class="text-xl font-bold mb-6">Let's Stay Connect</h3>
-                            <p class="text-gray-300 mb-8">
-                                I am always open to discussing new projects, job opportunities or simply exchanging ideas about technology. Contact me and I will get back to you as soon as possible.
-                            </p>
-                            
-                            <div class="space-y-6">
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 rounded-full bg-purple-900 flex items-center justify-center mr-4">
-                                        <i class="fas fa-map-marker-alt text-purple-400"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Location</h4>
-                                        <p class="text-gray-400">Curitiba, PR - Brasil</p>
-                                    </div>
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gradient">Contact Me</h2>
+
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="animate-in">
+                        <h3 class="text-xl font-bold mb-6 text-gradient">Let's Stay Connected</h3>
+                        <p class="text-gray-300 mb-8 leading-relaxed">
+                            I am always open to discussing new projects, job opportunities or simply exchanging ideas about technology. Contact me and I will get back to you as soon as possible.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center glass rounded-lg p-4 hover-lift">
+                                <div class="w-12 h-12 rounded-full bg-purple-900/50 flex items-center justify-center mr-4 border border-purple-500/30">
+                                    <i class="fas fa-map-marker-alt text-purple-400"></i>
                                 </div>
-                                
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 rounded-full bg-purple-900 flex items-center justify-center mr-4">
-                                        <i class="fas fa-envelope text-purple-400"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Email</h4>
-                                        <p class="text-gray-400">gutiajs@gmail.com</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 rounded-full bg-purple-900 flex items-center justify-center mr-4">
-                                        <i class="fas fa-phone text-purple-400"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Phone</h4>
-                                        <p class="text-gray-400">+55 (41) 99671-3782</p>
-                                    </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Location</h4>
+                                    <p class="text-gray-400 text-sm">Curitiba, PR - Brasil</p>
                                 </div>
                             </div>
                             
-                            <div class="flex space-x-4 mt-8">
-                                
-                                </a>    
-                                <a href="https://www.youtube.com/@CAFE_ct/streams"  target="_blank class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-purple-400 hover:bg-purple-900 transition-colors">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="https://x.com/ct_cafe87877" target="_blank class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-purple-400 hover:bg-purple-900 transition-colors">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                               
+                            <div class="flex items-center glass rounded-lg p-4 hover-lift">
+                                <div class="w-12 h-12 rounded-full bg-purple-900/50 flex items-center justify-center mr-4 border border-purple-500/30">
+                                    <i class="fas fa-envelope text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Email</h4>
+                                    <p class="text-gray-400 text-sm">gutiajs@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center glass rounded-lg p-4 hover-lift">
+                                <div class="w-12 h-12 rounded-full bg-purple-900/50 flex items-center justify-center mr-4 border border-purple-500/30">
+                                    <i class="fas fa-phone text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Phone</h4>
+                                    <p class="text-gray-400 text-sm">+55 (41) 99671-3782</p>
+                                </div>
                             </div>
                         </div>
                         
-                        <!-- Containers de Contato -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- GitHub -->
-                            <a href="https://github.com/CAFE2l"   class="social-card glass rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-purple-900/20 transition-colors" target="_blank rel="noopener noreferrer">
-                                <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mb-4 text-2xl">
-                                    <i class="fab fa-github text-purple-400"></i>
-                                </div>
-                                <h3 class="font-bold text-lg mb-2">GitHub</h3>
-                                <p class="text-gray-400 text-sm">See my projects and repositories</p>
-                                <div class="mt-4 text-xs text-purple-400 font-medium">
-                                    CAFE2l
-                                </div>
+                        <div class="flex space-x-4 mt-8">
+                            <a href="https://www.youtube.com/@CAFE_ct/streams" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-gray-400 hover:text-purple-400 hover:bg-purple-900/30 transition-all hover:scale-110 border border-purple-500/30">
+                                <i class="fab fa-youtube text-xl"></i>
                             </a>
-                            
-                            <!-- LinkedIn -->
-                            <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/?originalSubdomain=br"  class="social-card glass rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-purple-900/20 transition-colors" target="_blank rel="noopener noreferrer">
-                                <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mb-4 text-2xl">
-                                    <i class="fab fa-linkedin-in text-purple-400"></i>
-                                </div>
-                                <h3 class="font-bold text-lg mb-2">LinkedIn</h3>
-                                <p class="text-gray-400 text-sm">Professional Connection</p>
-                                <div class="mt-4 text-xs text-purple-400 font-medium">
-                                    
-                                </div>
-                            </a>
-                            
-                            <!-- WhatsApp -->
-                            <a href="https://api.whatsapp.com/send/?phone=5541996713782&text&type=phone_number&app_absent=0"  class="social-card glass rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-purple-900/20 transition-colors  target="_blank rel="noopener noreferrer">
-                                <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mb-4 text-2xl">
-                                    <i class="fab fa-whatsapp text-purple-400"></i>
-                                </div>
-                                <h3 class="font-bold text-lg mb-2">WhatsApp</h3>
-                                <p class="text-gray-400 text-sm">Direct Message</p>
-                                <div class="mt-4 text-xs text-purple-400 font-medium">
-                                    +55 (41) 99671-3782
-                                </div>
-                            </a>
-                            
-                            <!-- Gmail -->
-                            <a href="mailto:gutiajs@gmail.com" class="social-card glass rounded-xl p-6 flex flex-col items-center justify-center text-center hover:bg-purple-900/20 transition-colors">
-                                <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mb-4 text-2xl">
-                                    <i class="fas fa-envelope text-purple-400"></i>
-                                </div>
-                                <h3 class="font-bold text-lg mb-2">Gmail</h3>
-                                <p class="text-gray-400 text-sm">Send me a direct email </p>
-                                <div class="mt-4 text-xs text-purple-400 font-medium">
-                                    gutiajs@gmail.com
-                                </div>
+                            <a href="https://x.com/ct_cafe87877" target="_blank" class="w-12 h-12 rounded-full glass flex items-center justify-center text-gray-400 hover:text-purple-400 hover:bg-purple-900/30 transition-all hover:scale-110 border border-purple-500/30">
+                                <i class="fab fa-twitter text-xl"></i>
                             </a>
                         </div>
                     </div>
+                    
+                    <!-- Social Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in">
+                        <a href="https://github.com/CAFE2l" class="social-card clay led-glow" target="_blank">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-github text-2xl text-purple-400"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">GitHub</h3>
+                            <p class="text-gray-400 text-sm text-center">See my projects and repositories</p>
+                            <div class="mt-4 text-xs text-purple-400 font-medium">
+                                CAFE2l
+                            </div>
+                        </a>
+                        
+                        <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/" class="social-card clay led-glow" target="_blank">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-linkedin-in text-2xl text-purple-400"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">LinkedIn</h3>
+                            <p class="text-gray-400 text-sm text-center">Professional Connection</p>
+                            <div class="mt-4 text-xs text-purple-400 font-medium">
+                                Connect with me
+                            </div>
+                        </a>
+                        
+                        <a href="https://api.whatsapp.com/send/?phone=5541996713782" class="social-card clay led-glow" target="_blank">
+                            <div class="icon-wrapper">
+                                <i class="fab fa-whatsapp text-2xl text-purple-400"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">WhatsApp</h3>
+                            <p class="text-gray-400 text-sm text-center">Direct Message</p>
+                            <div class="mt-4 text-xs text-purple-400 font-medium">
+                                +55 (41) 99671-3782
+                            </div>
+                        </a>
+                        
+                        <a href="mailto:gutiajs@gmail.com" class="social-card clay led-glow">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-envelope text-2xl text-purple-400"></i>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Gmail</h3>
+                            <p class="text-gray-400 text-sm text-center">Send me a direct email</p>
+                            <div class="mt-4 text-xs text-purple-400 font-medium">
+                                gutiajs@gmail.com
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </section>
-        
-    
+            </div>
+        </section>
 
         <!-- Footer -->
-        <footer class="py-12 bg-gray-900">
+
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <div class="mb-6 md:mb-0">
-                        <a href="#" class="text-2xl font-bold text-white">
+                        <a href="#" class="text-2xl font-bold text-white hover:scale-105 transition-transform">
                             <span class="text-purple-500">&lt;</span>CAFÉ<span class="text-purple-500">/&gt;</span>
                         </a>
                     </div>
                     
                     <div class="flex space-x-6 mb-6 md:mb-0">
-                        <a href="#home" class="text-gray-400 hover:text-purple-400 transition-colors">Home</a>
-                        <a href="#about" class="text-gray-400 hover:text-purple-400 transition-colors">About Me</a>
-                        <a href="#skills" class="text-gray-400 hover:text-purple-400 transition-colors">Skills</a>
-                        <a href="#projects" class="text-gray-400 hover:text-purple-400 transition-colors">Projects</a>
-                        <a href="#contact" class="text-gray-400 hover:text-purple-400 transition-colors">Contact</a>
-                        <a href="./HTML/certificados.html" class="text-gray-400 hover:text-purple-400 transition-colors">Certificates</a>
+                        <a href="#home" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Home</a>
+                        <a href="#about" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">About</a>
+                        <a href="#skills" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Skills</a>
+                        <a href="#projects" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Projects</a>
+                        <a href="#contact" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Contact</a>
                     </div>
-                    
-                    
                 </div>
                 
-                <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-sm">
-                    <p>&copy; 2025 Gabriel Felipe. All rights reserved.</p>
+                <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                    <p class="text-gray-500 text-sm">
+                        &copy; <span id="current-year">2026</span> Gabriel Felipe. All rights reserved.
+                    </p>
+               
                 </div>
             </div>
         </footer>
@@ -781,8 +755,6 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="/JAVASCRIPT/index.js">
-    
-    </script>
+    <script src="/JAVASCRIPT/index.js"></script>
 </body>
 </html>

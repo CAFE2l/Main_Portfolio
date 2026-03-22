@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 'Full-Stack Developer', 
                 'UI/UX Designer', 
                 'Web3 Enthusiast',
-                'Creative Coder'
+                'Digital Influencer'
             ],
             typeSpeed: 50,
             backSpeed: 30,

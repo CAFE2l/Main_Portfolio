@@ -210,9 +210,167 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // ===== VIDEO PAGE AUTO METADATA =====
+    const videoCards = document.querySelectorAll('[data-video-category]');
+
+    const getYouTubeVideoId = (url) => {
+        try {
+            const parsedUrl = new URL(url);
+            const host = parsedUrl.hostname.replace(/^www\./, '');
+
+            if (host === 'youtu.be') {
+                return parsedUrl.pathname.split('/').filter(Boolean)[0] || null;
+            }
+
+            if (!host.endsWith('youtube.com')) return null;
+
+            if (parsedUrl.pathname === '/watch') {
+                return parsedUrl.searchParams.get('v');
+            }
+
+            const pathParts = parsedUrl.pathname.split('/').filter(Boolean);
+            const videoPathTypes = ['embed', 'shorts', 'live'];
+
+            if (videoPathTypes.includes(pathParts[0])) {
+                return pathParts[1] || null;
+            }
+
+            return null;
+        } catch (error) {
+            return null;
+        }
+    };
+
+    const getYouTubeThumbnailUrl = (videoId, quality = 'maxresdefault') => (
+        `https://img.youtube.com/vi/${videoId}/${quality}.jpg`
+    );
+
+    const getYouTubeWatchUrl = (videoId) => (
+        `https://www.youtube.com/watch?v=${videoId}`
+    );
+
+    const removeTitleHashtags = (title) => (
+        title
+            .replace(/(^|\s)#[^\s#]+/g, ' ')
+            .replace(/\s{2,}/g, ' ')
+            .trim()
+    );
+
+    const addVideoThumbnailImage = (card, imageUrl, shouldReplace = false) => {
+        const thumb = card.querySelector('.video-thumb');
+        if (!thumb) return null;
+
+        const existingImage = thumb.querySelector('img');
+        if (existingImage) {
+            if (shouldReplace && imageUrl) {
+                existingImage.src = imageUrl;
+            }
+
+            return existingImage;
+        }
+
+        const image = document.createElement('img');
+        image.src = imageUrl;
+        image.alt = '';
+        image.loading = 'lazy';
+        image.referrerPolicy = 'no-referrer';
+        thumb.prepend(image);
+        card.classList.add('has-video-thumb');
+
+        return image;
+    };
+
+    const setVideoThumbnail = (card, videoId) => {
+        const image = addVideoThumbnailImage(card, getYouTubeThumbnailUrl(videoId));
+        if (!image) return;
+
+        const fallbackQualities = ['hqdefault', 'mqdefault', 'default'];
+        let fallbackIndex = 0;
+        const useNextFallback = () => {
+            if (fallbackIndex >= fallbackQualities.length) return;
+            image.src = getYouTubeThumbnailUrl(videoId, fallbackQualities[fallbackIndex]);
+            fallbackIndex += 1;
+        };
+
+        image.addEventListener('load', () => {
+            const looksLikeMissingMaxres = image.src.includes('maxresdefault') && image.naturalWidth <= 120;
+
+            if (looksLikeMissingMaxres) {
+                useNextFallback();
+            }
+        });
+
+        image.addEventListener('error', () => {
+            useNextFallback();
+        });
+    };
+
+    const loadVideoMetadata = (videoUrl) => new Promise((resolve, reject) => {
+        const callbackName = `handleVideoMetadata_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+        const script = document.createElement('script');
+        const cleanup = () => {
+            delete window[callbackName];
+            script.remove();
+        };
+        const timeoutId = window.setTimeout(() => {
+            cleanup();
+            reject(new Error('Video metadata timeout'));
+        }, 7000);
+
+        window[callbackName] = (videoData) => {
+            window.clearTimeout(timeoutId);
+            cleanup();
+            resolve(videoData);
+        };
+
+        script.src = `https://noembed.com/embed?callback=${callbackName}&url=${encodeURIComponent(videoUrl)}`;
+        script.async = true;
+        script.addEventListener('error', () => {
+            window.clearTimeout(timeoutId);
+            cleanup();
+            reject(new Error('Video metadata unavailable'));
+        });
+
+        document.head.appendChild(script);
+    });
+
+    const hydrateVideoMetadata = async (card, videoUrl) => {
+        const titleEl = card.querySelector('.video-meta strong');
+        if (!titleEl) return;
+
+        const fallbackTitle = titleEl.textContent.trim();
+
+        try {
+            const videoData = await loadVideoMetadata(videoUrl);
+            const title = removeTitleHashtags(videoData?.title?.trim() || '');
+
+            if (title) {
+                titleEl.textContent = title;
+                titleEl.title = title;
+            }
+
+            if (videoData?.thumbnail_url) {
+                addVideoThumbnailImage(card, videoData.thumbnail_url, true);
+            }
+        } catch (error) {
+            titleEl.textContent = fallbackTitle;
+        }
+    };
+
+    videoCards.forEach(card => {
+        const videoUrl = card.href;
+        const videoId = getYouTubeVideoId(videoUrl);
+        const metadataUrl = videoId ? getYouTubeWatchUrl(videoId) : videoUrl;
+
+        if (videoId) {
+            setVideoThumbnail(card, videoId);
+        }
+
+        hydrateVideoMetadata(card, metadataUrl);
+    });
+
     // ===== VIDEO PAGE FILTER =====
     const videoFilterBtns = document.querySelectorAll('[data-video-filter]');
-    const videoCards = document.querySelectorAll('[data-video-category]');
 
     videoFilterBtns.forEach(btn => {
         btn.addEventListener('click', function() {

@@ -538,6 +538,11 @@
             text-align: center;
         }
 
+        .footer-logo {
+            margin-bottom: 18px;
+            justify-content: center;
+        }
+
         .footer-text {
             color: #8888aa;
             font-size: 0.9rem;
@@ -804,6 +809,90 @@
                 transform: translateX(0);
             }
         }
+        /* Header compartilhado com glass/LED */
+        .nav-header {
+            background: rgba(15, 15, 30, 0.72);
+            backdrop-filter: blur(18px) saturate(135%);
+            -webkit-backdrop-filter: blur(18px) saturate(135%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            border-bottom-color: rgba(255, 255, 255, 0.14);
+            box-shadow: 0 8px 35px rgba(0, 0, 0, 0.22);
+        }
+
+        .logo {
+            text-shadow: 0 0 20px rgba(124, 77, 255, 0.25);
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), text-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .logo .logo-mark,
+        .logo .logo-slash {
+            color: #9d7dff;
+            text-shadow:
+                0 0 8px rgba(124, 77, 255, 0.95),
+                0 0 18px rgba(124, 77, 255, 0.55);
+            filter: drop-shadow(0 0 8px rgba(124, 77, 255, 0.72));
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .logo .logo-image {
+            display: block;
+            width: clamp(40px, 5vw, 60px);
+            height: auto;
+            object-fit: contain;
+            filter:
+                drop-shadow(0 0 8px rgba(124, 77, 255, 0.82))
+                drop-shadow(0 0 18px rgba(124, 77, 255, 0.38));
+            transition: filter 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .logo .logo-mark {
+            transform: translateY(-1px);
+        }
+
+        .logo .logo-slash {
+            display: inline-block;
+            margin: 0 -1px 0 2px;
+            font-size: 1.32em;
+            font-weight: 900;
+            line-height: 0.78;
+            transform: translateY(2px) skewX(-8deg);
+        }
+
+        .logo:hover {
+            transform: translateY(-1px) scale(1.04);
+            text-shadow: 0 0 26px rgba(124, 77, 255, 0.45);
+        }
+
+        .logo:hover .logo-image {
+            filter:
+                drop-shadow(0 0 10px rgba(124, 77, 255, 0.95))
+                drop-shadow(0 0 26px rgba(124, 77, 255, 0.52));
+        }
+
+        .nav-link {
+            transition: color 0.35s cubic-bezier(0.22, 1, 0.36, 1), text-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .nav-link:hover {
+            color: #9d7dff;
+            text-shadow: 0 0 18px rgba(124, 77, 255, 0.58);
+        }
+
+        .nav-link::after {
+            background: linear-gradient(90deg, #00e5ff, #7c4dff, #ff4081);
+            box-shadow: 0 0 18px rgba(124, 77, 255, 0.32);
+            transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
     </style>
 </head>
 <body>
@@ -811,7 +900,7 @@
     <nav class="nav-header">
         <div class="container">
             <div class="nav-content">
-                <a href="#" class="logo"><span><</span>CAFÉ<span>/></span></a>
+                <a href="#" class="logo"><img src="./IMG/favicon.jpg" alt="CAFÉ" class="logo-image"></a>
                 <div class="nav-links">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#certificates" class="nav-link">Certificates</a>
@@ -901,6 +990,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <a href="#" class="logo footer-logo"><span class="logo-mark">&lt;</span>CAFÉ<span class="logo-slash">/</span><span class="logo-mark">&gt;</span></a>
                 <div class="footer-text">
                     <p>© 2025 Professional Portfolio. All rights reserved.</p>
                 </div>

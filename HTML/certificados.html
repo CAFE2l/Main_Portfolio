@@ -14,7 +14,7 @@
     <nav class="nav-header">
         <div class="container">
             <div class="nav-content">
-                <a href="../index.html" class="logo"><span><</span>CAFÉ<span>/></span></a>
+                <a href="../index.html" class="logo"><img src="../IMG/favicon.jpg" alt="CAFÉ" class="logo-image"></a>
                 <div class="nav-links">
                     <a href="../index.html" class="nav-link">Home</a>
                     <a href="#certificates" class="nav-link">Certificates</a>
@@ -104,6 +104,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <a href="../index.html" class="logo footer-logo"><span class="logo-mark">&lt;</span>CAFÉ<span class="logo-slash">/</span><span class="logo-mark">&gt;</span></a>
                 <div class="footer-text">
                     <p>© 2026 Professional Portfolio. All rights reserved.</p>
                 </div>
@@ -1156,12 +1157,47 @@
             });
         }
 
+        // ====== EFEITOS FLUIDOS DOS CARDS ======
+        function setupFluidCardEffects() {
+            const grid = document.getElementById('certificates-container');
+            const canUseMotion = window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+                !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!grid || !canUseMotion) return;
+
+            grid.addEventListener('mousemove', (event) => {
+                const card = event.target.closest('.certificate-card');
+                if (!card) return;
+
+                const rect = card.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                const rotateY = ((x / rect.width) - 0.5) * 8;
+                const rotateX = (0.5 - (y / rect.height)) * 8;
+
+                card.style.setProperty('--tilt-x', `${rotateX.toFixed(2)}deg`);
+                card.style.setProperty('--tilt-y', `${rotateY.toFixed(2)}deg`);
+                card.style.setProperty('--spot-x', `${((x / rect.width) * 100).toFixed(1)}%`);
+                card.style.setProperty('--spot-y', `${((y / rect.height) * 100).toFixed(1)}%`);
+            });
+
+            grid.addEventListener('mouseleave', () => {
+                grid.querySelectorAll('.certificate-card').forEach((card) => {
+                    card.style.setProperty('--tilt-x', '0deg');
+                    card.style.setProperty('--tilt-y', '0deg');
+                    card.style.setProperty('--spot-x', '50%');
+                    card.style.setProperty('--spot-y', '0%');
+                });
+            });
+        }
+
         // ====== INICIALIZAÇÃO ======
         document.addEventListener('DOMContentLoaded', () => {
             FilterManager.applyFilters();
             FilterManager.renderFilters();
             CertificateRenderer.render();
             setupEventListeners();
+            setupFluidCardEffects();
         });
     </script>
 </body>

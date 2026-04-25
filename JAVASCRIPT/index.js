@@ -209,6 +209,31 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
+    // ===== VIDEO PAGE FILTER =====
+    const videoFilterBtns = document.querySelectorAll('[data-video-filter]');
+    const videoCards = document.querySelectorAll('[data-video-category]');
+
+    videoFilterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const filter = this.dataset.videoFilter;
+
+            videoFilterBtns.forEach(button => {
+                button.classList.toggle('active', button === this);
+            });
+
+            videoCards.forEach(card => {
+                const shouldShow = filter === 'all' || card.dataset.videoCategory === filter;
+                card.classList.toggle('is-hidden', !shouldShow);
+
+                if (shouldShow) {
+                    card.classList.remove('is-filtering');
+                    void card.offsetWidth;
+                    card.classList.add('is-filtering');
+                }
+            });
+        });
+    });
     
     // ===== CARD HOVER EFFECTS =====
     document.querySelectorAll('.clay, .glass-enhanced').forEach(card => {

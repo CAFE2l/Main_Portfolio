@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos | Gabriel Felipe</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon">
+</head>
+<body class="animated-bg page-videos">
+    <div id="particles-js"></div>
+    <div class="content-wrapper">
+        <header id="main-header" class="glass-dark fixed w-full z-50 transition-all duration-300">
+            <nav class="container mx-auto px-6 py-4">
+                <div class="flex justify-between items-center">
+                    <a href="../index.html#home" class="site-logo text-2xl font-bold text-white hover:scale-105 transition-transform">
+                        <img src="../IMG/favicon.jpg" alt="CAFÉ" class="logo-image">
+                    </a>
+
+                    <div class="hidden md:flex space-x-10">
+                        <a href="../index.html#home" class="nav-link text-gray-300">Home</a>
+                        <a href="../index.html#about" class="nav-link text-gray-300">About Me</a>
+                        <a href="../index.html#skills" class="nav-link text-gray-300">Skills</a>
+                        <a href="../index.html#projects" class="nav-link text-gray-300">Projects</a>
+                        <a href="../index.html#experience" class="nav-link text-gray-300">Experience</a>
+                        <a href="./videos.html" class="nav-link text-gray-300 active">Videos</a>
+                        <a href="../index.html#contact" class="nav-link text-gray-300">Contact</a>
+                        <a href="./certificados.html" class="nav-link text-gray-300">Certificates</a>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+                        <button class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                        <a href="https://www.youtube.com/@CAFE_ct/streams" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-youtube"></i>Channel
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:hidden mt-4 hidden glass rounded-lg p-4">
+                    <div class="flex flex-col space-y-3">
+                        <a href="../index.html#home" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Home</a>
+                        <a href="../index.html#about" class="text-gray-300 hover:text-purple-400 transition-colors py-2">About Me</a>
+                        <a href="../index.html#skills" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Skills</a>
+                        <a href="../index.html#projects" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Projects</a>
+                        <a href="../index.html#experience" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Experience</a>
+                        <a href="./videos.html" class="text-purple-300 transition-colors py-2">Videos</a>
+                        <a href="../index.html#contact" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Contact</a>
+                        <a href="./certificados.html" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Certificates</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="video-work-page">
+            <section class="video-work-hero">
+                <div class="container mx-auto px-6">
+                    <div class="video-work-heading">
+                        <div>
+                            <p class="eyebrow">Youtube gallery</p>
+                            <h1>TRABALHOS</h1>
+                            <p class="video-work-subtitle">Escolha uma categoria e abra os videos direto no YouTube.</p>
+                        </div>
+
+                        <div class="video-filter-bar" aria-label="Filtro de videos">
+                            <button type="button" class="video-filter-btn active" data-video-filter="all">Todos</button>
+                            <button type="button" class="video-filter-btn" data-video-filter="long">Video longo</button>
+                            <button type="button" class="video-filter-btn" data-video-filter="shorts">Shorts</button>
+                            <button type="button" class="video-filter-btn" data-video-filter="live">Lives</button>
+                        </div>
+                    </div>
+
+                    <div class="video-gallery" aria-live="polite">
+                        <a class="video-gallery-card" data-video-category="long" href="https://www.youtube.com/@CAFE_ct/videos" target="_blank" rel="noopener">
+                            <span class="video-thumb">
+                                <span class="video-play"><i class="fas fa-play"></i></span>
+                            </span>
+                            <span class="video-meta">
+                                <strong>Conteudos completos</strong>
+                                <span>Video longo - projetos e estudos</span>
+                            </span>
+                        </a>
+
+                        <a class="video-gallery-card" data-video-category="long" href="https://www.youtube.com/@CAFE_ct/search?query=projeto" target="_blank" rel="noopener">
+                            <span class="video-thumb">
+                                <span class="video-play"><i class="fas fa-play"></i></span>
+                            </span>
+                            <span class="video-meta">
+                                <strong>Projetos na pratica</strong>
+                                <span>Video longo - desenvolvimento</span>
+                            </span>
+                        </a>
+
+                        <a class="video-gallery-card" data-video-category="long" href="https://www.youtube.com/@CAFE_ct/search?query=tecnologia" target="_blank" rel="noopener">
+                            <span class="video-thumb">
+                                <span class="video-play"><i class="fas fa-play"></i></span>
+                            </span>
+                            <span class="video-meta">
+                                <strong>Tech e rotina dev</strong>
+                                <span>Video longo - aprendizado</span>
+                            </span>
+                        </a>
+
+                        <a class="video-gallery-card" data-video-category="shorts" href="https://www.youtube.com/@CAFE_ct/shorts" target="_blank" rel="noopener">
+                            <span class="video-thumb">
+                                <span class="video-play"><i class="fas fa-play"></i></span>
+                            </span>
+                            <span class="video-meta">
+                                <strong>Cortes rapidos</strong>
+                                <span>Shorts - edicoes de alto alcance</span>
+                            </span>
+                        </a>
+
+                        <a class="video-gallery-card" data-video-category="shorts" href="https://www.youtube.com/@CAFE_ct/search?query=shorts%20dev" target="_blank" rel="noopener">
+                            <span class="video-thumb">
+                                <span class="video-play"><i class="fas fa-play"></i></span>
+                            </span>
+                            <span class="video-meta">
+                                <strong>Dev em cortes</strong>
+                                <span>Shorts - dicas rapidas</span>
+                            </span>
+                        </a>
+
+                        <a class="video-gallery-card" data-video-category="shorts" href="https://www.youtube.com/@CAFE_ct/search?query=shorts%20tecnologia" target="_blank" rel="noopener">
+                            <span class="video-thumb">
+                                <span class="video-play"><i class="fas fa-play"></i></span>
+                            </span>
+                            <span class="video-meta">
+                                <strong>Momentos tech</strong>
+                                <span>Shorts - ideias e bastidores</span>
+                            </span>
+                        </a>
+
+                        <a class="video-gallery-card" data-video-category="live" href="https://www.youtube.com/@CAFE_ct/streams" target="_blank" rel="noopener">
+                            <span class="video-thumb">
+                                <span class="video-play"><i class="fas fa-play"></i></span>
+                            </span>
+                            <span class="video-meta">
+                                <strong>Lives de estudo</strong>
+                                <span>Ao vivo - comunidade e foco</span>
+                            </span>
+                        </a>
+
+                        <a class="video-gallery-card" data-video-category="live" href="https://www.youtube.com/@CAFE_ct/search?query=live%20programacao" target="_blank" rel="noopener">
+                            <span class="video-thumb">
+                                <span class="video-play"><i class="fas fa-play"></i></span>
+                            </span>
+                            <span class="video-meta">
+                                <strong>Programando ao vivo</strong>
+                                <span>Live - codigo e projetos</span>
+                            </span>
+                        </a>
+
+                        <a class="video-gallery-card" data-video-category="live" href="https://www.youtube.com/@CAFE_ct/search?query=live%20estudo" target="_blank" rel="noopener">
+                            <span class="video-thumb">
+                                <span class="video-play"><i class="fas fa-play"></i></span>
+                            </span>
+                            <span class="video-meta">
+                                <strong>Sessao de foco</strong>
+                                <span>Live - estudo com comunidade</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="video-ticker" aria-hidden="true">
+                        <div class="video-ticker-track">
+                            <span>Criar</span><span>Publicar</span><span>Editar</span><span>Gravar</span><span>Criar</span><span>Publicar</span><span>Editar</span><span>Gravar</span>
+                            <span>Criar</span><span>Publicar</span><span>Editar</span><span>Gravar</span><span>Criar</span><span>Publicar</span><span>Editar</span><span>Gravar</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="py-10 border-t border-purple-500/20">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+                <a href="../index.html#home" class="site-logo text-2xl font-bold text-white">
+                    <span class="logo-mark">&lt;</span>CAFÉ<span class="logo-slash">/</span><span class="logo-mark">&gt;</span>
+                </a>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="../index.html#projects" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Projects</a>
+                    <a href="./videos.html" class="text-purple-300 transition-colors text-sm">Videos</a>
+                    <a href="../index.html#contact" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Contact</a>
+                    <a href="./certificados.html" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Certificates</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../JAVASCRIPT/index.js"></script>
+</body>
+</html>

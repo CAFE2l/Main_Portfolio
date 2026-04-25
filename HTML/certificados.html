@@ -4,25 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificates Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/certificados.css">
     <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon">    
 </head>
 <body>
-    <!-- Navigation Header -->
-    <nav class="nav-header">
-        <div class="container">
-            <div class="nav-content">
-                <a href="../index.html" class="logo"><img src="../IMG/favicon.jpg" alt="CAFÉ" class="logo-image"></a>
-                <div class="nav-links">
-                    <a href="../index.html" class="nav-link">Home</a>
-                    <a href="#certificates" class="nav-link">Certificates</a>
-                    <a href="#contact" class="nav-link">Contact</a>
+    <header id="main-header" class="glass-dark fixed w-full z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="../index.html#home" class="site-logo text-2xl font-bold text-white hover:scale-105 transition-transform">
+                    <img src="../IMG/favicon.jpg" alt="CAFÉ" class="logo-image">
+                </a>
+
+                <div class="hidden md:flex space-x-10">
+                    <a href="../index.html#home" class="nav-link text-gray-300">Home</a>
+                    <a href="../index.html#about" class="nav-link text-gray-300">About Me</a>
+                    <a href="../index.html#skills" class="nav-link text-gray-300">Skills</a>
+                    <a href="../index.html#projects" class="nav-link text-gray-300">Projects</a>
+                    <a href="../index.html#experience" class="nav-link text-gray-300">Experience</a>
+                    <a href="./videos.html" class="nav-link text-gray-300">Videos</a>
+                    <a href="../index.html#contact" class="nav-link text-gray-300">Contact</a>
+                    <a href="./certificados.html" class="nav-link text-gray-300 active">Certificates</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+             
                 </div>
             </div>
-        </div>
-    </nav>
+
+            <div class="md:hidden mt-4 hidden glass rounded-lg p-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="../index.html#home" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Home</a>
+                    <a href="../index.html#about" class="text-gray-300 hover:text-purple-400 transition-colors py-2">About Me</a>
+                    <a href="../index.html#skills" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Skills</a>
+                    <a href="../index.html#projects" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Projects</a>
+                    <a href="../index.html#experience" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Experience</a>
+                    <a href="./videos.html" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Videos</a>
+                    <a href="../index.html#contact" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Contact</a>
+                    <a href="./certificados.html" class="text-purple-300 transition-colors py-2">Certificates</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
@@ -1096,6 +1124,24 @@
 
         // ====== EVENT LISTENERS ======
         function setupEventListeners() {
+            const menuBtn = document.querySelector('#main-header button[class*="md:hidden"]');
+            const mobileMenu = document.querySelector('#main-header .md\\:hidden.mt-4');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    const icon = menuBtn.querySelector('i');
+
+                    if (mobileMenu.classList.contains('hidden')) {
+                        icon?.classList.remove('fa-times');
+                        icon?.classList.add('fa-bars');
+                    } else {
+                        icon?.classList.remove('fa-bars');
+                        icon?.classList.add('fa-times');
+                    }
+                });
+            }
+
             // Busca
             const searchInput = document.getElementById('search-input');
             searchInput.addEventListener('input', Utils.debounce((e) => {

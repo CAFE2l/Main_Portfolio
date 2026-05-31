@@ -55,140 +55,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // ===== TYPED.JS =====
-    if (typeof Typed !== 'undefined') {
-        new Typed('#typed', {
-            strings: [
-                'Full-Stack Developer', 
-                'UI/UX Designer', 
-                'Web3 Enthusiast',
-                'Digital Influencer'
-            ],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 2500,
-            loop: true,
-            cursorChar: '|',
-            showCursor: true
-        });
-    }
-    
-    // ===== LANGUAGE SELECTOR (i18n) =====
-    const translations = {
-        pt: {
-            nav_home: 'Home', nav_about: 'Sobre Mim', nav_skills: 'Habilidades',
-            nav_projects: 'Projetos', nav_experience: 'Experiência', nav_videos: 'Vídeos',
-            nav_contact: 'Contato', nav_certificates: 'Certificados',
-            cv: 'Currículo',
-            hero_greeting: 'Olá a todos👋, sou',
-            hero_role: 'Desenvolvedor Full-Stack Júnior',
-            hero_see_projects: 'Ver Projetos', hero_contact: 'Fale Comigo',
-            badge_experience: 'De Experiência', badge_made: 'Feitos',
-            about_title: 'Desenvolvedor Full-Stack & Influenciador Digital',
-            about_p1: 'Sou um desenvolvedor full-stack com mais de 1 ano de experiência criando soluções web inovadoras. Minha paixão é transformar ideias complexas em interfaces intuitivas e funcionais que proporcionam excelentes experiências ao usuário.',
-            about_p2: 'Minha jornada na programação começou aos 15 anos, e desde então me dedico a aprender novas tecnologias e metodologias. Acredito que a tecnologia deve ser acessível e útil a todos, e isso me motiva a criar aplicações que fazem a diferença.',
-            stat_projects: 'Projetos', stat_clients: 'Clientes', stat_years: 'Anos de Exp', stat_tech: 'Tecnologias',
-            section_skills: 'Minhas Habilidades', skills_technical: 'Habilidades Técnicas', skills_professional: 'Habilidades Profissionais',
-            section_projects: 'Meus Projetos', section_experience: 'Experiência',
-            section_contact: 'Fale Comigo', contact_title: 'Vamos nos Conectar',
-            contact_desc: 'Estou sempre aberto a discutir novos projetos, oportunidades de trabalho ou simplesmente trocar ideias sobre tecnologia. Entre em contato e responderei o mais rápido possível.',
-            contact_location: 'Localização', contact_email: 'E-mail', contact_phone: 'Telefone',
-            social_github: 'Veja meus projetos e repositórios',
-            social_linkedin: 'Conexão Profissional',
-            social_whatsapp: 'Mensagem Direta',
-            social_email: 'Me envie um e-mail direto',
-            footer_rights: 'Todos os direitos reservados.'
-        },
-        en: {
-            nav_home: 'Home', nav_about: 'About Me', nav_skills: 'Skills',
-            nav_projects: 'Projects', nav_experience: 'Experience', nav_videos: 'Videos',
-            nav_contact: 'Contact', nav_certificates: 'Certificates',
-            cv: 'Resume',
-            hero_greeting: 'Hi all👋, I\'m',
-            hero_role: 'Junior Full-Stack Developer',
-            hero_see_projects: 'See Projects', hero_contact: 'Contact Me',
-            badge_experience: 'Of Experience', badge_made: 'Made',
-            about_title: 'Full-Stack Developer & Digital Influencer',
-            about_p1: 'I am a full-stack developer with over 1 year of experience creating innovative web solutions. My passion is transforming complex ideas into intuitive and functional interfaces that provide excellent user experiences.',
-            about_p2: 'My programming journey began in my 15 years of age, and since then I have been dedicated to learning new technologies and methodologies. I believe technology should be accessible and useful to everyone, and that\'s what motivates me to create applications that make a difference.',
-            stat_projects: 'Projects', stat_clients: 'Clients', stat_years: 'Years Of Exp', stat_tech: 'Technologies',
-            section_skills: 'My Skills', skills_technical: 'Technical Skills', skills_professional: 'Professional Skills',
-            section_projects: 'My Projects', section_experience: 'Experience',
-            section_contact: 'Contact Me', contact_title: "Let's Stay Connected",
-            contact_desc: 'I am always open to discussing new projects, job opportunities or simply exchanging ideas about technology. Contact me and I will get back to you as soon as possible.',
-            contact_location: 'Location', contact_email: 'Email', contact_phone: 'Phone',
-            social_github: 'See my projects and repositories',
-            social_linkedin: 'Professional Connection',
-            social_whatsapp: 'Direct Message',
-            social_email: 'Send me a direct email',
-            footer_rights: 'All rights reserved.'
-        },
-        es: {
-            nav_home: 'Inicio', nav_about: 'Sobre Mí', nav_skills: 'Habilidades',
-            nav_projects: 'Proyectos', nav_experience: 'Experiencia', nav_videos: 'Videos',
-            nav_contact: 'Contacto', nav_certificates: 'Certificados',
-            cv: 'Currículum',
-            hero_greeting: 'Hola a todos👋, soy',
-            hero_role: 'Desarrollador Full-Stack Junior',
-            hero_see_projects: 'Ver Proyectos', hero_contact: 'Contáctame',
-            badge_experience: 'De Experiencia', badge_made: 'Realizados',
-            about_title: 'Desarrollador Full-Stack & Influencer Digital',
-            about_p1: 'Soy un desarrollador full-stack con más de 1 año de experiencia creando soluciones web innovadoras. Mi pasión es transformar ideas complejas en interfaces intuitivas y funcionales que brinden excelentes experiencias de usuario.',
-            about_p2: 'Mi camino en la programación comenzó a los 15 años, y desde entonces me he dedicado a aprender nuevas tecnologías y metodologías. Creo que la tecnología debe ser accesible y útil para todos, y eso me motiva a crear aplicaciones que marquen la diferencia.',
-            stat_projects: 'Proyectos', stat_clients: 'Clientes', stat_years: 'Años de Exp', stat_tech: 'Tecnologías',
-            section_skills: 'Mis Habilidades', skills_technical: 'Habilidades Técnicas', skills_professional: 'Habilidades Profesionales',
-            section_projects: 'Mis Proyectos', section_experience: 'Experiencia',
-            section_contact: 'Contáctame', contact_title: 'Mantengámonos Conectados',
-            contact_desc: 'Siempre estoy abierto a discutir nuevos proyectos, oportunidades laborales o simplemente intercambiar ideas sobre tecnología. Contáctame y te responderé lo antes posible.',
-            contact_location: 'Ubicación', contact_email: 'Correo', contact_phone: 'Teléfono',
-            social_github: 'Ver mis proyectos y repositorios',
-            social_linkedin: 'Conexión Profesional',
-            social_whatsapp: 'Mensaje Directo',
-            social_email: 'Envíame un correo directo',
-            footer_rights: 'Todos los derechos reservados.'
+    let typedInstance = null;
+    window.initTyped = (strings) => {
+        if (typedInstance) { typedInstance.destroy(); }
+        const el = document.getElementById('typed');
+        if (el) el.textContent = '';
+        if (typeof Typed !== 'undefined') {
+            typedInstance = new Typed('#typed', {
+                strings,
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 2500,
+                loop: true,
+                cursorChar: '|',
+                showCursor: true
+            });
         }
     };
-
-    const langFlags = { pt: '🇧🇷', en: '🇺🇸', es: '🇪🇸' };
-    const langCodes = { pt: 'PT', en: 'EN', es: 'ES' };
-
-    const applyLanguage = (lang) => {
-        const t = translations[lang];
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.dataset.i18n;
-            if (t[key]) el.textContent = t[key];
-        });
-        document.getElementById('lang-flag').textContent = langFlags[lang];
-        document.getElementById('lang-code').textContent = langCodes[lang];
-        document.querySelectorAll('.lang-option').forEach(opt => {
-            opt.classList.toggle('active', opt.dataset.lang === lang);
-        });
-        localStorage.setItem('portfolio-lang', lang);
-    };
-
-    const langSelector = document.getElementById('lang-selector');
-    const langBtn = document.getElementById('lang-btn');
-    const langDropdown = document.getElementById('lang-dropdown');
-
-    langBtn?.addEventListener('click', (e) => {
-        e.stopPropagation();
-        langSelector.classList.toggle('open');
-    });
-
-    document.querySelectorAll('.lang-option').forEach(opt => {
-        opt.addEventListener('click', () => {
-            applyLanguage(opt.dataset.lang);
-            langSelector.classList.remove('open');
-        });
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!langSelector?.contains(e.target)) {
-            langSelector?.classList.remove('open');
-        }
-    });
-
-    // Apply saved or default language
-    applyLanguage(localStorage.getItem('portfolio-lang') || 'pt');
 
     // ===== HEADER SCROLL EFFECT =====
     const header = document.getElementById('main-header');
@@ -269,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Fechar menu mobile se aberto
                 const mobileMenu = document.querySelector('.md\\:hidden.mt-4');
                 mobileMenu?.classList.add('hidden');
+                document.querySelector('button[class*="md:hidden"]')?.setAttribute('aria-expanded', 'false');
             }
         });
     });
@@ -280,6 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
             const icon = menuBtn.querySelector('i');
             if (mobileMenu.classList.contains('hidden')) {
                 icon?.classList.remove('fa-times');
@@ -290,6 +175,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // ===== CURRICULUM MODAL =====
+    const cvBtn = document.getElementById('cv-btn');
+    const cvModal = document.getElementById('cv-modal');
+    const cvModalClose = document.getElementById('cv-modal-close');
+
+    const setCvModalOpen = (shouldOpen) => {
+        if (!cvModal) return;
+
+        cvModal.classList.toggle('is-open', shouldOpen);
+        cvModal.setAttribute('aria-hidden', String(!shouldOpen));
+        document.body.classList.toggle('cv-modal-open', shouldOpen);
+
+        if (shouldOpen) {
+            cvModalClose?.focus();
+        } else {
+            cvBtn?.focus();
+        }
+    };
+
+    cvBtn?.addEventListener('click', () => setCvModalOpen(true));
+    cvModalClose?.addEventListener('click', () => setCvModalOpen(false));
+    cvModal?.addEventListener('click', (event) => {
+        if (event.target === cvModal) setCvModalOpen(false);
+    });
     
     // ===== PROJECT FILTER =====
     const filterBtns = document.querySelectorAll('.inline-flex button');
@@ -465,6 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (title) {
                 titleEl.textContent = title;
                 titleEl.title = title;
+                titleEl.removeAttribute('data-i18n');
             }
 
             if (videoData?.thumbnail_url) {
@@ -655,6 +566,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ===== KEYBOARD NAVIGATION =====
     document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && cvModal?.classList.contains('is-open')) {
+            setCvModalOpen(false);
+            return;
+        }
+
         // Atalhos para navegação
         if (e.ctrlKey || e.metaKey) {
             switch(e.key.toLowerCase()) {

@@ -1,0 +1,79 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 4173 >>
+stream
+BT 0.41 0.25 0.78 rg /F2 25 Tf 42 790 Td (Gabriel Felipe) Tj ET
+BT 0.31 0.30 0.40 rg /F2 12 Tf 42 766 Td (Desenvolvedor Full-Stack Junior | Designer UI/UX) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9 Tf 42 748 Td (Curitiba, PR - Brasil | gutiajs@gmail.com | +55 \(41\) 99671-3782) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9 Tf 42 734 Td (github.com/CAFE2l | LinkedIn: Gabriel Felipe) Tj ET
+BT 0.41 0.25 0.78 rg /F2 12 Tf 42 710 Td (RESUMO PROFISSIONAL) Tj ET
+0.87 0.85 0.94 RG 1 w 42 704 m 553 704 l S
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 42 686 Td (Desenvolvedor Full-Stack Junior com experiencia na criacao de solucoes web responsivas,) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 42 672 Td (interfaces intuitivas e aplicacoes dinamicas. Atua com HTML, CSS, JavaScript, PHP, MySQL,) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 42 658 Td (Firebase, JSON, Node.js e Docker, com atencao a usabilidade e experiencia do usuario.) Tj ET
+BT 0.41 0.25 0.78 rg /F2 12 Tf 42 635 Td (COMPETENCIAS) Tj ET
+0.87 0.85 0.94 RG 1 w 42 629 m 553 629 l S
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 42 611 Td (HTML5 | CSS3 | JavaScript | TypeScript | PHP | MySQL | Firebase | JSON) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 42 597 Td (Node.js | Docker | UI/UX Design | Git | Design Responsivo) Tj ET
+BT 0.41 0.25 0.78 rg /F2 12 Tf 42 574 Td (EXPERIENCIA E ATUACAO) Tj ET
+0.87 0.85 0.94 RG 1 w 42 568 m 553 568 l S
+BT 0.10 0.09 0.16 rg /F2 10 Tf 42 550 Td (Desenvolvimento Full-Stack | Jan 2025 - Presente) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 536 Td (Desenvolvimento de aplicacoes web responsivas e dinamicas com HTML, CSS, JavaScript,) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 522 Td (PHP e MySQL. Projetos proprios com foco em performance e experiencia do usuario.) Tj ET
+BT 0.10 0.09 0.16 rg /F2 10 Tf 42 504 Td (UI/UX Design | Mar 2025 - Presente) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 490 Td (Criacao de interfaces intuitivas para aplicacoes web e mobile, prototipagem interativa) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 476 Td (e estudo de design systems com foco em clareza e usabilidade.) Tj ET
+BT 0.10 0.09 0.16 rg /F2 10 Tf 42 458 Td (Producao de Conteudo Digital | Mar 2025 - Presente) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 444 Td (Producao de videos, transmissoes ao vivo e conteudo sobre tecnologia, desenvolvimento) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 430 Td (e rotina de estudos para plataformas digitais.) Tj ET
+BT 0.41 0.25 0.78 rg /F2 12 Tf 42 403 Td (PROJETOS EM DESTAQUE) Tj ET
+0.87 0.85 0.94 RG 1 w 42 397 m 553 397 l S
+BT 0.10 0.09 0.16 rg /F2 10 Tf 42 379 Td (Cafe Store) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 365 Td (Solucao para identidade digital, aplicacoes web, sites e landing pages para negocios.) Tj ET
+BT 0.10 0.09 0.16 rg /F2 10 Tf 42 347 Td (Study Overlay) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 333 Td (Overlays de produtividade em tempo real para criadores que utilizam OBS.) Tj ET
+BT 0.10 0.09 0.16 rg /F2 10 Tf 42 315 Td (LinkWave) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 301 Td (Pagina de links para criadores, influenciadores e streamers compartilharem conteudo.) Tj ET
+BT 0.10 0.09 0.16 rg /F2 10 Tf 42 283 Td (StreamPix) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 269 Td (Plataforma de alertas de doacoes via Pix para transmissoes ao vivo.) Tj ET
+BT 0.10 0.09 0.16 rg /F2 10 Tf 42 251 Td (Samptech) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 237 Td (Loja de informatica e assistencia tecnica para computadores, celulares e consoles.) Tj ET
+BT 0.10 0.09 0.16 rg /F2 10 Tf 42 219 Td (WaveOS) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 52 205 Td (Projeto de sistema operacional executado no navegador.) Tj ET
+BT 0.41 0.25 0.78 rg /F2 12 Tf 42 178 Td (FORMACAO COMPLEMENTAR) Tj ET
+0.87 0.85 0.94 RG 1 w 42 172 m 553 172 l S
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 42 154 Td (Cursos e certificados em desenvolvimento web, JavaScript, PHP, Python, HTML, CSS, bancos de) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 42 140 Td (dados, React Native, UX, Scrum, Linux e fundamentos de programacao.) Tj ET
+BT 0.10 0.09 0.16 rg /F1 9.5 Tf 42 126 Td (Plataformas: Alura, Curso em Video, Mimo, Sololearn e LinkedIn Learning.) Tj ET
+BT 0.38 0.38 0.48 rg /F1 8 Tf 42 28 Td (Gabriel Felipe | Curriculo profissional) Tj ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000185 00000 n 
+0000000260 00000 n 
+0000000396 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4621
+%%EOF

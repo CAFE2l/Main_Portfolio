@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Felipe | Full-Stack Developer</title>
+    <title data-i18n="home_page_title">Gabriel Felipe | Full-Stack Developer</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -38,7 +38,7 @@
                     <div class="flex items-center space-x-4">
                         <!-- Language Selector -->
                         <div class="lang-selector" id="lang-selector">
-                            <button class="lang-btn" id="lang-btn" aria-label="Select language">
+                            <button class="lang-btn" id="lang-btn" aria-label="Selecionar idioma" data-i18n-aria-label="select_language">
                                 <span id="lang-flag">🇧🇷</span>
                                 <span id="lang-code">PT</span>
                                 <i class="fas fa-chevron-down lang-arrow"></i>
@@ -58,10 +58,10 @@
                                 </button>
                             </div>
                         </div>
-                        <button class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu">
+                        <button class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu" aria-expanded="false" data-i18n-aria-label="open_menu">
                             <i class="fas fa-bars text-xl"></i>
                         </button>
-                        <button class="btn btn-primary" id="cv-btn">
+                        <button class="btn btn-primary" id="cv-btn" aria-label="Abrir currículo" data-i18n-aria-label="cv_open">
                             <i class="fas fa-download mr-2"></i><span data-i18n="cv">Currículo</span>
                         </button>
                     </div>
@@ -218,7 +218,7 @@
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">HTML/CSS</span>
+                                <span class="text-gray-300" data-i18n="skill_htmlcss">HTML/CSS</span>
                                 <span class="text-purple-400 font-bold">75%</span>
                             </div>
                             <div class="skill-track">
@@ -228,7 +228,7 @@
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">JavaScript/TypeScript</span>
+                                <span class="text-gray-300" data-i18n="skill_js">JavaScript/TypeScript</span>
                                 <span class="text-purple-400 font-bold">70%</span>
                             </div>
                             <div class="skill-track">
@@ -238,27 +238,27 @@
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">Firebase/JSON</span>
-                                <span class="text-purple-400 font-bold">45%</span>
+                                <span class="text-gray-300" data-i18n="skill_firebase">Firebase/JSON</span>
+                                <span class="text-purple-400 font-bold">75%</span>
                             </div>
                             <div class="skill-track">
-                                <div class="skill-fill" style="width: 45%"></div>
+                                <div class="skill-fill" style="width: 75%"></div>
                             </div>
                         </div>
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">Node.js/Docker</span>
-                                <span class="text-purple-400 font-bold">40%</span>
+                                <span class="text-gray-300" data-i18n="skill_node">Node.js/Docker</span>
+                                <span class="text-purple-400 font-bold">60%</span>
                             </div>
                             <div class="skill-track">
-                                <div class="skill-fill" style="width: 40%"></div>
+                                <div class="skill-fill" style="width: 60%"></div>
                             </div>
                         </div>
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">PHP/MySQL</span>
+                                <span class="text-gray-300" data-i18n="skill_php">PHP/MySQL</span>
                                 <span class="text-purple-400 font-bold">70%</span>
                             </div>
                             <div class="skill-track">
@@ -272,7 +272,7 @@
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">UI/UX Design</span>
+                                <span class="text-gray-300" data-i18n="skill_uiux">UI/UX Design</span>
                                 <span class="text-purple-400 font-bold">60%</span>
                             </div>
                             <div class="skill-track">
@@ -282,17 +282,17 @@
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">Agile Development</span>
-                                <span class="text-purple-400 font-bold">10%</span>
+                                <span class="text-gray-300" data-i18n="skill_agile">Agile Development</span>
+                                <span class="text-purple-400 font-bold">15%</span>
                             </div>
                             <div class="skill-track">
-                                <div class="skill-fill" style="width: 10%"></div>
+                                <div class="skill-fill" style="width: 15%"></div>
                             </div>
                         </div>
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">Problem Solving</span>
+                                <span class="text-gray-300" data-i18n="skill_problem">Problem Solving</span>
                                 <span class="text-purple-400 font-bold">75%</span>
                             </div>
                             <div class="skill-track">
@@ -302,17 +302,17 @@
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">Teamwork</span>
-                                <span class="text-purple-400 font-bold">10%</span>
+                                <span class="text-gray-300" data-i18n="skill_teamwork">Teamwork</span>
+                                <span class="text-purple-400 font-bold">20%</span>
                             </div>
                             <div class="skill-track">
-                                <div class="skill-fill" style="width: 10%"></div>
+                                <div class="skill-fill" style="width: 20%"></div>
                             </div>
                         </div>
                         
                         <div class="skill-bar">
                             <div class="skill-header">
-                                <span class="text-gray-300">Communication</span>
+                                <span class="text-gray-300" data-i18n="skill_communication">Communication</span>
                                 <span class="text-purple-400 font-bold">90%</span>
                             </div>
                             <div class="skill-track">
@@ -323,7 +323,7 @@
                 </div>
                 
               <div class="mt-16 animate-in">
-  <h3 class="text-xl font-bold mb-6 text-center text-gradient">
+  <h3 class="text-xl font-bold mb-6 text-center text-gradient" data-i18n="skills_tech_title">
     Technologies I Use
   </h3>
 
@@ -402,7 +402,7 @@
                 
                 <div class="flex justify-center mb-12 animate-in">
                     <div class="inline-flex rounded-lg shadow-lg glass p-1" role="group">
-                        <button type="button" class="px-5 py-2 text-sm font-medium rounded-lg bg-purple-600 text-white transition-all">
+                        <button type="button" class="px-5 py-2 text-sm font-medium rounded-lg bg-purple-600 text-white transition-all" data-i18n="filter_all">
                             All
                         </button>
                         <button type="button" class="px-5 py-2 text-sm font-medium rounded-lg text-gray-300 hover:bg-purple-600/30 transition-all">
@@ -430,7 +430,7 @@
                                     Full-Stack
                                 </span>
                             </div>
-                            <p class="text-gray-400 mb-4 text-sm">
+                            <p class="text-gray-400 mb-4 text-sm" data-i18n="proj_waveos_desc">
                                The browser operating system
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -441,7 +441,7 @@
                             </div>
                             <div class="flex justify-between mt-auto">
                                 <a href="#" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
-                                    <i class="fas fa-external-link-alt mr-2"></i> See
+                                    <i class="fas fa-external-link-alt mr-2"></i> <span data-i18n="proj_see">See</span>
                                 </a>
                                 <a href="https://github.com/CAFE2l/Productivity-App" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
@@ -462,7 +462,7 @@
                                     Full-stack
                                 </span>
                             </div>
-                            <p class="text-gray-400 mb-4 text-sm">
+                            <p class="text-gray-400 mb-4 text-sm" data-i18n="proj_cafestore_desc">
                                Tudo para sua Identidade digital. Criação de web-aplicações, agências digitais, site e landing pages para você e seu negócio 
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -475,7 +475,7 @@
                             </div>
                             <div class="flex justify-between mt-auto">
                                 <a href="https://e-commerce-landing-page-lime.vercel.app/" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
-                                    <i class="fas fa-external-link-alt mr-2"></i> See
+                                    <i class="fas fa-external-link-alt mr-2"></i> <span data-i18n="proj_see">See</span>
                                 </a>
                                 <a href="#" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
@@ -496,7 +496,7 @@
                                     Full-Stack
                                 </span>
                             </div>
-                            <p class="text-gray-400 mb-4 text-sm">
+                            <p class="text-gray-400 mb-4 text-sm" data-i18n="proj_todo_desc">
                                 Realtime OBS productivity overlays for creators
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -508,7 +508,7 @@
                             </div>
                             <div class="flex justify-between mt-auto">
                                 <a href="https://to-do-list-three-eta-84.vercel.app/" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
-                                    <i class="fas fa-external-link-alt mr-2"></i> See
+                                    <i class="fas fa-external-link-alt mr-2"></i> <span data-i18n="proj_see">See</span>
                                 </a>
                                 <a href="https://github.com/CAFE2l/To-do_list" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
@@ -529,7 +529,7 @@
                                     Full-Stack
                                 </span>
                             </div>
-                            <p class="text-gray-400 mb-4 text-sm">
+                            <p class="text-gray-400 mb-4 text-sm" data-i18n="proj_linkwave_desc">
                                 Links for creators, influencers and streamers. A simple and elegant way to share all your content in one place.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -542,7 +542,7 @@
                             </div>
                             <div class="flex justify-between mt-auto">
                                 <a href="https://linkwave.ct.ws" target="_blank" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
-                                    <i class="fas fa-external-link-alt mr-2"></i> See
+                                    <i class="fas fa-external-link-alt mr-2"></i> <span data-i18n="proj_see">See</span>
                                 </a>
                                 <a href="https://github.com/CAFE2l/LinkWave" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
@@ -563,7 +563,7 @@
                                    Full-Stack
                                 </span>
                             </div>
-                            <p class="text-gray-400 mb-4 text-sm">
+                            <p class="text-gray-400 mb-4 text-sm" data-i18n="proj_samptech_desc">
                                 Loja de Informática e Assistência Técnica para Computadores, Celulares e Consoles.
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -576,9 +576,9 @@
                             </div>
                             <div class="flex justify-between mt-auto">
                                 <a href="https://samptech-link-tree.vercel.app/" target="_blank" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
-                                    <i class="fas fa-external-link-alt mr-2"></i> See
+                                    <i class="fas fa-external-link-alt mr-2"></i> <span data-i18n="proj_see">See</span>
                                 </a>
-                                <a href="https://github.com/CAFE2l/samptechPHP target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors">
+                                <a href="https://github.com/CAFE2l/samptechPHP" target="_blank" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
                                 </a>
                             </div>
@@ -597,7 +597,7 @@
                                     Full-Stack
                                 </span> 
                             </div>
-                            <p class="text-gray-400 mb-4 text-sm">
+                            <p class="text-gray-400 mb-4 text-sm" data-i18n="proj_streampix_desc">
                                 Plataforma de Alertas de Doações via Pix para Streaming 
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
@@ -610,7 +610,7 @@
                             </div>
                             <div class="flex justify-between mt-auto">
                                 <a href="https://stream-pix-ashy.vercel.app/" class="text-purple-400 hover:text-purple-300 flex items-center text-sm font-medium">
-                                    <i class="fas fa-external-link-alt mr-2"></i> See
+                                    <i class="fas fa-external-link-alt mr-2"></i> <span data-i18n="proj_see">See</span>
                                 </a>
                                 <a href="https://github.com/CAFE2l/Stream_Pix" class="text-gray-400 hover:text-purple-300 transition-colors">
                                     <i class="fab fa-github text-xl"></i>
@@ -622,7 +622,7 @@
                 
                 <div class="text-center mt-12 animate-in">
                     <a href="https://github.com/CAFE2l" target="_blank" class="btn btn-glass inline-flex items-center">
-                        <i class="fab fa-github mr-2"></i> See more on GitHub
+                        <i class="fab fa-github mr-2"></i> <span data-i18n="proj_more_github">See more on GitHub</span>
                     </a>
                 </div>
             </div>
@@ -636,13 +636,13 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div class="animate-in">
-                        <h3 class="text-xl font-bold mb-6 text-gradient">UI/UX Design</h3>
+                        <h3 class="text-xl font-bold mb-6 text-gradient" data-i18n="exp_uiux_title">UI/UX Design</h3>
                         <div class="timeline">
                             <div class="timeline-item clay glass-hover">
-                                <span class="date">March 2025 - Present</span>
-                                <h4 class="text-lg font-bold text-gradient">UI/UX Designer</h4>
+                                <span class="date" data-i18n="exp_date_mar2025">March 2025 - Present</span>
+                                <h4 class="text-lg font-bold text-gradient" data-i18n="exp_uiux_role">UI/UX Designer</h4>
                                 <p class="text-purple-400 mb-2 font-medium">Alura</p>
-                                <p class="text-gray-300 text-sm">
+                                <p class="text-gray-300 text-sm" data-i18n="exp_uiux_desc">
                                     Creating intuitive interfaces and exceptional user experiences for web and mobile applications. Implementation of design systems and interactive prototyping with Figma.
                                 </p>
                             </div>
@@ -650,13 +650,13 @@
                     </div>
                     
                     <div class="animate-in">
-                        <h3 class="text-xl font-bold mb-6 text-gradient">Full-Stack Development</h3>
+                        <h3 class="text-xl font-bold mb-6 text-gradient" data-i18n="exp_fullstack_title">Full-Stack Development</h3>
                         <div class="timeline">
                             <div class="timeline-item clay glass-hover">
-                                <span class="date">Jan 2025 - Present</span>
-                                <h4 class="text-lg font-bold text-gradient">Full-Stack Developer</h4>
+                                <span class="date" data-i18n="exp_date_jan2025">Jan 2025 - Present</span>
+                                <h4 class="text-lg font-bold text-gradient" data-i18n="exp_fullstack_role">Full-Stack Developer</h4>
                                 <p class="text-purple-400 mb-2 font-medium">Alura - Curso em Vídeo - Mimo - Sololearn - LinkedIn Learning</p>
-                                <p class="text-gray-300 text-sm">
+                                <p class="text-gray-300 text-sm" data-i18n="exp_fullstack_desc">
                                     Web development using technologies such as HTML, CSS, JavaScript, PHP, and MySQL. Building responsive and dynamic applications with a focus on performance.
                                 </p>
                             </div>
@@ -664,17 +664,17 @@
                     </div>
                     
                     <div class="md:col-span-2 animate-in">
-                        <h3 class="text-xl font-bold mb-6 text-gradient">Digital Influencer</h3>
+                        <h3 class="text-xl font-bold mb-6 text-gradient" data-i18n="exp_influencer_title">Digital Influencer</h3>
                         <div class="timeline">
                             <div class="timeline-item clay glass-hover">
-                                <span class="date">March 2025 - Present</span>
-                                <h4 class="text-lg font-bold text-gradient">Digital Influencer</h4>
+                                <span class="date" data-i18n="exp_date_mar2025">March 2025 - Present</span>
+                                <h4 class="text-lg font-bold text-gradient" data-i18n="exp_influencer_role">Digital Influencer</h4>
                             
                                 <div class="mt-6 pt-6 border-t border-gray-700">
                                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
-                                        <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Social Media Strategy</p>
+                                        <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider" data-i18n="exp_social_strategy">Social Media Strategy</p>
                                         <a href="./HTML/videos.html" class="btn btn-glass text-sm py-2 px-4">
-                                            <i class="fab fa-youtube"></i> Video Hub
+                                            <i class="fab fa-youtube"></i> <span data-i18n="exp_video_hub">Video Hub</span>
                                         </a>
                                     </div>
                                     <div class="space-y-3 text-sm text-gray-300">
@@ -685,7 +685,7 @@
                                                 <img src="./icons/Youtube.png" class="w-4 h-4">
                                                 <p class="font-bold text-red-400">Youtube</p>
                                             </div>
-                                            <p class="text-xs ml-4 mt-1">Shorts → high-engagement edits | Long-form → premium production | Lives → community interaction | <span class="text-purple-300">Purpose: audience growth + strong connection</span></p>
+                                            <p class="text-xs ml-4 mt-1" data-i18n="exp_yt_desc">Shorts → high-engagement edits | Long-form → premium production | Lives → community interaction | <span class="text-purple-300">Purpose: audience growth + strong connection</span></p>
                                         </div>
                                         
                                         <div class="flex flex-col gap-1">
@@ -693,7 +693,7 @@
                                                 <img src="./icons/Twitter.png" class="w-4 h-4">
                                                 <p class="font-bold text-blue-400">Twitter</p>
                                             </div>
-                                            <p class="text-xs ml-4 mt-1"><span class="text-purple-300">Ideal Purpose: document your dev journey + financial insights | Real-time engagement with tech community</span></p>
+                                            <p class="text-xs ml-4 mt-1" data-i18n="exp_tw_desc"><span class="text-purple-300">Ideal Purpose: document your dev journey + financial insights | Real-time engagement with tech community</span></p>
                                         </div>
                                       
 
@@ -703,7 +703,7 @@
                                                 <img src="./icons/Pinterest.png" class="w-4 h-4">
                                                 <p class="font-bold text-red-400">Pinterest</p>
                                             </div>
-                                            <p class="text-xs ml-4 mt-1">Design portfolio | <span class="text-purple-300">Purpose: passive traffic + design visibility</span></p>
+                                            <p class="text-xs ml-4 mt-1" data-i18n="exp_pin_desc">Design portfolio | <span class="text-purple-300">Purpose: passive traffic + design visibility</span></p>
                                         </div>
                                         
                                         <div class="flex flex-col gap-1">
@@ -711,7 +711,7 @@
                                                 <img src="./icons/LinkedIn.png" class="w-4 h-4">
                                                 <p class="font-bold text-cyan-400">LnkedIn</p>
                                             </div>
-                                            <p class="text-xs ml-4 mt-1">Professional certificates & achievements | <span class="text-purple-300">Purpose: establish authority + professional credibility</span></p>
+                                            <p class="text-xs ml-4 mt-1" data-i18n="exp_li_desc">Professional certificates & achievements | <span class="text-purple-300">Purpose: establish authority + professional credibility</span></p>
                                         </div>
                                 
 
@@ -721,7 +721,7 @@
                                                 <img src="./icons/Telegram.png" class="w-4 h-4">
                                                 <p class="font-bold text-blue-400">Telegram</p>
                                             </div>
-                                            <p class="text-xs ml-4 mt-1">Direct client communication + promotional content | <span class="text-purple-300">Purpose: direct monetization channel</span></p>
+                                            <p class="text-xs ml-4 mt-1" data-i18n="exp_tg_desc">Direct client communication + promotional content | <span class="text-purple-300">Purpose: direct monetization channel</span></p>
                                         </div>
 
                                         
@@ -730,7 +730,7 @@
                                                 <img src="./icons/Discord.png" class="w-4 h-4">
                                                 <p class="font-bold text-white-400">Discord</p>
                                             </div>
-                                            <p class="text-xs ml-4 mt-1">Study community & learning hub | Study streams (camera on, focused work) | <span class="text-purple-300">Purpose: community retention + strong engagement</span></p>
+                                            <p class="text-xs ml-4 mt-1" data-i18n="exp_dc_desc">Study community & learning hub | Study streams (camera on, focused work) | <span class="text-purple-300">Purpose: community retention + strong engagement</span></p>
                                         </div>
                                      
                                     </div>
@@ -816,7 +816,7 @@
                             </div>
                             <h3 class="font-bold text-lg mb-2">LinkedIn</h3>
                             <p class="text-gray-400 text-sm text-center" data-i18n="social_linkedin">Professional Connection</p>
-                            <div class="mt-4 text-xs text-purple-400 font-medium">
+                            <div class="mt-4 text-xs text-purple-400 font-medium" data-i18n="social_linkedin_cta">
                                 Connect with me
                             </div>
                         </a>
@@ -858,12 +858,12 @@
                     </div>
                     
                     <div class="flex space-x-6 mb-6 md:mb-0">
-                        <a href="#home" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Home</a>
-                        <a href="#about" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">About</a>
-                        <a href="#skills" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Skills</a>
-                        <a href="#projects" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Projects</a>
-                        <a href="./HTML/videos.html" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Videos</a>
-                        <a href="#contact" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Contact</a>
+                        <a href="#home" class="text-gray-400 hover:text-purple-400 transition-colors text-sm" data-i18n="nav_home">Home</a>
+                        <a href="#about" class="text-gray-400 hover:text-purple-400 transition-colors text-sm" data-i18n="footer_about">About</a>
+                        <a href="#skills" class="text-gray-400 hover:text-purple-400 transition-colors text-sm" data-i18n="nav_skills">Skills</a>
+                        <a href="#projects" class="text-gray-400 hover:text-purple-400 transition-colors text-sm" data-i18n="nav_projects">Projects</a>
+                        <a href="./HTML/videos.html" class="text-gray-400 hover:text-purple-400 transition-colors text-sm" data-i18n="nav_videos">Videos</a>
+                        <a href="#contact" class="text-gray-400 hover:text-purple-400 transition-colors text-sm" data-i18n="nav_contact">Contact</a>
                     </div>
                 </div>
                 
@@ -877,8 +877,38 @@
         </footer>
     </div>
 
+    <!-- Modal Currículo -->
+    <div class="cv-modal" id="cv-modal" aria-hidden="true">
+        <div class="cv-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title">
+            <div class="cv-modal-header">
+                <div>
+                    <p class="eyebrow" data-i18n="cv_modal_eyebrow">Documento profissional</p>
+                    <h2 id="cv-modal-title" data-i18n="cv_modal_title">Currículo de Gabriel Felipe</h2>
+                    <p data-i18n="cv_modal_subtitle">Visualize o currículo abaixo ou baixe uma cópia em PDF.</p>
+                </div>
+                <button class="cv-modal-close" id="cv-modal-close" type="button" aria-label="Fechar currículo" data-i18n-aria-label="cv_close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="cv-modal-preview">
+                <iframe src="./HTML/curriculo.html" title="Currículo de Gabriel Felipe" data-i18n-title="cv_modal_title"></iframe>
+            </div>
+            <div class="cv-modal-actions">
+                <a class="btn btn-primary" href="./DOCUMENTOS/curriculo-gabriel-felipe.pdf" download="curriculo-gabriel-felipe.pdf">
+                    <i class="fas fa-download"></i>
+                    <span data-i18n="cv_download_pdf">Baixar currículo em PDF</span>
+                </a>
+                <a class="btn btn-glass" href="./HTML/curriculo.html" target="_blank" rel="noopener">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span data-i18n="cv_open_page">Abrir em nova página</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="/JAVASCRIPT/i18n.js"></script>
     <script src="/JAVASCRIPT/index.js"></script>
 </body>
 </html>

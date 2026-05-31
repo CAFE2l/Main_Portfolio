@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificates Portfolio</title>
+    <title data-i18n="cert_page_title">Certificados | Gabriel Felipe</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/certificados.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="shortcut icon" href="../IMG/favicon.png" type="image/x-icon">    
 </head>
 <body>
@@ -19,18 +20,31 @@
                 </a>
 
                 <div class="hidden md:flex space-x-10">
-                    <a href="../index.html#home" class="nav-link text-gray-300">Home</a>
-                    <a href="../index.html#about" class="nav-link text-gray-300">About Me</a>
-                    <a href="../index.html#skills" class="nav-link text-gray-300">Skills</a>
-                    <a href="../index.html#projects" class="nav-link text-gray-300">Projects</a>
-                    <a href="../index.html#experience" class="nav-link text-gray-300">Experience</a>
-                    <a href="./videos.html" class="nav-link text-gray-300">Videos</a>
-                    <a href="../index.html#contact" class="nav-link text-gray-300">Contact</a>
-                    <a href="./certificados.html" class="nav-link text-gray-300 active">Certificates</a>
+                    <a href="../index.html#home" class="nav-link text-gray-300" data-i18n="nav_home">Home</a>
+                    <a href="../index.html#about" class="nav-link text-gray-300" data-i18n="nav_about">About Me</a>
+                    <a href="../index.html#skills" class="nav-link text-gray-300" data-i18n="nav_skills">Skills</a>
+                    <a href="../index.html#projects" class="nav-link text-gray-300" data-i18n="nav_projects">Projects</a>
+                    <a href="../index.html#experience" class="nav-link text-gray-300" data-i18n="nav_experience">Experience</a>
+                    <a href="./videos.html" class="nav-link text-gray-300" data-i18n="nav_videos">Videos</a>
+                    <a href="../index.html#contact" class="nav-link text-gray-300" data-i18n="nav_contact">Contact</a>
+                    <a href="./certificados.html" class="nav-link text-gray-300 active" data-i18n="nav_certificates">Certificates</a>
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <button class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu">
+                    <!-- Language Selector -->
+                    <div class="lang-selector" id="lang-selector">
+                        <button class="lang-btn" id="lang-btn" aria-label="Selecionar idioma" data-i18n-aria-label="select_language">
+                            <span id="lang-flag">🇧🇷</span>
+                            <span id="lang-code">PT</span>
+                            <i class="fas fa-chevron-down lang-arrow"></i>
+                        </button>
+                        <div class="lang-dropdown" id="lang-dropdown">
+                            <button class="lang-option active" data-lang="pt"><span class="lang-flag-emoji">🇧🇷</span><span>Português</span></button>
+                            <button class="lang-option" data-lang="en"><span class="lang-flag-emoji">🇺🇸</span><span>English</span></button>
+                            <button class="lang-option" data-lang="es"><span class="lang-flag-emoji">🇪🇸</span><span>Español</span></button>
+                        </div>
+                    </div>
+                    <button class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu" aria-expanded="false" data-i18n-aria-label="open_menu">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
              
@@ -39,14 +53,14 @@
 
             <div class="md:hidden mt-4 hidden glass rounded-lg p-4">
                 <div class="flex flex-col space-y-3">
-                    <a href="../index.html#home" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Home</a>
-                    <a href="../index.html#about" class="text-gray-300 hover:text-purple-400 transition-colors py-2">About Me</a>
-                    <a href="../index.html#skills" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Skills</a>
-                    <a href="../index.html#projects" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Projects</a>
-                    <a href="../index.html#experience" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Experience</a>
-                    <a href="./videos.html" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Videos</a>
-                    <a href="../index.html#contact" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Contact</a>
-                    <a href="./certificados.html" class="text-purple-300 transition-colors py-2">Certificates</a>
+                    <a href="../index.html#home" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_home">Home</a>
+                    <a href="../index.html#about" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_about">About Me</a>
+                    <a href="../index.html#skills" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_skills">Skills</a>
+                    <a href="../index.html#projects" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_projects">Projects</a>
+                    <a href="../index.html#experience" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_experience">Experience</a>
+                    <a href="./videos.html" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_videos">Videos</a>
+                    <a href="../index.html#contact" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_contact">Contact</a>
+                    <a href="./certificados.html" class="text-purple-300 transition-colors py-2" data-i18n="nav_certificates">Certificates</a>
                 </div>
             </div>
         </nav>
@@ -56,8 +70,8 @@
     <section id="home" class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title fade-in">My <span>Professional Certificates</span></h1>
-                <p class="hero-subtitle fade-in">
+                <h1 class="hero-title fade-in" data-i18n="cert_hero_title">My <span>Professional Certificates</span></h1>
+                <p class="hero-subtitle fade-in" data-i18n="cert_hero_subtitle">
                     A collection of certifications and qualifications demonstrating expertise across various technologies and methodologies.
                 </p>
             </div>
@@ -68,13 +82,13 @@
     <section id="certificates" class="section-padding">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="section-title">Certificates Collection</h2>
-                <p class="section-subtitle">Browse through my professional certifications</p>
+                <h2 class="section-title" data-i18n="cert_section_title">Certificates Collection</h2>
+                <p class="section-subtitle" data-i18n="cert_section_subtitle">Browse through my professional certifications</p>
             </div>
 
             <!-- Search Bar -->
             <div class="search-container fade-in">
-                <input type="text" id="search-input" class="search-input" placeholder="Search certificates...">
+                <input type="text" id="search-input" class="search-input" data-i18n-placeholder="cert_search_placeholder" placeholder="Search certificates...">
                 <i class="fas fa-search search-icon"></i>
             </div>
 
@@ -104,8 +118,8 @@
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="section-header fade-in">
-                <h2 class="section-title">Let's Stay Connected</h2>
-                <p class="section-subtitle">Feel free to reach out for professional opportunities</p>
+                <h2 class="section-title" data-i18n="cert_contact_title">Let's Stay Connected</h2>
+                <p class="section-subtitle" data-i18n="cert_contact_subtitle">Feel free to reach out for professional opportunities</p>
             </div>
             
           <div class="social-links fade-in">
@@ -134,7 +148,7 @@
             <div class="footer-content">
                 <a href="../index.html" class="logo footer-logo"><span class="logo-mark">&lt;</span>CAFÉ<span class="logo-slash">/</span><span class="logo-mark">&gt;</span></a>
                 <div class="footer-text">
-                    <p>© 2026 Professional Portfolio. All rights reserved.</p>
+                    <p data-i18n="cert_footer">© 2026 Professional Portfolio. All rights reserved.</p>
                 </div>
             </div>
         </div>
@@ -157,43 +171,56 @@
                 </div>
                 <div class="modal-details">
                     <div class="detail-group">
-                        <h4><i class="fas fa-info-circle"></i> Details</h4>
+                        <h4><i class="fas fa-info-circle"></i> <span data-i18n="cert_details">Details</span></h4>
                         <div class="detail-item">
-                            <span class="detail-label">Issuer:</span>
+                            <span class="detail-label" data-i18n="cert_issuer">Issuer:</span>
                             <span class="detail-value" id="modal-issuer">-</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Date:</span>
+                            <span class="detail-label" data-i18n="cert_date">Date:</span>
                             <span class="detail-value" id="modal-date">-</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">Duration:</span>
+                            <span class="detail-label" data-i18n="cert_duration">Duration:</span>
                             <span class="detail-value" id="modal-duration">-</span>
                         </div>
                         <div class="detail-item">
-                            <span class="detail-label">ID:</span>
+                            <span class="detail-label" data-i18n="cert_id">ID:</span>
                             <span class="detail-value" id="modal-id">-</span>
                         </div>
                     </div>
                     <div class="detail-group">
-                        <h4><i class="fas fa-tools"></i> Skills</h4>
+                        <h4><i class="fas fa-tools"></i> <span data-i18n="cert_skills_label">Skills</span></h4>
                         <div class="modal-skills" id="modal-skills"></div>
                     </div>
                 </div>
                 <p class="modal-description" id="modal-description"></p>
                 <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
                     <button class="action-btn view-btn" id="modal-download-pdf">
-                        <i class="fas fa-download"></i> Download PDF
+                        <i class="fas fa-download"></i> <span data-i18n="cert_download">Baixar PDF</span>
                     </button>
                     <button class="action-btn download-btn" id="modal-share">
-                        <i class="fas fa-share-alt"></i> Share
+                        <i class="fas fa-share-alt"></i> <span data-i18n="cert_share">Compartilhar</span>
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="../JAVASCRIPT/i18n.js"></script>
     <script>
+        // ====== CERT PAGE i18n BRIDGE ======
+        function updateCertPageStrings(t) {
+            const searchInput = document.getElementById('search-input');
+            if (searchInput && t.cert_search_placeholder) searchInput.placeholder = t.cert_search_placeholder;
+
+            if (typeof FilterManager !== 'undefined') {
+                FilterManager.applyFilters();
+                FilterManager.renderFilters();
+                CertificateRenderer.render();
+                ModalManager.refresh();
+            }
+        }
         // ====== CONFIGURAÇÃO E DADOS ======
         const CONFIG = {
             certificatesPerPage: 12,
@@ -775,6 +802,350 @@
             },
         ];
 
+        // ====== LOCALIZAÇÃO DOS DADOS DINÂMICOS ======
+        const certificateLocale = {
+            pt: {
+                months: {
+                    January: 'Janeiro', February: 'Fevereiro', March: 'Março',
+                    April: 'Abril', May: 'Maio', June: 'Junho', July: 'Julho',
+                    August: 'Agosto', September: 'Setembro', October: 'Outubro',
+                    November: 'Novembro', December: 'Dezembro'
+                },
+                categories: {
+                    development: 'Desenvolvimento', design: 'Design', web3: 'Web3',
+                    language: 'Idiomas', fullstack: 'Full Stack', management: 'Gestão'
+                },
+                hours: 'horas',
+                description: subtitle => `Curso de ${subtitle} com fundamentos, conceitos essenciais, aplicação prática e boas práticas profissionais.`,
+                terms: {
+                    'Javascript Web and Terminal': 'JavaScript Web e Terminal',
+                    'HTML & CSS Practice': 'Prática de HTML e CSS',
+                    'Frontend Framework': 'Framework Frontend',
+                    'Python Developer': 'Desenvolvedor Python',
+                    'Coding for Data': 'Programação para Dados',
+                    'SQL Database': 'Banco de Dados SQL',
+                    'Web Development': 'Desenvolvimento Web',
+                    'React Native Apps': 'Aplicativos React Native',
+                    'CSS Fundamentals': 'Fundamentos de CSS',
+                    'SQL Basics': 'Fundamentos de SQL',
+                    'JavaScript Basics': 'Fundamentos de JavaScript',
+                    'PHP Basic': 'PHP Básico',
+                    'PHP Development': 'Desenvolvimento PHP',
+                    'Object Oriented Programming': 'Programação Orientada a Objetos',
+                    'Object-Oriented Programming': 'Programação Orientada a Objetos',
+                    'Professional Python Development': 'Desenvolvimento Profissional em Python',
+                    'Full Stack Web Development': 'Desenvolvimento Web Full Stack',
+                    'Advanced Database Management': 'Gerenciamento Avançado de Banco de Dados',
+                    'Database Management': 'Gerenciamento de Banco de Dados',
+                    'Database Design': 'Design de Banco de Dados',
+                    'Document Processing': 'Processamento de Documentos',
+                    'Spreadsheet Management': 'Gerenciamento de Planilhas',
+                    'Programming Fundamentals': 'Fundamentos de Programação',
+                    'Programming Concepts': 'Conceitos de Programação',
+                    'Programming Logic': 'Lógica de Programação',
+                    'Python Programming Basics': 'Fundamentos de Programação em Python',
+                    'Introduction to Programming': 'Introdução à Programação',
+                    'Introduction to Python': 'Introdução ao Python',
+                    'Frontend Development': 'Desenvolvimento Frontend',
+                    'Complete Frontend Skills': 'Competências Completas de Frontend',
+                    'Advanced JavaScript Concepts': 'Conceitos Avançados de JavaScript',
+                    'Advanced Python Programming': 'Programação Avançada em Python',
+                    'Advanced CSS Styling': 'Estilização CSS Avançada',
+                    'Advanced Structures': 'Estruturas Avançadas',
+                    'Data Structures': 'Estruturas de Dados',
+                    'Data Science Programming': 'Programação para Ciência de Dados',
+                    'Styling Web Pages': 'Estilização de Páginas Web',
+                    'Web Structure & Semantics': 'Estrutura Web e Semântica',
+                    'Web development Fundamentals': 'Fundamentos de Desenvolvimento Web',
+                    'HTML Fundamentals': 'Fundamentos de HTML',
+                    'PHP Fundamentals': 'Fundamentos de PHP',
+                    'Python Fundamentals': 'Fundamentos de Python',
+                    'Linux Fundamentals': 'Fundamentos de Linux',
+                    'Building Mobile Apps': 'Criação de Aplicativos Mobile',
+                    'Menu and Navigation': 'Menu e Navegação',
+                    'Agile Project Management': 'Gerenciamento Ágil de Projetos',
+                    'Leadership in Scrum': 'Liderança no Scrum',
+                    'Running Agile Projects': 'Execução de Projetos Ágeis',
+                    'Planning with Agile': 'Planejamento Ágil',
+                    'Running Projects with Agile': 'Execução de Projetos com Agilidade',
+                    'Review, retrospective and close projects with agile': 'Revisão, retrospectiva e encerramento de projetos ágeis',
+                    'Engaging People': 'Engajamento de Pessoas',
+                    'Deep Dive into JS': 'Aprofundamento em JavaScript',
+                    'Types and Variables': 'Tipos e Variáveis',
+                    'Database Queries': 'Consultas em Banco de Dados',
+                    'Web Projects': 'Projetos Web',
+                    'Data Modeling': 'Modelagem de Dados',
+                    'Communication Skills': 'Habilidades de Comunicação',
+                    'Algorithm': 'Algoritmo',
+                    'HTML Basis': 'Fundamentos de HTML',
+                    'JavaScript Exploring': 'Explorando JavaScript',
+                    'JavaScript Functions': 'Funções JavaScript',
+                    'Python Module': 'Módulo Python',
+                    'Scrum Part': 'Scrum Parte',
+                    'for Beginners': 'para Iniciantes',
+                    'Fundamentals': 'Fundamentos',
+                    'Basics': 'Básico',
+                    'Intermediate': 'Intermediário',
+                    'Advanced': 'Avançado',
+                    'Development': 'Desenvolvimento',
+                    'Management': 'Gerenciamento',
+                    'Navigation': 'Navegação',
+                    'Functions': 'Funções',
+                    'Variables': 'Variáveis',
+                    'Data Types': 'Tipos de Dados',
+                    'Control Flow': 'Fluxo de Controle',
+                    'Control Structures': 'Estruturas de Controle',
+                    'Problem Solving': 'Resolução de Problemas',
+                    'Responsive Design': 'Design Responsivo',
+                    'Best Practices': 'Boas Práticas',
+                    'File Management': 'Gerenciamento de Arquivos',
+                    'System Configuration': 'Configuração do Sistema',
+                    'Package Installation': 'Instalação de Pacotes',
+                    'Terminal Commands': 'Comandos de Terminal',
+                    'Document Formatting': 'Formatação de Documentos',
+                    'Table of Contents': 'Sumário',
+                    'Decision Structures': 'Estruturas de Decisão',
+                    'Semantic Tags': 'Tags Semânticas',
+                    'Semantic Elements': 'Elementos Semânticos',
+                    'Aggregate Functions': 'Funções Agregadas',
+                    'State Management': 'Gerenciamento de Estado',
+                    'API Integration': 'Integração com API',
+                    'Scope': 'Escopo',
+                    'Relationships': 'Relacionamentos',
+                    'Public Speaking': 'Oratória',
+                    'Team Collaboration': 'Colaboração em Equipe',
+                    'Team Management': 'Gerenciamento de Equipe',
+                    'Team Coordination': 'Coordenação de Equipe',
+                    'Project Management': 'Gerenciamento de Projetos',
+                    'Project Execution': 'Execução de Projetos',
+                    'Project Closure': 'Encerramento de Projetos',
+                    'Progress Tracking': 'Acompanhamento de Progresso',
+                    'Continuous Improvement': 'Melhoria Contínua',
+                    'Data Analysis': 'Análise de Dados',
+                    'Data Visualization': 'Visualização de Dados',
+                    'Data Cleaning': 'Limpeza de Dados',
+                    'Accessibility': 'Acessibilidade',
+                    'Code Structure': 'Estrutura de Código',
+                    'Computational Thinking': 'Pensamento Computacional',
+                    'Data Manipulation': 'Manipulação de Dados',
+                    'Web Frameworks': 'Frameworks Web',
+                    'Backend Development': 'Desenvolvimento Backend',
+                    'Database Integration': 'Integração com Banco de Dados',
+                    'Testing': 'Testes',
+                    'Deployment': 'Deploy',
+                    'ECMAScript Standards': 'Padrões ECMAScript',
+                    'DOM Manipulation': 'Manipulação do DOM',
+                    'Interactive Pages': 'Páginas Interativas',
+                    'Modern Operators': 'Operadores Modernos',
+                    'Form Handling': 'Manipulação de Formulários',
+                    'Math Functions': 'Funções Matemáticas',
+                    'HTML Integration': 'Integração com HTML',
+                    'String Functions': 'Funções de Texto',
+                    'OOP Principles': 'Princípios de POO',
+                    'Inheritance': 'Herança',
+                    'Polymorphism': 'Polimorfismo',
+                    'Encapsulation': 'Encapsulamento',
+                    'Arrays': 'Vetores',
+                    'Loops': 'Laços',
+                    'Classes': 'Classes'
+                }
+            },
+            es: {
+                months: {
+                    January: 'Enero', February: 'Febrero', March: 'Marzo',
+                    April: 'Abril', May: 'Mayo', June: 'Junio', July: 'Julio',
+                    August: 'Agosto', September: 'Septiembre', October: 'Octubre',
+                    November: 'Noviembre', December: 'Diciembre'
+                },
+                categories: {
+                    development: 'Desarrollo', design: 'Diseño', web3: 'Web3',
+                    language: 'Idiomas', fullstack: 'Full Stack', management: 'Gestión'
+                },
+                hours: 'horas',
+                description: subtitle => `Curso de ${subtitle} con fundamentos, conceptos esenciales, aplicación práctica y buenas prácticas profesionales.`,
+                terms: {
+                    'Javascript Web and Terminal': 'JavaScript Web y Terminal',
+                    'HTML & CSS Practice': 'Práctica de HTML y CSS',
+                    'Frontend Framework': 'Framework Frontend',
+                    'Python Developer': 'Desarrollador Python',
+                    'Coding for Data': 'Programación para Datos',
+                    'SQL Database': 'Base de Datos SQL',
+                    'Web Development': 'Desarrollo Web',
+                    'React Native Apps': 'Aplicaciones React Native',
+                    'CSS Fundamentals': 'Fundamentos de CSS',
+                    'SQL Basics': 'Fundamentos de SQL',
+                    'JavaScript Basics': 'Fundamentos de JavaScript',
+                    'PHP Basic': 'PHP Básico',
+                    'PHP Development': 'Desarrollo PHP',
+                    'Object Oriented Programming': 'Programación Orientada a Objetos',
+                    'Object-Oriented Programming': 'Programación Orientada a Objetos',
+                    'Professional Python Development': 'Desarrollo Profesional en Python',
+                    'Full Stack Web Development': 'Desarrollo Web Full Stack',
+                    'Advanced Database Management': 'Gestión Avanzada de Bases de Datos',
+                    'Database Management': 'Gestión de Bases de Datos',
+                    'Database Design': 'Diseño de Bases de Datos',
+                    'Document Processing': 'Procesamiento de Documentos',
+                    'Spreadsheet Management': 'Gestión de Hojas de Cálculo',
+                    'Programming Fundamentals': 'Fundamentos de Programación',
+                    'Programming Concepts': 'Conceptos de Programación',
+                    'Programming Logic': 'Lógica de Programación',
+                    'Python Programming Basics': 'Fundamentos de Programación en Python',
+                    'Introduction to Programming': 'Introducción a la Programación',
+                    'Introduction to Python': 'Introducción a Python',
+                    'Frontend Development': 'Desarrollo Frontend',
+                    'Complete Frontend Skills': 'Habilidades Completas de Frontend',
+                    'Advanced JavaScript Concepts': 'Conceptos Avanzados de JavaScript',
+                    'Advanced Python Programming': 'Programación Avanzada en Python',
+                    'Advanced CSS Styling': 'Estilos CSS Avanzados',
+                    'Advanced Structures': 'Estructuras Avanzadas',
+                    'Data Structures': 'Estructuras de Datos',
+                    'Data Science Programming': 'Programación para Ciencia de Datos',
+                    'Styling Web Pages': 'Estilos de Páginas Web',
+                    'Web Structure & Semantics': 'Estructura Web y Semántica',
+                    'Web development Fundamentals': 'Fundamentos de Desarrollo Web',
+                    'HTML Fundamentals': 'Fundamentos de HTML',
+                    'PHP Fundamentals': 'Fundamentos de PHP',
+                    'Python Fundamentals': 'Fundamentos de Python',
+                    'Linux Fundamentals': 'Fundamentos de Linux',
+                    'Building Mobile Apps': 'Creación de Aplicaciones Móviles',
+                    'Menu and Navigation': 'Menú y Navegación',
+                    'Agile Project Management': 'Gestión Ágil de Proyectos',
+                    'Leadership in Scrum': 'Liderazgo en Scrum',
+                    'Running Agile Projects': 'Ejecución de Proyectos Ágiles',
+                    'Planning with Agile': 'Planificación Ágil',
+                    'Running Projects with Agile': 'Ejecución de Proyectos con Agilidad',
+                    'Review, retrospective and close projects with agile': 'Revisión, retrospectiva y cierre de proyectos ágiles',
+                    'Engaging People': 'Participación de Personas',
+                    'Deep Dive into JS': 'Profundización en JavaScript',
+                    'Types and Variables': 'Tipos y Variables',
+                    'Database Queries': 'Consultas de Bases de Datos',
+                    'Web Projects': 'Proyectos Web',
+                    'Data Modeling': 'Modelado de Datos',
+                    'Communication Skills': 'Habilidades de Comunicación',
+                    'Algorithm': 'Algoritmo',
+                    'HTML Basis': 'Fundamentos de HTML',
+                    'JavaScript Exploring': 'Explorando JavaScript',
+                    'JavaScript Functions': 'Funciones JavaScript',
+                    'Python Module': 'Módulo Python',
+                    'Scrum Part': 'Scrum Parte',
+                    'for Beginners': 'para Principiantes',
+                    'Fundamentals': 'Fundamentos',
+                    'Basics': 'Básico',
+                    'Intermediate': 'Intermedio',
+                    'Advanced': 'Avanzado',
+                    'Development': 'Desarrollo',
+                    'Management': 'Gestión',
+                    'Navigation': 'Navegación',
+                    'Functions': 'Funciones',
+                    'Variables': 'Variables',
+                    'Data Types': 'Tipos de Datos',
+                    'Control Flow': 'Flujo de Control',
+                    'Control Structures': 'Estructuras de Control',
+                    'Problem Solving': 'Resolución de Problemas',
+                    'Responsive Design': 'Diseño Responsivo',
+                    'Best Practices': 'Buenas Prácticas',
+                    'File Management': 'Gestión de Archivos',
+                    'System Configuration': 'Configuración del Sistema',
+                    'Package Installation': 'Instalación de Paquetes',
+                    'Terminal Commands': 'Comandos de Terminal',
+                    'Document Formatting': 'Formato de Documentos',
+                    'Table of Contents': 'Índice',
+                    'Decision Structures': 'Estructuras de Decisión',
+                    'Semantic Tags': 'Etiquetas Semánticas',
+                    'Semantic Elements': 'Elementos Semánticos',
+                    'Aggregate Functions': 'Funciones Agregadas',
+                    'State Management': 'Gestión de Estado',
+                    'API Integration': 'Integración con API',
+                    'Scope': 'Ámbito',
+                    'Relationships': 'Relaciones',
+                    'Public Speaking': 'Oratoria',
+                    'Team Collaboration': 'Colaboración en Equipo',
+                    'Team Management': 'Gestión de Equipo',
+                    'Team Coordination': 'Coordinación de Equipo',
+                    'Project Management': 'Gestión de Proyectos',
+                    'Project Execution': 'Ejecución de Proyectos',
+                    'Project Closure': 'Cierre de Proyectos',
+                    'Progress Tracking': 'Seguimiento del Progreso',
+                    'Continuous Improvement': 'Mejora Continua',
+                    'Data Analysis': 'Análisis de Datos',
+                    'Data Visualization': 'Visualización de Datos',
+                    'Data Cleaning': 'Limpieza de Datos',
+                    'Accessibility': 'Accesibilidad',
+                    'Code Structure': 'Estructura del Código',
+                    'Computational Thinking': 'Pensamiento Computacional',
+                    'Data Manipulation': 'Manipulación de Datos',
+                    'Web Frameworks': 'Frameworks Web',
+                    'Backend Development': 'Desarrollo Backend',
+                    'Database Integration': 'Integración con Base de Datos',
+                    'Testing': 'Pruebas',
+                    'Deployment': 'Despliegue',
+                    'ECMAScript Standards': 'Estándares ECMAScript',
+                    'DOM Manipulation': 'Manipulación del DOM',
+                    'Interactive Pages': 'Páginas Interactivas',
+                    'Modern Operators': 'Operadores Modernos',
+                    'Form Handling': 'Gestión de Formularios',
+                    'Math Functions': 'Funciones Matemáticas',
+                    'HTML Integration': 'Integración con HTML',
+                    'String Functions': 'Funciones de Texto',
+                    'OOP Principles': 'Principios de POO',
+                    'Inheritance': 'Herencia',
+                    'Polymorphism': 'Polimorfismo',
+                    'Encapsulation': 'Encapsulación',
+                    'Arrays': 'Arreglos',
+                    'Loops': 'Bucles',
+                    'Classes': 'Clases'
+                }
+            }
+        };
+
+        function getPortfolioLanguage() {
+            const language = localStorage.getItem('portfolio-lang') || 'pt';
+            return ['pt', 'en', 'es'].includes(language) ? language : 'pt';
+        }
+
+        function getCertificateUi() {
+            return translations[getPortfolioLanguage()] || translations.pt;
+        }
+
+        function translateCertificateText(value, language) {
+            if (language === 'en' || !value) return value;
+            const terms = certificateLocale[language].terms;
+
+            return Object.keys(terms)
+                .sort((a, b) => b.length - a.length)
+                .reduce((translated, term) => translated.replaceAll(term, terms[term]), value);
+        }
+
+        function localizeCertificate(certificate) {
+            const language = getPortfolioLanguage();
+            if (language === 'en') {
+                return {
+                    ...certificate,
+                    typeLabel: certificate.type.charAt(0).toUpperCase() + certificate.type.slice(1)
+                };
+            }
+
+            const locale = certificateLocale[language];
+            const skills = certificate.skills.map(skill => translateCertificateText(skill, language));
+            const subtitle = translateCertificateText(certificate.subtitle, language);
+            const date = Object.entries(locale.months).reduce(
+                (localizedDate, [month, translatedMonth]) => localizedDate.replace(month, translatedMonth),
+                certificate.date
+            );
+            const hours = certificate.duration.match(/\d+/)?.[0] || certificate.duration;
+
+            return {
+                ...certificate,
+                title: translateCertificateText(certificate.title, language),
+                subtitle,
+                date,
+                duration: `${hours} ${locale.hours}`,
+                skills,
+                description: locale.description(subtitle, skills),
+                typeLabel: locale.categories[certificate.type] || certificate.type
+            };
+        }
+
         // ====== ESTADO GLOBAL ======
         const AppState = {
             currentPage: 1,
@@ -844,14 +1215,17 @@
                     management: 'fa-tasks'
                 };
 
+                const lang = getPortfolioLanguage();
+                const t = getCertificateUi();
+                const localizedCategories = certificateLocale[lang]?.categories || {};
                 const filterLabels = {
-                    all: 'All',
-                    development: 'Development',
-                    design: 'Design',
-                    web3: 'Web3',
-                    language: 'Languages',
-                    fullstack: 'Full Stack',
-                    management: 'Management'
+                    all: t.cert_filter_all || 'All',
+                    development: localizedCategories.development || t.cert_filter_dev || 'Development',
+                    design: localizedCategories.design || 'Design',
+                    web3: localizedCategories.web3 || 'Web3',
+                    language: localizedCategories.language || 'Languages',
+                    fullstack: localizedCategories.fullstack || 'Full Stack',
+                    management: localizedCategories.management || t.cert_filter_mgmt || 'Management'
                 };
 
                 container.innerHTML = '';
@@ -879,12 +1253,13 @@
                 // Aplicar busca
                 if (AppState.searchQuery.trim()) {
                     const query = AppState.searchQuery.toLowerCase();
-                    data = data.filter(cert =>
-                        cert.title.toLowerCase().includes(query) ||
-                        cert.description.toLowerCase().includes(query) ||
-                        cert.skills.some(skill => skill.toLowerCase().includes(query)) ||
-                        cert.issuer.toLowerCase().includes(query)
-                    );
+                    data = data.filter(cert => {
+                        const localized = localizeCertificate(cert);
+                        return localized.title.toLowerCase().includes(query) ||
+                            localized.description.toLowerCase().includes(query) ||
+                            localized.skills.some(skill => skill.toLowerCase().includes(query)) ||
+                            localized.issuer.toLowerCase().includes(query);
+                    });
                 }
 
                 AppState.filteredData = data;
@@ -907,9 +1282,11 @@
                     container.innerHTML = `
                         <div style="grid-column: 1/-1; text-align: center; padding: 60px 20px; color: #8888aa;">
                             <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
-                            <p style="font-size: 1.2rem;">No certificates found matching your criteria</p>
+                            <p style="font-size: 1.2rem;">${getCertificateUi().cert_no_results || 'No certificates found matching your criteria'}</p>
                         </div>
                     `;
+                    this.updateResultsCount(0, 0);
+                    PaginationManager.render(0);
                     return;
                 }
                 
@@ -923,12 +1300,14 @@
             },
 
             createCard(certificate, index) {
+                const localized = localizeCertificate(certificate);
+                const t = getCertificateUi();
                 const card = document.createElement('div');
                 card.className = 'certificate-card fade-in';
                 card.style.animationDelay = `${index * 0.1}s`;
                 
-                const safeTitle = Utils.sanitizeHTML(certificate.title);
-                const safeDescription = Utils.sanitizeHTML(certificate.description);
+                const safeTitle = Utils.sanitizeHTML(localized.title);
+                const safeDescription = Utils.sanitizeHTML(localized.description);
                 
                 card.innerHTML = `
                     <div class="certificate-image">
@@ -936,32 +1315,32 @@
                         <div class="certificate-overlay"></div>
                         <div class="certificate-badge">
                             <i class="fas fa-certificate"></i>
-                            ${certificate.type.charAt(0).toUpperCase() + certificate.type.slice(1)}
+                            ${Utils.sanitizeHTML(localized.typeLabel)}
                         </div>
                     </div>
                     <div class="certificate-content">
                         <h3 class="certificate-title">${safeTitle}</h3>
                         <div class="certificate-issuer">
                             <i class="fas fa-university"></i>
-                            ${Utils.sanitizeHTML(certificate.issuer)}
+                            ${Utils.sanitizeHTML(localized.issuer)}
                         </div>
                         <p class="certificate-description">${safeDescription}</p>
                         <div class="certificate-meta">
                             <div class="certificate-date">
                                 <i class="far fa-calendar"></i>
-                                ${certificate.date}
+                                ${Utils.sanitizeHTML(localized.date)}
                             </div>
                             <div class="certificate-duration">
                                 <i class="far fa-clock"></i>
-                                ${certificate.duration}
+                                ${Utils.sanitizeHTML(localized.duration)}
                             </div>
                         </div>
                         <div class="certificate-actions">
                             <button class="action-btn view-btn" data-id="${certificate.id}">
-                                <i class="fas fa-eye"></i> View
+                                <i class="fas fa-eye"></i> ${t.cert_view || 'View'}
                             </button>
                             <button class="action-btn download-btn" data-id="${certificate.id}">
-                                <i class="fas fa-download"></i> PDF
+                                <i class="fas fa-download"></i> ${t.cert_pdf || 'PDF'}
                             </button>
                         </div>
                     </div>
@@ -973,7 +1352,14 @@
             updateResultsCount(start, end) {
                 const resultsCount = document.getElementById('results-count');
                 const total = AppState.filteredData.length;
-                resultsCount.textContent = `Showing ${start}-${end} of ${total} certificates`;
+                const t = getCertificateUi();
+                const showing = t.cert_showing_count || 'Showing';
+                const of = t.cert_of || 'of';
+                const certs = t.cert_certificates || 'certificates';
+                resultsCount.textContent = `${showing} ${start}-${end} ${of} ${total} ${certs}`;
+                resultsCount.dataset.start = start;
+                resultsCount.dataset.end = end;
+                resultsCount.dataset.total = total;
             }
         };
 
@@ -1010,7 +1396,8 @@
                 // Info de página
                 const pageInfo = document.createElement('div');
                 pageInfo.className = 'page-info';
-                pageInfo.textContent = `Page ${AppState.currentPage} of ${totalPages}`;
+                const t = getCertificateUi();
+                pageInfo.textContent = `${t.cert_page || 'Page'} ${AppState.currentPage} of ${totalPages}`;
                 container.appendChild(pageInfo);
             },
 
@@ -1034,12 +1421,17 @@
 
         // ====== MODAL ======
         const ModalManager = {
+            activeCertificateId: null,
+
             open(certificateId) {
                 const certificate = certificatesData.find(cert => cert.id === certificateId);
                 if (!certificate) return;
+                const localized = localizeCertificate(certificate);
+                const t = getCertificateUi();
+                this.activeCertificateId = certificateId;
                 
-                document.getElementById('modal-title').textContent = certificate.title;
-                document.getElementById('modal-subtitle').textContent = certificate.subtitle;
+                document.getElementById('modal-title').textContent = localized.title;
+                document.getElementById('modal-subtitle').textContent = localized.subtitle;
                 
                 // Display PDF if available, otherwise show image
                 const pdfElement = document.getElementById('modal-pdf');
@@ -1055,21 +1447,23 @@
                     pdfElement.style.display = 'none';
                 }
                 
-                document.getElementById('modal-issuer').textContent = certificate.issuer;
-                document.getElementById('modal-date').textContent = certificate.date;
-                document.getElementById('modal-duration').textContent = certificate.duration;
+                document.getElementById('modal-issuer').textContent = localized.issuer;
+                document.getElementById('modal-date').textContent = localized.date;
+                document.getElementById('modal-duration').textContent = localized.duration;
                 document.getElementById('modal-id').textContent = `#${certificate.id.toString().padStart(3, '0')}`;
-                document.getElementById('modal-description').textContent = certificate.description;
+                document.getElementById('modal-description').textContent = localized.description;
                 
                 const skillsContainer = document.getElementById('modal-skills');
                 skillsContainer.innerHTML = '';
-                certificate.skills.forEach(skill => {
+                localized.skills.forEach(skill => {
                     const tag = document.createElement('div');
                     tag.className = 'skill-tag';
                     tag.innerHTML = `<i class="fas fa-check"></i> ${Utils.sanitizeHTML(skill)}`;
                     skillsContainer.appendChild(tag);
                 });
                 
+                document.getElementById('modal-download-pdf').innerHTML = `<i class="fas fa-download"></i> ${t.cert_download || 'Download PDF'}`;
+                document.getElementById('modal-share').innerHTML = `<i class="fas fa-share-alt"></i> ${t.cert_share || 'Share'}`;
                 document.getElementById('modal-download-pdf').onclick = () => this.downloadCertificate(certificate);
                 document.getElementById('modal-share').onclick = () => this.shareCertificate(certificate);
                 
@@ -1080,12 +1474,20 @@
             close() {
                 document.getElementById('certificate-modal').style.display = 'none';
                 document.body.style.overflow = 'auto';
+                this.activeCertificateId = null;
+            },
+
+            refresh() {
+                if (this.activeCertificateId !== null) {
+                    this.open(this.activeCertificateId);
+                }
             },
 
             downloadCertificate(certificate) {
+                const t = getCertificateUi();
                 try {
                     if (!certificate.pdfUrl || certificate.pdfUrl === '#') {
-                        Utils.showNotification('PDF not available for this certificate', 'warning');
+                        Utils.showNotification(t.cert_pdf_unavailable, 'warning');
                         return;
                     }
                     
@@ -1098,17 +1500,19 @@
                     link.click();
                     document.body.removeChild(link);
                     
-                    Utils.showNotification('Download started!', 'success');
+                    Utils.showNotification(t.cert_download_started, 'success');
                 } catch (error) {
                     console.error('Download error:', error);
-                    Utils.showNotification('Error downloading certificate', 'error');
+                    Utils.showNotification(t.cert_pdf_unavailable, 'error');
                 }
             },
 
             shareCertificate(certificate) {
+                const localized = localizeCertificate(certificate);
+                const t = getCertificateUi();
                 const shareData = {
-                    title: certificate.title,
-                    text: `Check out my ${certificate.title} certificate!`,
+                    title: localized.title,
+                    text: `${t.cert_share_text} ${localized.title}`,
                     url: window.location.href
                 };
 
@@ -1116,8 +1520,8 @@
                     navigator.share(shareData).catch(() => {});
                 } else {
                     navigator.clipboard.writeText(window.location.href).then(() => {
-                        Utils.showNotification('Link copied to clipboard!', 'success');
-                    });
+                        Utils.showNotification(t.cert_link_copied, 'success');
+                    }).catch(() => Utils.showNotification(t.cert_share_unavailable, 'error'));
                 }
             }
         };
@@ -1130,6 +1534,7 @@
             if (menuBtn && mobileMenu) {
                 menuBtn.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
+                    menuBtn.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
                     const icon = menuBtn.querySelector('i');
 
                     if (mobileMenu.classList.contains('hidden')) {

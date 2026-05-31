@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo | Gabriel Felipe</title>
+    <style>
+        :root {
+            --ink: #19182a;
+            --muted: #5f6075;
+            --accent: #6941c6;
+            --soft: #f3f0ff;
+            --line: #ddd8ee;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { overflow-x: hidden; }
+
+        body {
+            margin: 0;
+            color: var(--ink);
+            background: #eceaf3;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.45;
+        }
+
+        .resume {
+            width: min(100%, 900px);
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 42px;
+            background: #fff;
+        }
+
+        h1, h2, h3, p { margin-top: 0; }
+
+        h1 {
+            margin-bottom: 4px;
+            color: var(--accent);
+            font-size: 34px;
+        }
+
+        h2 {
+            margin: 25px 0 10px;
+            padding-bottom: 5px;
+            color: var(--accent);
+            border-bottom: 2px solid var(--line);
+            font-size: 17px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        h3 {
+            margin-bottom: 3px;
+            font-size: 15px;
+        }
+
+        p, li {
+            font-size: 13px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .role {
+            margin-bottom: 10px;
+            color: var(--muted);
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px 16px;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .item {
+            margin-bottom: 13px;
+        }
+
+        .meta {
+            margin-bottom: 5px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        ul {
+            margin: 5px 0 0;
+            padding-left: 18px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .tag {
+            padding: 5px 8px;
+            color: #4f368c;
+            border-radius: 999px;
+            background: var(--soft);
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 760px) {
+            .resume {
+                padding: 30px 24px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .resume {
+                padding: 22px 16px;
+            }
+
+            h1 {
+                font-size: clamp(26px, 9vw, 30px);
+            }
+
+            h2 {
+                margin-top: 22px;
+                font-size: 15px;
+                letter-spacing: 0.05em;
+            }
+
+            .role {
+                font-size: 15px;
+            }
+
+            .contact {
+                display: grid;
+                gap: 4px;
+            }
+
+            p, li {
+                font-size: 12.5px;
+            }
+
+            .tags {
+                gap: 5px;
+            }
+
+            .tag {
+                padding: 4px 7px;
+                font-size: 11px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .resume {
+                padding-inline: 13px;
+            }
+
+            h2 {
+                overflow-wrap: anywhere;
+            }
+        }
+
+        @media print {
+            body { background: #fff; }
+            .resume {
+                width: 100%;
+                min-height: 0;
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="resume">
+        <header>
+            <h1>Gabriel Felipe</h1>
+            <p class="role">Desenvolvedor Full-Stack Júnior | Criador de Conteúdo Digital</p>
+            <div class="contact">
+                <span>Curitiba, PR - Brasil</span>
+                <a href="mailto:gutiajs@gmail.com">gutiajs@gmail.com</a>
+                <a href="https://api.whatsapp.com/send/?phone=5541996713782">+55 (41) 99671-3782</a>
+                <a href="https://github.com/CAFE2l">github.com/CAFE2l</a>
+                <a href="https://www.linkedin.com/in/gabriel-felipe-sabino-de-souza-ab05a630a/">LinkedIn: Gabriel Felipe</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Resumo Profissional</h2>
+            <p>Desenvolvedor Full-Stack Júnior com experiência na criação de soluções web responsivas, interfaces intuitivas e aplicações dinâmicas. Atua com HTML, CSS, JavaScript, PHP, MySQL, Firebase, JSON, Node.js e Docker, com atenção a usabilidade, organização visual e experiência do usuário.</p>
+        </section>
+
+        <section>
+            <h2>Competências</h2>
+            <div class="tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">JSON</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Docker</span>
+                <span class="tag">UI/UX Design</span>
+                <span class="tag">Git</span>
+                <span class="tag">Design Responsivo</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experiência e Atuação</h2>
+            <div class="item">
+                <h3>Desenvolvimento Full-Stack</h3>
+                <p class="meta">Jan 2025 - Presente</p>
+                <p>Desenvolvimento de aplicações web responsivas e dinâmicas com HTML, CSS, JavaScript, PHP e MySQL. Construção de projetos próprios com foco em performance, experiência do usuário e evolução técnica contínua.</p>
+            </div>
+     
+            <div class="item">
+                <h3>Produção de Conteúdo Digital</h3>
+                <p class="meta">Mar 2025 - Presente</p>
+                <p>Produção de vídeos, transmissões ao vivo e conteúdo sobre tecnologia, desenvolvimento e rotina de estudos para plataformas digitais.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Projetos em Destaque</h2>
+            <div class="grid">
+                <div class="item">
+                    <h3>Café Store</h3>
+                    <p>Solução para identidade digital, criação de aplicações web, sites e landing pages para negócios.</p>
+                </div>
+                <div class="item">
+                    <h3>Study Overlay</h3>
+                    <p>Overlays de produtividade em tempo real para criadores que utilizam OBS.</p>
+                </div>
+                <div class="item">
+                    <h3>LinkWave</h3>
+                    <p>Página de links para criadores, influenciadores e streamers compartilharem conteúdo em um único lugar.</p>
+                </div>
+                <div class="item">
+                    <h3>StreamPix</h3>
+                    <p>Plataforma de alertas de doações via Pix para transmissões ao vivo.</p>
+                </div>
+                <div class="item">
+                    <h3>Samptech</h3>
+                    <p>Loja de informática e assistência técnica para computadores, celulares e consoles.</p>
+                </div>
+                <div class="item">
+                    <h3>WaveOS</h3>
+                    <p>Projeto de sistema operacional executado no navegador.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Formação Complementar</h2>
+            <p>Cursos e certificados em desenvolvimento web, JavaScript, PHP, Python, HTML, CSS, bancos de dados, React Native, UX, Scrum, Linux e fundamentos de programação.</p>
+            <p class="meta">Plataformas: Alura, Curso em Vídeo, Mimo, Sololearn e LinkedIn Learning.</p>
+        </section>
+    </main>
+</body>
+</html>

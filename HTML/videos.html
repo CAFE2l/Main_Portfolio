@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videos | Gabriel Felipe</title>
+    <title data-i18n="videos_page_title">Vídeos | Gabriel Felipe</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
@@ -20,36 +20,49 @@
                     </a>
 
                     <div class="hidden md:flex space-x-10">
-                        <a href="../index.html#home" class="nav-link text-gray-300">Home</a>
-                        <a href="../index.html#about" class="nav-link text-gray-300">About Me</a>
-                        <a href="../index.html#skills" class="nav-link text-gray-300">Skills</a>
-                        <a href="../index.html#projects" class="nav-link text-gray-300">Projects</a>
-                        <a href="../index.html#experience" class="nav-link text-gray-300">Experience</a>
-                        <a href="./videos.html" class="nav-link text-gray-300 active">Videos</a>
-                        <a href="../index.html#contact" class="nav-link text-gray-300">Contact</a>
-                        <a href="./certificados.html" class="nav-link text-gray-300">Certificates</a>
+                        <a href="../index.html#home" class="nav-link text-gray-300" data-i18n="nav_home">Home</a>
+                        <a href="../index.html#about" class="nav-link text-gray-300" data-i18n="nav_about">About Me</a>
+                        <a href="../index.html#skills" class="nav-link text-gray-300" data-i18n="nav_skills">Skills</a>
+                        <a href="../index.html#projects" class="nav-link text-gray-300" data-i18n="nav_projects">Projects</a>
+                        <a href="../index.html#experience" class="nav-link text-gray-300" data-i18n="nav_experience">Experience</a>
+                        <a href="./videos.html" class="nav-link text-gray-300 active" data-i18n="nav_videos">Videos</a>
+                        <a href="../index.html#contact" class="nav-link text-gray-300" data-i18n="nav_contact">Contact</a>
+                        <a href="./certificados.html" class="nav-link text-gray-300" data-i18n="nav_certificates">Certificates</a>
                     </div>
 
                     <div class="flex items-center space-x-4">
-                        <button class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu">
+                        <!-- Language Selector -->
+                        <div class="lang-selector" id="lang-selector">
+                            <button class="lang-btn" id="lang-btn" aria-label="Selecionar idioma" data-i18n-aria-label="select_language">
+                                <span id="lang-flag">🇧🇷</span>
+                                <span id="lang-code">PT</span>
+                                <i class="fas fa-chevron-down lang-arrow"></i>
+                            </button>
+                            <div class="lang-dropdown" id="lang-dropdown">
+                                <button class="lang-option active" data-lang="pt"><span class="lang-flag-emoji">🇧🇷</span><span>Português</span></button>
+                                <button class="lang-option" data-lang="en"><span class="lang-flag-emoji">🇺🇸</span><span>English</span></button>
+                                <button class="lang-option" data-lang="es"><span class="lang-flag-emoji">🇪🇸</span><span>Español</span></button>
+                            </div>
+                        </div>
+                        <button class="md:hidden text-gray-300 focus:outline-none" aria-label="Abrir menu" aria-expanded="false" data-i18n-aria-label="open_menu">
                             <i class="fas fa-bars text-xl"></i>
                         </button>
-                        <a href="https://www.youtube.com/@CAFE_ct" target="_blank" class="btn btn-primary">
-                            <i class="fab fa-youtube"></i>Canal
+                        <a href="https://www.youtube.com/@CAFE_ct" target="_blank" class="btn btn-primary" aria-label="Abrir canal no YouTube" data-i18n-aria-label="videos_open_channel">
+                            <i class="fab fa-youtube"></i><span data-i18n="videos_channel">Canal</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="md:hidden mt-4 hidden glass rounded-lg p-4">
                     <div class="flex flex-col space-y-3">
-                        <a href="../index.html#home" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Home</a>
-                        <a href="../index.html#about" class="text-gray-300 hover:text-purple-400 transition-colors py-2">About Me</a>
-                        <a href="../index.html#skills" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Skills</a>
-                        <a href="../index.html#projects" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Projects</a>
-                        <a href="../index.html#experience" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Experience</a>
-                        <a href="./videos.html" class="text-purple-300 transition-colors py-2">Videos</a>
-                        <a href="../index.html#contact" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Contact</a>
-                        <a href="./certificados.html" class="text-gray-300 hover:text-purple-400 transition-colors py-2">Certificates</a>
+                        <a href="../index.html#home" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_home">Home</a>
+                        <a href="../index.html#about" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_about">About Me</a>
+                        <a href="../index.html#skills" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_skills">Skills</a>
+                        <a href="../index.html#projects" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_projects">Projects</a>
+                        <a href="../index.html#experience" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_experience">Experience</a>
+                        <a href="./videos.html" class="text-purple-300 transition-colors py-2" data-i18n="nav_videos">Videos</a>
+                        <a href="../index.html#contact" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_contact">Contact</a>
+                        <a href="./certificados.html" class="text-gray-300 hover:text-purple-400 transition-colors py-2" data-i18n="nav_certificates">Certificates</a>
                     </div>
                 </div>
             </nav>
@@ -60,12 +73,12 @@
                 <div class="container mx-auto px-6">
                     <div class="video-work-heading">
                         <div>
-                            <p class="eyebrow">Youtube gallery</p>
-                            <h1>TRABALHOS</h1>
-                            <p class="video-work-subtitle">Escolha uma categoria e abra os videos direto no YouTube.</p>
+                            <p class="eyebrow" data-i18n="videos_eyebrow">Youtube gallery</p>
+                            <h1 data-i18n="videos_heading">TRABALHOS</h1>
+                            <p class="video-work-subtitle" data-i18n="videos_subtitle">Escolha uma categoria e abra os videos direto no YouTube.</p>
                         </div>
 
-                        <div class="video-filter-bar" aria-label="Filtro de videos">
+                        <div class="video-filter-bar" aria-label="Filtro de vídeos" data-i18n-aria-label="videos_filters_label">
                             <button type="button" class="video-filter-btn active" data-video-filter="all">Todos</button>
                             <button type="button" class="video-filter-btn" data-video-filter="long">Video longo</button>
                             <button type="button" class="video-filter-btn" data-video-filter="shorts">Shorts</button>
@@ -79,8 +92,8 @@
                                 <span class="video-play"><i class="fas fa-play"></i></span>
                             </span>
                             <span class="video-meta">
-                                <strong>Conteudos completos</strong>
-                                <span>Video longo - Reflexão</span>
+                                <strong data-i18n="videos_card_complete">Conteúdos completos</strong>
+                                <span data-i18n="videos_long_reflection">Vídeo longo - Reflexão</span>
                             </span>
                         </a>
 
@@ -89,8 +102,8 @@
                                 <span class="video-play"><i class="fas fa-play"></i></span>
                             </span>
                             <span class="video-meta">
-                                <strong>Projetos na pratica</strong>
-                                <span>Video longo - reflexão</span>
+                                <strong data-i18n="videos_card_projects">Projetos na prática</strong>
+                                <span data-i18n="videos_long_reflection">Vídeo longo - Reflexão</span>
                             </span>
                         </a>
 
@@ -99,8 +112,8 @@
                                 <span class="video-play"><i class="fas fa-play"></i></span>
                             </span>
                             <span class="video-meta">
-                                <strong>Tech e rotina dev</strong>
-                                <span>Video longo - Reflexão</span>
+                                <strong data-i18n="videos_card_tech">Tecnologia e rotina dev</strong>
+                                <span data-i18n="videos_long_reflection">Vídeo longo - Reflexão</span>
                             </span>
                         </a>
 
@@ -109,8 +122,8 @@
                                 <span class="video-play"><i class="fas fa-play"></i></span>
                             </span>
                             <span class="video-meta">
-                                <strong>Cortes rapidos</strong>
-                                <span>Shorts - EDITS</span>
+                                <strong data-i18n="videos_card_edits">Cortes rápidos</strong>
+                                <span data-i18n="videos_shorts_edits">Shorts - Edições</span>
                             </span>
                         </a>
 
@@ -119,8 +132,8 @@
                                 <span class="video-play"><i class="fas fa-play"></i></span>
                             </span>
                             <span class="video-meta">
-                                <strong>Dev em cortes</strong>
-                                <span>Shorts - Calisthenics</span>
+                                <strong data-i18n="videos_card_dev">Dev em cortes</strong>
+                                <span data-i18n="videos_shorts_calisthenics">Shorts - Calistenia</span>
                             </span>
                         </a>
 
@@ -129,8 +142,8 @@
                                 <span class="video-play"><i class="fas fa-play"></i></span>
                             </span>
                             <span class="video-meta">
-                                <strong>Momentos tech</strong>
-                                <span>Shorts - Products Reviews</span>
+                                <strong data-i18n="videos_card_moments">Momentos tech</strong>
+                                <span data-i18n="videos_shorts_reviews">Shorts - Avaliações de produtos</span>
                             </span>
                         </a>
 
@@ -139,8 +152,8 @@
                                 <span class="video-play"><i class="fas fa-play"></i></span>
                             </span>
                             <span class="video-meta">
-                                <strong>Lives de estudo</strong>
-                                <span>Live - Study with me</span>
+                                <strong data-i18n="videos_card_study">Lives de estudo</strong>
+                                <span data-i18n="videos_live_study">Live - Estude comigo</span>
                             </span>
                         </a>
 
@@ -149,8 +162,8 @@
                                 <span class="video-play"><i class="fas fa-play"></i></span>
                             </span>
                             <span class="video-meta">
-                                <strong>Programando ao vivo</strong>
-                                <span>Live - Study with me </span>
+                                <strong data-i18n="videos_card_programming">Programando ao vivo</strong>
+                                <span data-i18n="videos_live_study">Live - Estude comigo</span>
                             </span>
                         </a>
 
@@ -159,16 +172,16 @@
                                 <span class="video-play"><i class="fas fa-play"></i></span>
                             </span>
                             <span class="video-meta">
-                                <strong>Sessao de foco</strong>
-                                <span>Live - Study with me </span>
+                                <strong data-i18n="videos_card_focus">Sessão de foco</strong>
+                                <span data-i18n="videos_live_study">Live - Estude comigo</span>
                             </span>
                         </a>
                     </div>
 
                     <div class="video-ticker" aria-hidden="true">
                         <div class="video-ticker-track">
-                            <span>Criar</span><span>Publicar</span><span>Editar</span><span>Gravar</span><span>Criar</span><span>Publicar</span><span>Editar</span><span>Gravar</span>
-                            <span>Criar</span><span>Publicar</span><span>Editar</span><span>Gravar</span><span>Criar</span><span>Publicar</span><span>Editar</span><span>Gravar</span>
+                            <span data-i18n="videos_ticker_create">Criar</span><span data-i18n="videos_ticker_publish">Publicar</span><span data-i18n="videos_ticker_edit">Editar</span><span data-i18n="videos_ticker_record">Gravar</span><span data-i18n="videos_ticker_create">Criar</span><span data-i18n="videos_ticker_publish">Publicar</span><span data-i18n="videos_ticker_edit">Editar</span><span data-i18n="videos_ticker_record">Gravar</span>
+                            <span data-i18n="videos_ticker_create">Criar</span><span data-i18n="videos_ticker_publish">Publicar</span><span data-i18n="videos_ticker_edit">Editar</span><span data-i18n="videos_ticker_record">Gravar</span><span data-i18n="videos_ticker_create">Criar</span><span data-i18n="videos_ticker_publish">Publicar</span><span data-i18n="videos_ticker_edit">Editar</span><span data-i18n="videos_ticker_record">Gravar</span>
                         </div>
                     </div>
                 </div>
@@ -180,17 +193,18 @@
                 <a href="../index.html#home" class="site-logo text-2xl font-bold text-white">
                     <span class="logo-mark">&lt;</span>CAFÉ<span class="logo-slash">/</span><span class="logo-mark">&gt;</span>
                 </a>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="../index.html#projects" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Projects</a>
-                    <a href="./videos.html" class="text-purple-300 transition-colors text-sm">Videos</a>
-                    <a href="../index.html#contact" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Contact</a>
-                    <a href="./certificados.html" class="text-gray-400 hover:text-purple-400 transition-colors text-sm">Certificates</a>
-                </div>
+                        <div class="flex flex-wrap justify-center gap-6">
+                            <a href="../index.html#projects" class="text-gray-400 hover:text-purple-400 transition-colors text-sm" data-i18n="videos_footer_projects">Projects</a>
+                            <a href="./videos.html" class="text-purple-300 transition-colors text-sm" data-i18n="videos_footer_videos">Videos</a>
+                            <a href="../index.html#contact" class="text-gray-400 hover:text-purple-400 transition-colors text-sm" data-i18n="videos_footer_contact">Contact</a>
+                            <a href="./certificados.html" class="text-gray-400 hover:text-purple-400 transition-colors text-sm" data-i18n="videos_footer_certificates">Certificates</a>
+                        </div>
             </div>
         </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../JAVASCRIPT/i18n.js"></script>
     <script src="../JAVASCRIPT/index.js"></script>
 </body>
 </html>
